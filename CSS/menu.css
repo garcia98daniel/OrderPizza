@@ -1,0 +1,128 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  background-color: #e5e5e5;
+}
+
+/*---------------------- TITLE--- ---------------- */
+.container {
+  width: 1024px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 5%;
+  position: relative;
+}
+h1 {
+  font-family: "Roboto", sans-serif;
+  color: #4a8846;
+  font-weight: 400;
+  font-size: 36px;
+  margin-right: 10px;
+}
+h2 {
+  font-family: "Roboto", sans-serif;
+  color: #4a8846;
+  font-weight: 400;
+}
+.title-container {
+  display: flex;
+}
+.title {
+  text-align: center;
+}
+.pizza-logo {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  background-color: #ffd985;
+  border: solid 2px #d6a251;
+  position: relative;
+}
+.pizza-logo .jam {
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background-color: #bc0707;
+}
+.jam:nth-child(8) {
+  position: absolute;
+  left: 20%;
+  top: 11%;
+}
+.jam:nth-child(1) {
+  position: absolute;
+  left: 53%;
+  bottom: 79%;
+}
+.jam:nth-child(2) {
+  position: absolute;
+  left: 5%;
+  top: 51%;
+}
+.jam:nth-child(3) {
+  position: absolute;
+  left: 20%;
+  bottom: 20%;
+}
+.jam:nth-child(4) {
+  position: absolute;
+  top: 73%;
+  right: 20%;
+}
+.jam:nth-child(5) {
+  position: absolute;
+  top: 20%;
+  right: 20%;
+}
+.jam:nth-child(6) {
+  position: absolute;
+  top: 20%;
+  right: 20%;
+}
+.jam:nth-child(7) {
+  position: absolute;
+  top: 20%;
+  right: 20%;
+}
+
+.shopping-car {
+  display: flex;
+  width: 118px;
+  height: 76px;
+  position: absolute;
+  right: 0px;
+  top: 72px;
+}
+.box1 {
+  background-color: black;
+  width: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box1 i {
+  color: white;
+  font-size: 10px;
+}
+
+.box2 {
+  background-color: #4a8846;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box2 i {
+  font-size: 35px;
+  color: white;
+  text-align: center;
+}
+/*---------------------- TITLE END--- ---------------- */
+
+/* -------------HERE STARTS MENU SECTION---------- */
+
+/* -------------HERE ENDS MENU SECTION---------- */
