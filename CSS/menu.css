@@ -9,7 +9,7 @@ body {
 
 /*---------------------- TITLE--- ---------------- */
 .container {
-  width: 1024px;
+  width: 100%;
   margin: auto;
   display: flex;
   justify-content: center;
@@ -42,51 +42,69 @@ h2 {
   border: solid 2px #d6a251;
   position: relative;
 }
+.pizza-cut {
+  width: 50%;
+  height: 0px;
+  border: solid 1px #5f5f5f;
+  position: absolute;
+  background-color: #5f5f5f;
+  z-index: 1;
+}
+.pizza-cut:nth-child(2) {
+  transform: rotate(-61deg);
+  top: 24%;
+  left: 37%;
+}
+.pizza-cut:nth-child(1) {
+  transform: rotate(-19deg);
+  top: 42%;
+  left: 50%;
+}
 .pizza-logo .jam {
   height: 6px;
   width: 6px;
   border-radius: 50%;
   background-color: #bc0707;
 }
-.jam:nth-child(8) {
+.jam:nth-of-type(8) {
   position: absolute;
   left: 20%;
   top: 11%;
 }
-.jam:nth-child(1) {
+.jam:nth-of-type(9) {
   position: absolute;
   left: 53%;
   bottom: 79%;
 }
-.jam:nth-child(2) {
+.jam:nth-of-type(10) {
   position: absolute;
   left: 5%;
   top: 51%;
 }
-.jam:nth-child(3) {
+.jam:nth-of-type(3) {
   position: absolute;
   left: 20%;
-  bottom: 20%;
+  bottom: 12%;
 }
-.jam:nth-child(4) {
+.jam:nth-of-type(4) {
   position: absolute;
   top: 73%;
   right: 20%;
 }
-.jam:nth-child(5) {
+.jam:nth-of-type(5) {
   position: absolute;
-  top: 20%;
-  right: 20%;
+  top: 45%;
+  right: 44%;
 }
-.jam:nth-child(6) {
+.jam:nth-of-type(6) {
   position: absolute;
-  top: 20%;
-  right: 20%;
+  top: 45%;
+  right: 5%;
 }
-.jam:nth-child(7) {
+.jam:nth-of-type(7) {
   position: absolute;
-  top: 20%;
-  right: 20%;
+  top: 21%;
+  right: 14%;
 }
 
 .shopping-car {
@@ -95,7 +113,7 @@ h2 {
   height: 76px;
   position: absolute;
   right: 0px;
-  top: 72px;
+  bottom: 0px;
 }
 .box1 {
   background-color: black;
