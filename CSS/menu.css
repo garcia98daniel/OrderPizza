@@ -15,6 +15,7 @@ body {
   justify-content: center;
   padding-top: 5%;
   position: relative;
+  margin-bottom: 40px;
 }
 h1 {
   font-family: "Roboto", sans-serif;
@@ -27,6 +28,7 @@ h2 {
   font-family: "Roboto", sans-serif;
   color: #4a8846;
   font-weight: 400;
+  font-size: 28px;
 }
 .title-container {
   display: flex;
@@ -142,5 +144,61 @@ h2 {
 /*---------------------- TITLE END--- ---------------- */
 
 /* -------------HERE STARTS MENU SECTION---------- */
+.menu-section {
+  max-width: 1440px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+.options {
+  width: 95%;
+  border-bottom: solid 2px black;
+  padding: 5px;
+  margin: auto;
+  margin-bottom: 25px;
+}
+.options li {
+  padding: 5px;
+  font-family: "Roboto", sans-serif;
+}
+.options ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+}
+.options a {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.options-pizza {
+  display: flex;
+}
+.pizza-container {
+  width: 226px;
+  height: 397px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 14px;
+  box-shadow: 4px 10px 5px #aca9a9;
+}
+.options-pizza img {
+  width: inherit;
+  height: 240px;
+}
+.pizza-description {
+  padding: 10px;
+  text-align: right;
+}
+.pizza-description h3 {
+  color: #4a8846;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
 
 /* -------------HERE ENDS MENU SECTION---------- */
