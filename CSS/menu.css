@@ -4,7 +4,7 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 body {
-  background-color: #e5e5e5;
+  background-color: rgb(240 240 240);
 }
 
 /*---------------------- TITLE--- ---------------- */
@@ -20,7 +20,7 @@ body {
 h1 {
   font-family: "Roboto", sans-serif;
   color: #4a8846;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 36px;
   margin-right: 10px;
 }
@@ -187,7 +187,8 @@ h2 {
   justify-content: space-between;
   margin-right: 14px;
   box-shadow: 4px 10px 5px #aca9a9;
-  border-radius: 5px;
+  border-radius: 10px;
+  overflow: auto;
 }
 .options-pizza img {
   width: inherit;
@@ -208,7 +209,7 @@ h2 {
 .aditions-section {
   width: 1440px;
   padding: 0px 10px 0px 10px;
-  margin-bottom: 50px;
+  padding-bottom: 50px;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -226,7 +227,7 @@ h2 {
 }
 .aditions-container {
   overflow: auto;
-  display: flex;
+  display: -webkit-box;
   width: 99%;
 }
 .adition-container {
@@ -238,7 +239,7 @@ h2 {
   box-sizing: border-box;
   background-color: white;
   border-top: solid 8px #fcb84f;
-  border-radius: 7px;
+  border-radius: 10px;
   box-shadow: 4px 10px 5px #aca9a9;
   margin: 5px;
 }
@@ -260,4 +261,9 @@ h2 {
   width: 148px;
   height: 103px;
 }
-/* ------------- HERE ENDS ADITIONS SECTION --------- */ ;
+/* ------------- HERE ENDS ADITIONS SECTION --------- */
+/* ------------- HERE STARTS FOOTER SECTION --------- */
+footer {
+  background-color: black;
+  height: 38px;
+}
