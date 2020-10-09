@@ -215,6 +215,17 @@ h2 {
   flex-direction: column;
   align-items: center;
 }
+.aditions-container::-webkit-scrollbar {
+  background-color: rgb(240 240 240);
+  border-radius: 5px;
+  height: 10px;
+}
+.aditions-container::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 5px;
+  height: 10px;
+  width: 25%;
+}
 .aditions-title {
   border-bottom: solid 2px black;
   margin-bottom: 20px;
@@ -229,6 +240,7 @@ h2 {
   overflow: auto;
   display: -webkit-box;
   width: 99%;
+  padding: 10px;
 }
 .adition-container {
   padding: 20px;
