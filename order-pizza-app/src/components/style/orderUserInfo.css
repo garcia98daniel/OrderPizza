@@ -1,0 +1,89 @@
+h1, h2, h3, h4, h5, h6{
+    padding: 0;
+    margin: 0;
+    font-style: italic;
+}
+.OrdersUserInfo_header{
+    background: green;
+    padding: 0px 5px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.OrdersUserInfo{
+    padding: 0 10px;
+}
+
+.OrdersUserInfo_mainInfo{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid lightgray;
+    margin: 0px 35px;
+}
+
+.OrdersUserInfo_info{
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.OrdersUserInfo_infoAdress_direction{
+    text-align: center;
+    max-width: 350px;
+}
+
+.OrdersUserInfo_infoAdress_reference{
+    text-align: center;
+    max-width: 350px;
+}
+
+.OrdersUserInfo_infoAdress_reference h5{
+    color: gray;
+}
+
+
+/*____Way to pay section*/
+
+.OrdersUserInfo_wayToPay_wrapper{
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.OrdersUserInfo_wayToPay{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
+.OrdersUserInfo_info_total{
+    text-align: center;
+}
+
+.wayToPay_description{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    max-width: 300px;
+}
+
+.wayToPay_description_change{
+    color: gray;
+}
+
+.OrdersUserInfo_info_total :nth-child(2){
+    line-height: 0.5em;
+    color: green;
+}
+
+.ordersTittle{
+    background: green;
+    color: white;
+    width: 100%;
+    padding: 2px;
+    text-align: center;
+}

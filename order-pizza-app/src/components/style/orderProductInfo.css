@@ -1,0 +1,74 @@
+.orderProductInfo{
+    padding: 8px 55px;
+    border-bottom: 1px solid black;
+}
+
+.orderProductInfo_product_info{
+    display: flex;
+    align-items: center;
+    width: 95%;
+    margin: 0 auto;
+    border-bottom: 2px solid lightgray;
+    margin: 5px 0;
+}
+
+.orderProduct_product_item_quantity_container{
+    width: 55%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.orderProductInfo_product{
+    width: 45%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-right: 20px;
+
+}
+
+.orderProductInfo_product_details{
+    margin-left: 10px;
+}
+
+.orderProductInfo_product_details :nth-child(2){
+    color: green;
+}
+
+.orderProductInfo_observation{
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 1px 0;
+    background: rgb(230, 0, 0);
+}
+
+.orderProductInfo_observation_txt{
+    text-align: center;
+    color: gray;
+}
+
+.orderProductInfo_additionals_container{
+    width: 100%;
+    display: flex;
+}
+
+.additionals{
+    width: 50%;
+    text-align: center;
+    color: green;
+}
+
+.additionals :first-child{
+    color: black;
+}
+
+.pizza_additionals{
+   
+}
+
+.others_additionals{
+
+}
