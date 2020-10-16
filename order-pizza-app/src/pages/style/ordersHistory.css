@@ -29,3 +29,32 @@
     font-size: 2em;
     font-weight: 700;
 }
+
+.ordersHistory_dateContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.ordersHistory_dateContainer input{
+    border: 2px solid rgb(173, 172, 172) !important;
+}
+
+.ordersHistory_dateContainer svg g{
+    color: green;
+}
+
+.calendar{
+    position: absolute;
+    font-weight: 800;
+}
+
+.calender-date{
+    color: green !important;
+
+}
+
+.calendar :nth-child(2){
+    background: rgb(240, 240, 240) !important;
+}
