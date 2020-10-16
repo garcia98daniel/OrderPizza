@@ -4,8 +4,8 @@ import PizzaLogo from "./PizzaLogo";
 
 function Brand(props) {
   return (
-    <div class="title-container">
-      <div class="title">
+    <div className="title-container">
+      <div className="title">
         <h1>ENTRE AMIGOS</h1>
         <h2>Menu</h2>
       </div>

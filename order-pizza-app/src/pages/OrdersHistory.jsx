@@ -1,6 +1,7 @@
 import React from 'react';
 import "./style/ordersHistory.css";
 import {useState, useEffect} from 'react';
+import axios from 'axios';
 
 import OrderUserInfo from "../components/OrderUserInfo";
 import Navbar from "../components/Navbar";
@@ -15,6 +16,15 @@ function OrdersHistory(props) {
         alert(value.format('YYYY-MM-DD'));
         setDateValue(value);
     }
+
+    useEffect(() => {
+        console.log(`/api/admin/historial/${dateValue.format('YYYY-MM-DD')}`);
+        axios.get(`/api/admin/historial/${dateValue.format('YYYY-MM-DD')}`)
+        .then(res => {
+            console.log(res.data);
+        })
+        .catch(err => console.log("Error getting orders"));
+    },)
     return (
         <div className="ordersHistory_body">
             <div className="ordersHistory_wrapper">
@@ -46,7 +56,7 @@ function OrdersHistory(props) {
                     168,000 COP
                 </div>
                 <div className="totalDate">
-                    23-06-2016
+                    {dateValue.format('YYYY-MM-DD')}
                 </div>
             </div>
         </div>

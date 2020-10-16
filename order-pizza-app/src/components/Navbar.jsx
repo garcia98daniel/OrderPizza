@@ -9,7 +9,7 @@ function Navbar(props) {
             <Link to="/admin/pedidos">
                 PEDIDOS <div className="navbar_pizzaLogoLink"><PizzaLogo/></div>
             </Link>
-            <Link to="/admin/historialPedidos/:date">
+            <Link to="/admin/historialPedidos">
                 HISTORIAL <div className="navbar_pizzaLogoLink"><PizzaLogo/></div>
             </Link>
         </div>
