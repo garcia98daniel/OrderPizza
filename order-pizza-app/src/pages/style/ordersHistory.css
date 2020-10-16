@@ -1,8 +1,6 @@
-.orders_body{
+.ordersHistory_body{
     background: #E5E5E5;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
     height: 100vh;
     min-height: 100vh;
@@ -10,16 +8,24 @@
     position: relative;
 }
 
-.orders_wrapper{
+.ordersHistory_wrapper{
     max-width: 1200px;
     height: 100vh;
     width: 100%;
 }
 
-.orders_bottomBar{
+.ordersHistory_bottomBar{
     position: absolute;
     bottom: 0;
     height: 50px;
     width: 100%;
     background: black;
+    box-sizing: border-box;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 2em;
+    font-weight: 700;
 }

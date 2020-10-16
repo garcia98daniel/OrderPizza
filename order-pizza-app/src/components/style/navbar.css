@@ -1,0 +1,35 @@
+.navbar{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    color: black;
+}
+
+.navbar a{
+    width: 120px;
+    height: 36px;
+    font-size: 1.2em;
+    font-weight: 600;
+    font-style: italic;
+    color: black;
+    padding: 10px 30px;
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 6px;
+    transition: all .2s ease;
+}
+a:hover{
+    color: rgb(59, 59, 59);
+    box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.navbar_pizzaLogoLink{
+    display: none;
+} 
+
+.navbar a:hover .navbar_pizzaLogoLink{
+    display: block;
+}
+
