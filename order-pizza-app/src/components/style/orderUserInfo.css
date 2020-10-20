@@ -48,7 +48,8 @@ h1, h2, h3, h4, h5, h6{
 /*____Way to pay section*/
 
 .OrdersUserInfo_wayToPay_wrapper{
-    margin: 20px 0;
+    margin: 0 60px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: space-around;
 }

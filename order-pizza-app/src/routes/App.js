@@ -12,7 +12,7 @@ function App() {
             {/* <Layout> */}
                 <Switch>
                     <Route exact path="/admin/pedidos" component={Orders} />
-                    <Route exact path="/admin/historialPedidos" component={OrdersHistory} />
+                    <Route exact path="/admin/historial-pedidos" component={OrdersHistory} />
                 </Switch>  
             {/* </Layout>   */}
         </BrowserRouter>

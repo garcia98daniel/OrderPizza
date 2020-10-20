@@ -6,6 +6,7 @@
     min-height: 100vh;
     overflow-y: auto;
     position: relative;
+    /* padding-bottom: 250px; */
 }
 
 .ordersHistory_wrapper{
@@ -15,7 +16,7 @@
 }
 
 .ordersHistory_bottomBar{
-    position: absolute;
+    position: fixed;
     bottom: 0;
     height: 50px;
     width: 100%;
@@ -37,7 +38,14 @@
     padding: 20px 0;
 }
 
+.ordersHistory_dateGroup{
+    display: flex;
+    align-items: flex-end;
+    margin: 0 20px;
+}
+
 .ordersHistory_dateContainer input{
+    margin-left: 10px;
     border: 2px solid rgb(173, 172, 172) !important;
 }
 
@@ -57,4 +65,43 @@
 
 .calendar :nth-child(2){
     background: rgb(240, 240, 240) !important;
+}
+
+.ordersNoFound{
+    width: 100%;
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+}
+
+/*ordenes cargando*/
+.orderItem.loading{
+    border-top: 12px solid green; 
+}
+
+.stripe{
+    width: 90%;
+    border-top: 2px solid lightgray;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.orderLoadingif{
+    display: flex;
+    margin: auto;
+}
+
+.spaceOrderLoadingItem{
+    width: 100%;
+    height: 50px;
+}
+
+.orderProductInfo_observation{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 80%;
+
 }

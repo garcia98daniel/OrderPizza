@@ -1,23 +1,30 @@
 import React from 'react';
 import "./style/orderProductInfo.css";
 
-function OrderProductInfo(props) {
+function OrderProductInfo({ 
+    productItemIndex,
+    productQuantity,
+    productName,
+    productZise,
+    productObservation,
+    productAdditionals
+}) {
     return (
         <div className="orderProductInfo">
             <div className="orderProductInfo_product_info">
                 <div className="orderProduct_product_item_quantity_container">
                     <h3 className="orderProductInfo_product_numberItem">
-                        #1
+                        Producto #{productItemIndex}
                     </h3>
                     <h1 className="orderProductInfo_product_quantity">
-                        x1
+                        x{productQuantity}
                     </h1>
                 </div>
                 <div className="orderProductInfo_product">
-                    <h3>ProductType</h3>
+                    <h3>PIZZA</h3>
                     <div className="orderProductInfo_product_details">
-                        <h5>Size</h5>
-                        <h4>Product</h4> 
+                        <h5>{productZise}</h5>
+                        <h4>{productName}</h4> 
                     </div>
                 </div>
             </div>
@@ -25,13 +32,13 @@ function OrderProductInfo(props) {
                 Observacion
             </h3>
             <h4 className="orderProductInfo_observation_txt">
-                Nulla praesentium asperiores consequatur cumque impedit soluta sed voluptas esse aut sequi minima provident ratione et.
+                {productObservation}
             </h4>
             <div className="orderProductInfo_additionals_container">
                 <div className="additionals pizza_additionals">
-                    <h3>Adicionales</h3>
-                    <h3>Borde de queso</h3>
-                    <h3>Extra queso</h3>
+                {productAdditionals && productAdditionals.map((additional, index) => (
+                    <h3>{additional.name}</h3>
+                ))}
                 </div>
                 <div className="additionals others_additionals">
                     <h3>Bebidas</h3>
