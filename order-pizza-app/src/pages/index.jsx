@@ -46,12 +46,9 @@ function index(props) {
         <div className="index_wrapper">
           <div className="ourHistoryWords_container">
             <h1 className="ourHistory_mainWords">Descubre</h1>
-            <h1>Nuestra historia</h1>
+            <h1>Nuestra filosofía</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
-              deserunt minus, voluptatum ullam, libero eos dignissimos tenetur,
-              incidunt eveniet molestias esse? Explicabo nulla tenetur molestias
-              ullam voluptate at temporibus ipsum?
+            Nuestras pizzas deben llevar ingredientes frescos del campo Colombiano de nuestra región Caribe, deben ser seleccionados personalmente y cortadas a mano, cuidando cada detalle, en especial la higiene de nuestra cocina y herramientas, para garantizar no solamente una pizza de buena calidad y gran sabor, si no totalmente inocua!
             </p>
           </div>
           <img className="imgSectionOurHistory" src={especias} alt="image" />
@@ -80,10 +77,8 @@ function index(props) {
             <img className="arrow right" src={arrow} alt="img_arrow" />
           </div>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem
-            ipsam sint ab! Sapiente nesciunt magnam facilis officia aperiam
-            officiis Quidem ipsam sint ab! Sapiente nesciunt magnam facilis
-            officia aperiam officiis.
+          Lograr la satisfacción de nuestros clientes, con una pizza artesanal
+vegetariana de excelente calidad y extraordinario sabor.
           </p>
           <Link to="/menu">FULL MENU</Link>
         </div>
@@ -97,10 +92,9 @@ function index(props) {
             <h1 className="contactTxt">Contactanos</h1>
             <span>*</span>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-              corporis numquam velit? Aliquid reiciendis non iusto perferendis
-              praesentium itaque nulla placeat nihil iste! Ab tempora autem
-              doloribus reiciendis cum ullam.
+              
+		La dieta carnívora, además de la crueldad con los animales, supone un despilfarro de recursos naturales, genera un gran impacto ambiental y más cambio climático, unetenos.  
+	
             </p>
           </div>
           <div className="footer_section2">

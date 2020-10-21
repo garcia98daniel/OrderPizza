@@ -119,6 +119,7 @@
     border-radius: 6px;
     padding: 3px 30px;
     font-weight: 600;
+    padding-bottom: 5px;
 }
 
 .btn_menu:hover{
