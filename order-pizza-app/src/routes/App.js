@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
+import index from '../pages/index';
 import Orders from '../pages/Orders';
 import OrdersHistory from '../pages/OrdersHistory';
 
@@ -11,6 +12,7 @@ function App() {
     <BrowserRouter>
             {/* <Layout> */}
                 <Switch>
+                    <Route exact path="/" component={index} />
                     <Route exact path="/admin/pedidos" component={Orders} />
                     <Route exact path="/admin/historial-pedidos" component={OrdersHistory} />
                 </Switch>  
