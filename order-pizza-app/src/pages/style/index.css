@@ -1,3 +1,21 @@
+:root{
+    --gold-color: #FCB84F;
+    --darkerGold-color: #D6A251;
+    --green-color: #4A8845;
+    --big-text-font: 'Herr Von Muellerhoff', cursive;
+}
+
+.index_wrapper{
+    max-width: 1300px;
+    width: inherit;
+    height: inherit;
+    display: inherit;
+    flex-direction: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+    margin: auto;
+}
+
 .hero{
     color: white;
     background-image: url('../../img/bgHero.png');
@@ -19,11 +37,36 @@
     align-items: center;
     padding: 25px 50px;
     width: 100%;
+    font-size: 1.3em;
+}
+
+.brand{
+    font-size: 1.4em;
 }
 
 .navBarIndex a {
     padding: 0 20px;
     color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.navBarIndex a:hover {
+    color: white;
+    border-bottom: 2px solid white;
+    box-shadow: none;
+}
+
+.cartIcon_container{
+ color: white;
+ height: 35px;
+ width: 35px;
+}
+
+.cartIcon_container img{
+    color: white;
+    height: 35px;
+    width: 35px;   
 }
 
 .mainWords{
@@ -31,33 +74,50 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 60%;
+
 }
 
 .welcomeTxt{
-    font-size: 6em;
-    color: #FCB84F;
+    font-size: 11em;
+    color: var(--gold-color);
+    font-family: var(--big-text-font);
+    font-weight: 200;
+    position: relative;
+    top:100px;
 }
 
 .entreAmigostxt{
-    font-size: 2em;
+    font-size: 3em;
+    position: relative;
+    top:20px;
+    font-style: normal;
 }
+
 
 .star_container{
     font-size: 2em;
     display: flex;
     justify-content: flex-start;
+    width: 100%;
+}
+.stripeIndex{
+    width: 100%;
+    border-bottom: 2px solid white;
 }
 
 .frace{
-    font-size: 1.6em;
+    font-size: 1.8em;
+    font-weight: 500;
+    letter-spacing: 1px;
 }
 
 .btn_menu{
     text-decoration: none;
-    background: darkgreen;
+    background: var(--green-color);
     color: white;
     border-radius: 6px;
-    padding: 5px 20px;
+    padding: 3px 30px;
     font-weight: 600;
 }
 
@@ -84,13 +144,19 @@
 }
 
 .ourHistory_mainWords{
-    color: #FCB84F;
-    font-size: 5em;
+    color: var(--gold-color);
+    font-size: 10em;
+    font-family: var(--big-text-font);
+    font-weight: 200;
+    position: relative;
+    top:90px;
 }
 
 .ourHistoryWords_container :nth-child(2){
-    font-size: 2em;
-    color: green;
+    font-size: 3em;
+    font-weight: 600;
+    font-style: normal;
+    color: var(--green-color);
 }
 
 .ourHistoryWords_container p{
@@ -118,8 +184,20 @@
 }
 
 .enjoy_words_container :first-child{
-    color: #FCB84F;
-    font-size: 5em; 
+    color: var(--gold-color);
+    font-size: 9em;
+    font-family: var(--big-text-font);
+    font-weight: 200;
+    position: relative;
+    top:70px;
+
+}
+
+.enjoy_words_container :nth-child(2){
+    font-size: 2.2em;
+    font-weight: 600;
+    font-style: normal;
+    z-index: 1;
 }
 
 .menu{
@@ -134,7 +212,7 @@
     font-size: 8em;
     font-weight: 700;
     margin: 80px 0 20px 0;
-    color: green;
+    color: var(--green-color);
 }
 
 .arrows_img_container{
@@ -158,7 +236,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    overflow-x: auto;
+    overflow-x: overlay;
 }
 
 .img_menuSection{
@@ -172,13 +250,13 @@
 
 .menu a {
     margin: 0 0 50px 0;
-    color: #FCB84F;
+    color: var(--darkerGold-color);
     font-weight: 700;
     font-size: 1.5em;
 }
 
 .menu a:hover {
-    color: #FCB84F;
+    color: var(--gold-color);;
     box-shadow: none;
     text-decoration: none;
 }
@@ -225,7 +303,7 @@ footer{
 }
 
 .footer_text_container span{
-    color: #FCB84F;
+    color: var(--darkerGold-color);
     font-size: 2em;
 }
 
@@ -234,7 +312,7 @@ footer{
     box-sizing: border-box;
     text-align: center;
     color: white;
-    border-top: 2px solid #FCB84F;
+    border-top: 2px solid var(--darkerGold-color);
     padding: 0 200px;
 }
 
@@ -277,7 +355,7 @@ footer{
 }
 
 .contactUs button{
-    background: green;
+    background:  var(--green-color);
     font-weight: 600;
     font-size: 1em;
     color: white;
