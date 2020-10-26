@@ -36,13 +36,20 @@ function OrderProductInfo({
             </h4>
             <div className="orderProductInfo_additionals_container">
                 <div className="additionals pizza_additionals">
-                {productAdditionals && productAdditionals.map((additional, index) => (
-                    <h3>{additional.name}</h3>
-                ))}
+                    <h3>Adicionales</h3>
+                    {productAdditionals && 
+                    productAdditionals.filter(additional => additional.type != "drink")
+                    .map((additional, index) => (
+                        <h3>{additional.name}</h3>
+                    ))}
                 </div>
                 <div className="additionals others_additionals">
                     <h3>Bebidas</h3>
-                    <h3>CocaCola 250ml</h3>
+                    {productAdditionals && 
+                    productAdditionals.filter(additional => additional.type != "ownProduct")
+                    .map((additional, index) => (
+                        <h3>{additional.name}</h3>
+                    ))}
                 </div>
             </div>
         </div>

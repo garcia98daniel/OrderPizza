@@ -9,6 +9,7 @@ import arrow from "../img/arrow.png";
 import whiteArrow from "../img/white_arrow.png";
 import fb_icon from "../img/fb.png";
 import ig_icon from "../img/ig.png";
+import wa_icon from "../img/wa.png";
 import cart from "../img/cart.png";
 
 function index(props) {
@@ -48,7 +49,12 @@ function index(props) {
             <h1 className="ourHistory_mainWords">Descubre</h1>
             <h1>Nuestra filosofía</h1>
             <p>
-            Nuestras pizzas deben llevar ingredientes frescos del campo Colombiano de nuestra región Caribe, deben ser seleccionados personalmente y cortadas a mano, cuidando cada detalle, en especial la higiene de nuestra cocina y herramientas, para garantizar no solamente una pizza de buena calidad y gran sabor, si no totalmente inocua!
+              Nuestras pizzas deben llevar ingredientes frescos del campo
+              Colombiano de nuestra región Caribe, deben ser seleccionados
+              personalmente y cortadas a mano, cuidando cada detalle, en
+              especial la higiene de nuestra cocina y herramientas, para
+              garantizar no solamente una pizza de buena calidad y gran sabor,
+              si no totalmente inocua!
             </p>
           </div>
           <img className="imgSectionOurHistory" src={especias} alt="image" />
@@ -77,8 +83,8 @@ function index(props) {
             <img className="arrow right" src={arrow} alt="img_arrow" />
           </div>
           <p>
-          Lograr la satisfacción de nuestros clientes, con una pizza artesanal
-vegetariana de excelente calidad y extraordinario sabor.
+            Lograr la satisfacción de nuestros clientes, con una pizza artesanal
+            vegetariana de excelente calidad y extraordinario sabor.
           </p>
           <Link to="/menu">FULL MENU</Link>
         </div>
@@ -92,9 +98,9 @@ vegetariana de excelente calidad y extraordinario sabor.
             <h1 className="contactTxt">Contactanos</h1>
             <span>*</span>
             <p>
-              
-		La dieta carnívora, además de la crueldad con los animales, supone un despilfarro de recursos naturales, genera un gran impacto ambiental y más cambio climático, unetenos.  
-	
+              La dieta carnívora, además de la crueldad con los animales, supone
+              un despilfarro de recursos naturales, genera un gran impacto
+              ambiental y más cambio climático, unetenos.
             </p>
           </div>
           <div className="footer_section2">
@@ -118,7 +124,7 @@ vegetariana de excelente calidad y extraordinario sabor.
                 <Link>
                   <img
                     className="socialMedia_icon ig"
-                    src={fb_icon}
+                    src={wa_icon}
                     alt="socialM_icon"
                   />
                 </Link>
