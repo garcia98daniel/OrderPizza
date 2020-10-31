@@ -38,7 +38,7 @@ function OrderProductInfo({
                 <div className="additionals pizza_additionals">
                     <h3>Adicionales</h3>
                     {productAdditionals && 
-                    productAdditionals.filter(additional => additional.type != "drink")
+                    productAdditionals.filter(additional => additional.type !== "drink")
                     .map((additional, index) => (
                         <h3>{additional.name}</h3>
                     ))}
@@ -46,7 +46,7 @@ function OrderProductInfo({
                 <div className="additionals others_additionals">
                     <h3>Bebidas</h3>
                     {productAdditionals && 
-                    productAdditionals.filter(additional => additional.type != "ownProduct")
+                    productAdditionals.filter(additional => additional.type !== "ownProduct")
                     .map((additional, index) => (
                         <h3>{additional.name}</h3>
                     ))}

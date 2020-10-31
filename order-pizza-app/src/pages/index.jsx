@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./style/index.css";
 import especias from "../img/especias.png";
@@ -13,9 +14,16 @@ import wa_icon from "../img/wa.png";
 import cart from "../img/cart.png";
 
 function index(props) {
+
+  const scrollingWithButton = (direction) => {
+    let scrollDiv = document.querySelector(".img_menuSection_container");
+    scrollDiv.scrollLeft += direction;
+  } 
+
   return (
     <>
       <section className="hero">
+        <div className="heroImg"></div>
         <div className="index_wrapper">
           <nav className="navBarIndex">
             <h1 className="brand">ENTRE AMIGOS</h1>
@@ -39,7 +47,7 @@ function index(props) {
               <div className="stripeIndex"></div>
             </div>
             <div className="frace">Deliciosamente saludabe!</div>
-            <Link className="btn_menu">Menu</Link>
+            <a href="#menu" className="btn_menu">Menu</a>
           </div>
         </div>
       </section>
@@ -61,6 +69,7 @@ function index(props) {
         </div>
       </section>
       <section className="enjoyPizza">
+        <div className="enjoyPizzaImg"></div>
         <div className="index_wrapper">
           <div className="enjoy_words_container">
             <h1>Disfruta</h1>
@@ -68,11 +77,11 @@ function index(props) {
           </div>
         </div>
       </section>
-      <section className="menu">
+      <section className="menu" name="menu" id="menu">
         <div className="index_wrapper">
           <div className="menu_section_tittle">MENU</div>
           <div className="arrows_img_container">
-            <img className="arrow left" src={arrow} alt="img_arrow" />
+            <img className="arrow left" src={arrow} alt="img_arrow" onClick={() => scrollingWithButton(-250)}/>
             <div className="img_menuSection_container">
               <img className="img_menuSection" src={pizza1} alt="img_pizza" />
               <img className="img_menuSection" src={pizza2} alt="img_pizza" />
@@ -80,7 +89,7 @@ function index(props) {
               <img className="img_menuSection" src={pizza3} alt="img_pizza" />
               <img className="img_menuSection" src={pizza3} alt="img_pizza" />
             </div>
-            <img className="arrow right" src={arrow} alt="img_arrow" />
+            <img className="arrow right" src={arrow} alt="img_arrow" onClick={() => scrollingWithButton(250)}/>
           </div>
           <p>
             Lograr la satisfacción de nuestros clientes, con una pizza artesanal

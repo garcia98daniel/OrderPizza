@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import index from '../pages/index';
+import Menu from '../pages/Menu';
 import Orders from '../pages/Orders';
 import OrdersHistory from '../pages/OrdersHistory';
 
@@ -13,6 +14,7 @@ function App() {
             {/* <Layout> */}
                 <Switch>
                     <Route exact path="/" component={index} />
+                    <Route exact path="/menu" component={Menu} />
                     <Route exact path="/admin/pedidos" component={Orders} />
                     <Route exact path="/admin/historial-pedidos" component={OrdersHistory} />
                 </Switch>  

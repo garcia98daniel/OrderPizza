@@ -18,9 +18,6 @@
 
 .hero{
     color: white;
-    background-image: url('../../img/bgHero.png');
-    background-size: cover;
-    background-repeat: no-repeat;
     height: 100vh;
     min-height: 100vh;
     width: 100%;
@@ -28,6 +25,21 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+}
+
+.heroImg{
+    background-image: url('../../img/bgHero.jpg');  
+    background-size: cover;
+    background-position-y: -100px;
+    background-repeat: no-repeat;
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+    filter: brightness(60%);
 }
 
 .navBarIndex{
@@ -131,8 +143,9 @@
 .ourHistory{
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
     background: white;
-    padding: 50px 100px;
+    padding: 20px 100px 70px 100px;
 
 }
 
@@ -165,14 +178,28 @@
     width: 80%;
 }
 
+.imgSectionOurHistory{
+    width: 430px;
+    height: 100%;
+    object-fit: cover;
+}
+
 .enjoyPizza{
     width: 100%;
     height: 450px;
-    background-image: url('../../img/section3bg.png');
-    background-repeat: no-repeat;
-    background-size: cover;
+    position: relative;
     display: flex;
     justify-content: flex-end;
+}
+
+.enjoyPizzaImg{
+    background-image: url('../../img/section3bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: scaleX(-1);
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 .enjoy_words_container{
@@ -223,12 +250,21 @@
 }
 
 .arrow{
+    cursor: pointer;
     height: 50px;
     width: 50px;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 10px 6px -6px #777;
+    
 }
 
 .arrow.right{
     transform: rotate(180deg);
+    -webkit-box-shadow: 0 -10px 6px -6px #777;
+    -moz-box-shadow: 0 -10px 6px -6px #777;
+    box-shadow: 0 -10px 6px -6px #777;
 }
 
 .img_menuSection_container{
@@ -238,6 +274,10 @@
     justify-content: space-between;
     align-items: center;
     overflow-x: overlay;
+    scroll-behavior: smooth;
+    line-height: normal;
+    transition: all 2s;
+    
 }
 
 .img_menuSection{
