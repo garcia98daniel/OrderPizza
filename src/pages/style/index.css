@@ -5,6 +5,12 @@
     --big-text-font: 'Herr Von Muellerhoff', cursive;
 }
 
+*{
+    scroll-behavior: smooth;
+    line-height: normal;
+    /* transition: all 2s; */
+}
+
 .index_wrapper{
     max-width: 1300px;
     width: inherit;
@@ -67,18 +73,6 @@
     color: white;
     border-bottom: 2px solid white;
     box-shadow: none;
-}
-
-.cartIcon_container{
- color: white;
- height: 35px;
- width: 35px;
-}
-
-.cartIcon_container img{
-    color: white;
-    height: 35px;
-    width: 35px;   
 }
 
 .mainWords{

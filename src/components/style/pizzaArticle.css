@@ -1,0 +1,29 @@
+.pizza-container {
+    width: 226px;
+    /* height: 397px; */
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 14px;
+    box-shadow: 4px 10px 5px #aca9a9;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .2s all;
+    border: 1px solid #f3f3f3;
+  }
+
+  .pizza-container:hover{
+    transform: scale(1.05);
+  }
+
+  .options-pizza img {
+    width: 100%;
+    height: auto;
+  }
+  .pizza-description {
+    padding: 10px;
+    min-height: 130px;
+    text-align: right;
+  }

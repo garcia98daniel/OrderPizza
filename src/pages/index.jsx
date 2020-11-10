@@ -29,12 +29,9 @@ function index(props) {
             <h1 className="brand">ENTRE AMIGOS</h1>
             <div className="navigationsItems">
               <Link>INICIO</Link>
-              <Link>MENU</Link>
-              <Link>NOSOTROS</Link>
-              <Link>CONTACTANOS</Link>
-              <Link className="cartIcon_container">
-                <img src={cart} alt="cart" />
-              </Link>
+              <a href="#menu"> MENU</a>
+              <a href="#ourHistory">NOSOTROS</a>
+              <a href="#footer">CONTACTANOS</a>
             </div>
           </nav>
 
@@ -51,7 +48,7 @@ function index(props) {
           </div>
         </div>
       </section>
-      <section className="ourHistory">
+      <section className="ourHistory" id="ourHistory">
         <div className="index_wrapper">
           <div className="ourHistoryWords_container">
             <h1 className="ourHistory_mainWords">Descubre</h1>
@@ -98,7 +95,7 @@ function index(props) {
           <Link to="/menu">FULL MENU</Link>
         </div>
       </section>
-      <footer>
+      <footer id="footer">
         <div className="index_wrapper">
           <div className="footer_arrow_up">
             <img className="arrow_up" src={whiteArrow} alt="" />
@@ -112,7 +109,7 @@ function index(props) {
               ambiental y más cambio climático, unetenos.
             </p>
           </div>
-          <div className="footer_section2">
+          <div className="footer_section2" >
             <div className="followUs">
               <h2>SIGUENOS</h2>
               <div className="socialMedia">

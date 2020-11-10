@@ -1,0 +1,384 @@
+:root{
+  --gold-color: #FCB84F;
+  --darkerGold-color: #D6A251;
+  --green-color: #4A8845;
+  --big-text-font: 'Herr Von Muellerhoff', cursive;
+  --normal-font: "Roboto", sans-serif;
+}
+
+.cartIcon_container{
+  color: white;
+  height: 35px;
+  width: 35px;
+ }
+ 
+ .cartIcon_container img{
+     color: white;
+     height: 35px;
+     width: 35px;   
+ }
+
+.menuBody {
+  font-family: var(--normal-font);
+}
+
+/*---------------------- TITLE--- ---------------- */
+.container {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 5%;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.title-container {
+  display: flex;
+}
+.title {
+  text-align: center;
+}
+.pizza-logo {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  background-color: #ffd985;
+  border: solid 2px #d6a251;
+  position: relative;
+}
+.pizza-cut {
+  width: 50%;
+  height: 0px;
+  border: solid 1px #5f5f5f;
+  position: absolute;
+  background-color: #5f5f5f;
+  z-index: 1;
+}
+.pizza-cut:nth-child(2) {
+  transform: rotate(-61deg);
+  top: 24%;
+  left: 37%;
+}
+.pizza-cut:nth-child(1) {
+  transform: rotate(-19deg);
+  top: 42%;
+  left: 50%;
+}
+.pizza-logo .jam {
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background-color: #bc0707;
+}
+.jam:nth-of-type(8) {
+  position: absolute;
+  left: 20%;
+  top: 11%;
+}
+.jam:nth-of-type(9) {
+  position: absolute;
+  left: 53%;
+  bottom: 79%;
+}
+.jam:nth-of-type(10) {
+  position: absolute;
+  left: 5%;
+  top: 51%;
+}
+.jam:nth-of-type(3) {
+  position: absolute;
+  left: 20%;
+  bottom: 12%;
+}
+.jam:nth-of-type(4) {
+  position: absolute;
+  top: 73%;
+  right: 20%;
+}
+.jam:nth-of-type(5) {
+  position: absolute;
+  top: 45%;
+  right: 44%;
+}
+.jam:nth-of-type(6) {
+  position: absolute;
+  top: 45%;
+  right: 5%;
+}
+.jam:nth-of-type(7) {
+  position: absolute;
+  top: 21%;
+  right: 14%;
+}
+
+.shopping-car {
+  display: flex;
+  width: 100px;
+  height: 70px;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  cursor: pointer;
+}
+.box1 {
+  background-color: black;
+  width: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px 0 0 4px;
+}
+.box1 i {
+  color: white;
+  font-size: 10px;
+}
+
+.box2 {
+  background-color: #4a8846;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box2 a:hover {
+  box-shadow: none;
+}
+/*---------------------- TITLE END--- ---------------- */
+
+/* -------------HERE STARTS MENU SECTION---------- */
+.menu-section {
+  max-width: 1440px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-bottom: 40px;
+}
+.options {
+  width: 95%;
+  
+  margin: auto;
+  margin-bottom: 25px;
+}
+.options ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  height: 25px;
+
+}
+.options li {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  font-family: "Roboto", sans-serif;
+  border-bottom: solid 2px black;
+  transition: .2s all;
+  cursor: pointer;
+}
+
+.options li:hover {
+  border-bottom: 5px solid #4a8846;
+}
+
+.options li:hover > a{
+  color: #4a8846;
+}
+  
+.categoryActive{
+  border-bottom: 5px solid #4a8846 !important;
+}
+
+.categoryActive a{
+  color: #4a8846 !important;
+}
+  
+.options a {
+  text-decoration: none;
+  color: black;
+  height: 100%;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.options li a:hover {
+  box-shadow: none;
+}
+
+
+.options-pizza {
+  display: flex;
+}
+
+.pizza-description h3 {
+  color: #4a8846;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* -------------HERE ENDS MENU SECTION---------- */
+/* ------------- HERE STARTS ADITIONS SECTION --------- */
+.aditions-section {
+  width: 1440px;
+  padding: 0px 10px 0px 10px;
+  padding-bottom: 50px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.aditions-container::-webkit-scrollbar {
+  background-color: rgb(240 240 240);
+  border-radius: 5px;
+  height: 10px;
+}
+.aditions-container::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 5px;
+  height: 10px;
+  width: 25%;
+}
+.aditions-title {
+  border-bottom: solid 2px black;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 95%;
+}
+.aditions-title h1 {
+  color: black;
+  margin: auto;
+}
+.aditions-container {
+  overflow: auto;
+  display: -webkit-box;
+  width: 99%;
+  padding: 10px;
+}
+
+
+/* ------------- HERE STARTS OVERLAY ONE SECTION --------- */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* visibility: hidden; */
+}
+
+/* ------------- HERE ENDS OVERLAY ONE SECTION --------- */
+/* ------------- HERE STARTS OVERLAY TWO SECTION --------- */
+.overlay-two {
+  background-color: rgba(0, 0, 0, 0.3);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  visibility: hidden;
+}
+.make-order {
+  width: 600px;
+  height: 100%;
+  background-color: #f2f2f2;
+  display: flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0px 35px;
+  box-sizing: border-box;
+}
+.item {
+  display: flex;
+  justify-content: space-between;
+  height: 200px;
+  padding: 14px 0px;
+}
+.item:nth-of-type(2n + 1) {
+  border-bottom: solid 1px #717171;
+}
+.item img {
+  width: 188px;
+  height: 177px;
+  margin-right: 10px;
+}
+.item-description {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0px;
+}
+.item-description h4 {
+  margin-bottom: 15px;
+  color: #4a8846;
+  font-family: "roboto";
+  font-size: 24px;
+}
+.item-description :nth-child(2){
+  color: #8d8d8d;
+  margin-bottom: 7px;
+  font-family: "roboto";
+}
+.item-description a {
+  color: #2680ca;
+  font-size: 0.8em;
+}
+.fa-times-circle {
+  font-size: 40px;
+}
+.price {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.price p {
+  font-family: "Roboto";
+  color: #4a8846;
+  font-size: 24px;
+  font-weight: 600;
+}
+.make-order-button {
+  padding: 20px 30px;
+  text-align: center;
+  border-top: solid 4px #e1e1e1;
+}
+.order-resume {
+  display: flex;
+  justify-content: space-between;
+}
+.order-resume h4 {
+  font-family: "Roboto";
+  color: #4a8846;
+  font-size: 24px;
+  font-weight: 600;
+}
+.order-resume p {
+  margin-bottom: 15px;
+  color: #4a8846;
+  font-family: "roboto";
+  font-size: 24px;
+}
+.make-order-button button {
+  padding: 5px 60px;
+  background-color: black;
+  font-size: 27px;
+  font-family: "roboto";
+  color: white;
+  margin-top: 40px;
+  border-radius: 5px;
+}
+
+/* ------------- HERE ENDS OVERLAY THREE ONE SECTION --------- */
+
+/* ------------- HERE ENDS ADITIONS SECTION --------- */
+/* ------------- HERE STARTS FOOTER SECTION --------- */
