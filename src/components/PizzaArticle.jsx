@@ -3,15 +3,14 @@ import "./style/pizzaArticle.css";
 import pizza from '../img/pizza3.png';
 
 
-function pizzaArticle(props) {
+function pizzaArticle({prices, productDescription, handleClick}) {
   
     return (
-        <article class="pizza-container" onClick={() => props.openModal(true)}>
+        <article class="pizza-container" onClick={() => handleClick(true, prices)}>
             <div class="pizza-description">
-              <h3>18k amigera</h3>
+              <h3>{prices.value.personal}k amigera</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui,
-                ad? Similique perferendis facilis ullam eaque repudiandae.
+                {productDescription}
               </p>
             </div>
             <img src={pizza} alt="" />

@@ -61,6 +61,7 @@
     min-height: 340px;
     background-color: #e7e7e7;
     text-align: center;
+    border-top-right-radius: 8px;
   }
   .pizza-caracteristics h3 {
     font-size: 24px;
@@ -142,17 +143,14 @@
 
   .pizza_pequeña:hover > span{
     visibility: visible;
-
   }
 
   .pizza_mediana:hover > span{
     visibility: visible;
-
   }
 
   .pizza_grande:hover > span{
     visibility: visible;
-
   }
 
   .pizzaModel{
@@ -160,7 +158,7 @@
     position: absolute;
     width: 280px;
     height: 180px;
-    background: lightgray;
+    background: #D1D1D1;
     top: 40px;
     left: 10px;
     z-index: 1000;
@@ -168,6 +166,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .pizzaModel::before{
+    content:"\A";
+    border-style: solid;
+    border-width: 10px 15px 10px 0;
+    border-color: transparent lightgray transparent transparent;
+    position: absolute;
+    left: 8px;
+    top: -13px;
+    transform: rotate(-35deg);
   }
 
   .pizzaModel .detailsZise{
@@ -188,15 +197,68 @@
     height: 160px;
     margin-right: 50px;
     border-radius: 50%;
-    background: gray;
+    background: #7D7D7D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .pizza_stripe{
+    position: absolute;
+    width: 100%;
+    border-bottom: 1px solid white;
+  }
+
+  .stripe_two_4{
+    transform: rotate(90deg);
+  }
+/* ------------------------------------------------ */
+  .stripe_two_6{
+    transform: rotate(60deg);
+  }
+
+  .stripe_three_6{
+    transform: rotate(-60deg);
   }
   
+/* ------------------------------------------------ */
+ .stripe_two_8{
+  transform: rotate(90deg);
+ }
+ .stripe_three_8{
+  transform: rotate(45deg);
+ }
+ .stripe_four_8{
+  transform: rotate(-45deg);
+ }
+
+/* ------------------------------------------------ */
+.stripe_two_10{
+  transform: rotate(36deg);
+}
+
+.stripe_three_10{
+  transform: rotate(72deg);
+
+}
+
+.stripe_four_10{
+  transform: rotate(-36deg);
+
+}
+
+.stripe_five_10{
+  transform: rotate(-72deg);
+
+}
+
   .order-price .quantity {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: white;
-    border: solid 1px #9e9d9d;
+    border: solid 1px lightgray;
     border-radius: 9px;
     overflow: hidden;
     padding: 1px;
@@ -258,6 +320,7 @@
     width: 207px;
     border-radius: 8px;
     padding: 8px 10px;
+    cursor: pointer;
   }
 
   .total-price .plusIcon{

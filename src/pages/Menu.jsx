@@ -6,12 +6,20 @@ import cart from "../img/cart.png";
 import PizzaArticle from "../components/PizzaArticle";
 import AdicionalArticle from "../components/AdicionalArticle";
 import ModalSelectPizza from "../components/ModalSelectPizza";
+import {pizzaPricesLigeras} from "../components/pizzaPricesData/pizzaPricesLigeras.js";
 
 import "./style/menu.css";
 
 function Menu(props) {
   const [pizzaCategory, setPizzaCategory] = useState("ligeras");
   const [selectPizzaModal, setSelectPizzaModal] = useState(false);
+  const [productPrice, setProductPrice] = useState(0);
+  
+  
+  const openPizzaModal =(open, prices)=>{
+    setSelectPizzaModal(open);
+    setProductPrice(prices);
+  }
   return (
     <div className="menuBody">
       <div className="container">
@@ -57,10 +65,38 @@ function Menu(props) {
           </ul>
         </div>
         <div className="options-pizza">
-          {pizzaCategory === "ligeras" && <PizzaArticle openModal={setSelectPizzaModal} />}
-          {pizzaCategory === "combinadas" && <PizzaArticle openModal={setSelectPizzaModal} />}
-          {pizzaCategory === "especiales" && <PizzaArticle openModal={setSelectPizzaModal} />}
-          {pizzaCategory === "gourmet" && <PizzaArticle openModal={setSelectPizzaModal} />}
+          {pizzaCategory === "ligeras" &&
+              
+              <PizzaArticle 
+              handleClick={openPizzaModal}
+              prices={pizzaPricesLigeras[0]}
+              productDescription={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, ad? Similique perferendis facilis ullam eaque repudiandae."} 
+
+           />}
+          {pizzaCategory === "combinadas" &&
+              
+              <PizzaArticle 
+              handleClick={openPizzaModal}
+              prices={pizzaPricesLigeras[1]}
+              productDescription={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, ad? Similique perferendis facilis ullam eaque repudiandae."} 
+           
+           />}
+          {pizzaCategory === "especiales" &&
+              
+              <PizzaArticle 
+              handleClick={openPizzaModal}
+              prices={pizzaPricesLigeras[3]}
+              productDescription={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, ad? Similique perferendis facilis ullam eaque repudiandae."} 
+           
+           />}
+          {pizzaCategory === "gourmet" &&
+              
+              <PizzaArticle 
+              handleClick={openPizzaModal}
+              prices={pizzaPricesLigeras[4]}
+              productDescription={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, ad? Similique perferendis facilis ullam eaque repudiandae."} 
+           
+           />}
         </div>
       </div>
       <div className="aditions-section">
@@ -83,7 +119,7 @@ function Menu(props) {
       {/* modals */}
       {selectPizzaModal && (
         <div className="overlay">
-          <ModalSelectPizza openModal={setSelectPizzaModal}/>
+          <ModalSelectPizza openModal={setSelectPizzaModal} productPrice={productPrice}/>
         </div>
       )}
 

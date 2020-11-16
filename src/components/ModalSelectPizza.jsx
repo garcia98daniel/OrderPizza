@@ -6,9 +6,13 @@ import pizza3 from '../img/pizza3.png';
 import plusIconSvg from '../img/plusIconSvg.svg';
 
 
-function ModalSelectPizza(props) {
+function ModalSelectPizza({openModal, productPrice}) {
     const [quantity, setQuantity] = useState(1);
     const [size, setZise] = useState("Personal");
+    const [pizzaEdge, setPizzaEdge] = useState("Bordes");
+    const [drink, setDrink] = useState("Bebidas");
+    const [ingredient, setIngredient] = useState("Ingrediente");
+    const [observation, setObservation] = useState("");
 
 
     const handleProductQuantity = (number) =>{
@@ -18,9 +22,10 @@ function ModalSelectPizza(props) {
         setQuantity(quantity + number);
       }
     }
+    
     return (
         <div className="order-popup">
-            <img src={closeIcon} alt="close" className="closeIcon" onClick={() => props.openModal(false)}/>
+            <img src={closeIcon} alt="close" className="closeIcon" onClick={() => openModal(false)}/>
 
         <div className="order-information">
           <article className="pizza-visual-description">
@@ -36,7 +41,7 @@ function ModalSelectPizza(props) {
             <h3>Adicionales</h3>
             <form action="">
               <label for="border"></label>
-              <select name="border" id="border" className="input-select">
+              <select name="border" id="border" className="input-select" value={pizzaEdge} onChange={(e)=>setPizzaEdge(e.target.value)}>
                 <option value="" selected disabled>Bordes</option>
                 <option value="borde-1">borde 1</option>
                 <option value="borde-2">borde 2</option>
@@ -46,7 +51,7 @@ function ModalSelectPizza(props) {
             </form>
             <form action="">
               <label for="drinks"></label>
-              <select name="drinks" id="drinks" className="input-select">
+              <select name="drinks" id="drinks" className="input-select" value={drink} onChange={(e)=>setDrink(e.target.value)}>
                 <option value="" selected disabled>Bebidas</option>
                 <option value="borde-1">bebida 1</option>
                 <option value="borde-2">bebida 2</option>
@@ -56,7 +61,7 @@ function ModalSelectPizza(props) {
             </form>
             <form action="">
               <label for="ingredients"></label>
-              <select name="ingredients" id="ingredients" className="input-select">
+              <select name="ingredients" id="ingredients" className="input-select" value={ingredient} onChange={(e)=>setIngredient(e.target.value)}>
                 <option value="" selected disabled>Ingrediente</option>
                 <option value="borde-1">ingrediente 1</option>
                 <option value="borde-2">ingrediente 2</option>
@@ -67,6 +72,8 @@ function ModalSelectPizza(props) {
             <img src={plusIcon} alt="" className="plusCirculeIcon"/>
             <h4>Observación</h4>
             <textarea
+              value={observation} 
+              onChange={(e)=>setObservation(e.target.value)}
               name="observation"
               id="observation"
               cols="30"
@@ -80,7 +87,8 @@ function ModalSelectPizza(props) {
               <span className="pizzaModel">
                 <div className="detailsZise"><h3>Porciones 4</h3> <span>24 CM</span></div>
                 <div className="circulePizzaModel ">
-                  <div className="pizza_stripe"></div>
+                  <div className="pizza_stripe stripe_one_4"></div>
+                  <div className="pizza_stripe stripe_two_4"></div>
                 </div>
               </span>
             </div>
@@ -88,7 +96,9 @@ function ModalSelectPizza(props) {
               <span className="pizzaModel">
                 <div className="detailsZise"><h3>Porciones 6</h3><span>32 CM</span></div>
                 <div className="circulePizzaModel">
-                  <div className="pizza_stripe"></div>
+                  <div className="pizza_stripe stripe_one_6"></div>
+                  <div className="pizza_stripe stripe_two_6"></div>
+                  <div className="pizza_stripe stripe_three_6"></div> 
                 </div>
               </span>
             </div>
@@ -96,7 +106,10 @@ function ModalSelectPizza(props) {
               <span className="pizzaModel">
                 <div className="detailsZise"><h3>Porciones 8</h3><span>37 CM</span></div>
                 <div className="circulePizzaModel">
-                  <div className="pizza_stripe"></div>
+                  <div className="pizza_stripe stripe_one_8"></div>
+                  <div className="pizza_stripe stripe_two_8"></div>
+                  <div className="pizza_stripe stripe_three_8"></div>
+                  <div className="pizza_stripe stripe_four_8"></div>
                 </div>
               </span>
             </div>
@@ -104,7 +117,11 @@ function ModalSelectPizza(props) {
               <span className="pizzaModel">
                 <div className="detailsZise"><h3>Porciones 10</h3><span>42 CM</span></div>
                 <div className="circulePizzaModel">
-                  <div className="pizza_stripe"></div>
+                <div className="pizza_stripe stripe_one_10"></div>
+                  <div className="pizza_stripe stripe_two_10"></div>
+                  <div className="pizza_stripe stripe_three_10"></div>
+                  <div className="pizza_stripe stripe_four_10"></div>
+                  <div className="pizza_stripe stripe_five_10"></div>
                 </div>
               </span>
             </div>
@@ -122,7 +139,11 @@ function ModalSelectPizza(props) {
           </div>
           <div className="total-price">
             <img src={plusIconSvg} alt="" className="plusIcon"/>
-            <p>27000 COP</p>
+            { size === 'Personal' && <p>{productPrice.value.personal} COP</p>}
+            { size === 'Pequeña' && <p>{productPrice.value.pequeña} COP</p>}
+            { size === 'Mediana' && <p>{productPrice.value.mediana} COP</p>}
+            { size === 'Grande' && <p>{productPrice.value.grande} COP</p>}
+
           </div>
         </div>
       </div>
