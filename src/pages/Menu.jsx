@@ -7,6 +7,10 @@ import PizzaArticle from "../components/PizzaArticle";
 import AdicionalArticle from "../components/AdicionalArticle";
 import ModalSelectPizza from "../components/ModalSelectPizza";
 import {pizzaPricesLigeras} from "../components/pizzaPricesData/pizzaPricesLigeras.js";
+import {pizzaPricesCombinadas} from "../components/pizzaPricesData/pizzaPricesCombinadas.js";
+import {pizzaPricesEspeciales} from "../components/pizzaPricesData/pizzaPricesEspeciales.js";
+import {pizzaPricesGourmet} from "../components/pizzaPricesData/pizzaPricesGourmet.js";
+
 
 import "./style/menu.css";
 
@@ -77,7 +81,7 @@ function Menu(props) {
               
               <PizzaArticle 
               handleClick={openPizzaModal}
-              prices={pizzaPricesLigeras[1]}
+              prices={pizzaPricesCombinadas[1]}
               productDescription={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, ad? Similique perferendis facilis ullam eaque repudiandae."} 
            
            />}
@@ -85,7 +89,7 @@ function Menu(props) {
               
               <PizzaArticle 
               handleClick={openPizzaModal}
-              prices={pizzaPricesLigeras[3]}
+              prices={pizzaPricesEspeciales[2]}
               productDescription={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, ad? Similique perferendis facilis ullam eaque repudiandae."} 
            
            />}
@@ -93,7 +97,7 @@ function Menu(props) {
               
               <PizzaArticle 
               handleClick={openPizzaModal}
-              prices={pizzaPricesLigeras[4]}
+              prices={pizzaPricesGourmet[3]}
               productDescription={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, ad? Similique perferendis facilis ullam eaque repudiandae."} 
            
            />}

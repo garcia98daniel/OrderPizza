@@ -4,15 +4,20 @@ import closeIcon from '../img/closeIcon.png';
 import plusIcon from '../img/plusIcon.png';
 import pizza3 from '../img/pizza3.png';
 import plusIconSvg from '../img/plusIconSvg.svg';
+import {bordersPizzas} from "../components/pizzaPricesData/bordersPizzas.js";
+import {extraQueso} from "../components/pizzaPricesData/extraQueso.js";
+
 
 
 function ModalSelectPizza({openModal, productPrice}) {
     const [quantity, setQuantity] = useState(1);
     const [size, setZise] = useState("Personal");
     const [pizzaEdge, setPizzaEdge] = useState("Bordes");
+    const [pizzaExtraQueso, setPizzaExtraQueso] = useState("Extra Queso");
     const [drink, setDrink] = useState("Bebidas");
     const [ingredient, setIngredient] = useState("Ingrediente");
     const [observation, setObservation] = useState("");
+    const [totalProductPrice, setTotalProductPrice] = useState(0);
 
 
     const handleProductQuantity = (number) =>{
@@ -22,6 +27,25 @@ function ModalSelectPizza({openModal, productPrice}) {
         setQuantity(quantity + number);
       }
     }
+
+    const TotalPrice = () => {
+      let onlyProductPrice;
+      if(size === 'Personal'){
+        onlyProductPrice = productPrice.value.personal;
+      } else if(size === 'Pequeña'){
+        onlyProductPrice = productPrice.value.pequeña;
+      } else if(size === 'Mediana'){
+        onlyProductPrice = productPrice.value.mediana;
+      }else if(size === 'Grande'){
+        onlyProductPrice = productPrice.value.grande;
+      }
+      
+      setTotalProductPrice(onlyProductPrice * quantity);
+    }
+
+    useEffect(() => {
+      TotalPrice();
+    });
     
     return (
         <div className="order-popup">
@@ -43,20 +67,16 @@ function ModalSelectPizza({openModal, productPrice}) {
               <label for="border"></label>
               <select name="border" id="border" className="input-select" value={pizzaEdge} onChange={(e)=>setPizzaEdge(e.target.value)}>
                 <option value="" selected disabled>Bordes</option>
-                <option value="borde-1">borde 1</option>
-                <option value="borde-2">borde 2</option>
-                <option value="borde-3">borde 3</option>
-                <option value="borde-4">borde 4</option>
+                <option value={bordersPizzas[0].text}>{bordersPizzas[0].text}</option>
+                <option value={bordersPizzas[1].text}>{bordersPizzas[1].text}</option>
+                <option value={bordersPizzas[2].text}>{bordersPizzas[2].text}</option>
               </select>
             </form>
             <form action="">
-              <label for="drinks"></label>
-              <select name="drinks" id="drinks" className="input-select" value={drink} onChange={(e)=>setDrink(e.target.value)}>
-                <option value="" selected disabled>Bebidas</option>
-                <option value="borde-1">bebida 1</option>
-                <option value="borde-2">bebida 2</option>
-                <option value="borde-3">bebida 3</option>
-                <option value="borde-4">bebida 4</option>
+              <label for="Extra Queso"></label>
+              <select name="Extra Queso" id="Extra Queso" className="input-select" value={pizzaExtraQueso} onChange={(e)=>setPizzaExtraQueso(e.target.value)}>
+                <option value="" selected disabled>Extra Queso</option>
+                <option value={extraQueso[0].text}>{extraQueso[0].text}</option>
               </select>
             </form>
             <form action="">
@@ -67,6 +87,16 @@ function ModalSelectPizza({openModal, productPrice}) {
                 <option value="borde-2">ingrediente 2</option>
                 <option value="borde-3">ingrediente 3</option>
                 <option value="borde-4">ingrediente 4</option>
+              </select>
+            </form>
+            <form action="">
+              <label for="drinks"></label>
+              <select name="drinks" id="drinks" className="input-select" value={drink} onChange={(e)=>setDrink(e.target.value)}>
+                <option value="" selected disabled>Bebidas</option>
+                <option value="borde-1">bebida 1</option>
+                <option value="borde-2">bebida 2</option>
+                <option value="borde-3">bebida 3</option>
+                <option value="borde-4">bebida 4</option>
               </select>
             </form>
             <img src={plusIcon} alt="" className="plusCirculeIcon"/>
@@ -139,11 +169,7 @@ function ModalSelectPizza({openModal, productPrice}) {
           </div>
           <div className="total-price">
             <img src={plusIconSvg} alt="" className="plusIcon"/>
-            { size === 'Personal' && <p>{productPrice.value.personal} COP</p>}
-            { size === 'Pequeña' && <p>{productPrice.value.pequeña} COP</p>}
-            { size === 'Mediana' && <p>{productPrice.value.mediana} COP</p>}
-            { size === 'Grande' && <p>{productPrice.value.grande} COP</p>}
-
+            <p>{totalProductPrice} COP</p>
           </div>
         </div>
       </div>
