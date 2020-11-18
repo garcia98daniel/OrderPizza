@@ -1,4 +1,4 @@
-export const bordersPizzas =[
+export const pizzaBorder =[
     { key: 'bordesQueso',
       value: {
         personal: 2500,

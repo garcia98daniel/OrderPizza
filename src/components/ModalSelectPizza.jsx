@@ -4,8 +4,10 @@ import closeIcon from '../img/closeIcon.png';
 import plusIcon from '../img/plusIcon.png';
 import pizza3 from '../img/pizza3.png';
 import plusIconSvg from '../img/plusIconSvg.svg';
-import {bordersPizzas} from "../components/pizzaPricesData/bordersPizzas.js";
+import {pizzaBorder} from "./pizzaPricesData/pizzaBorder.js";
 import {extraQueso} from "../components/pizzaPricesData/extraQueso.js";
+import {pizzaIngredients} from "../components/pizzaPricesData/pizzaIngredients.js";
+import {drinks} from "../components/pizzaPricesData/drinks.js";
 
 
 
@@ -13,7 +15,7 @@ function ModalSelectPizza({openModal, productPrice}) {
     const [quantity, setQuantity] = useState(1);
     const [size, setZise] = useState("Personal");
     const [pizzaEdge, setPizzaEdge] = useState("Bordes");
-    const [pizzaExtraQueso, setPizzaExtraQueso] = useState("Extra Queso");
+    const [pizzaExtraQueso, setPizzaExtraQueso] = useState(false);
     const [drink, setDrink] = useState("Bebidas");
     const [ingredient, setIngredient] = useState("Ingrediente");
     const [observation, setObservation] = useState("");
@@ -66,39 +68,31 @@ function ModalSelectPizza({openModal, productPrice}) {
             <form action="">
               <label for="border"></label>
               <select name="border" id="border" className="input-select" value={pizzaEdge} onChange={(e)=>setPizzaEdge(e.target.value)}>
-                <option value="" selected disabled>Bordes</option>
-                <option value={bordersPizzas[0].text}>{bordersPizzas[0].text}</option>
-                <option value={bordersPizzas[1].text}>{bordersPizzas[1].text}</option>
-                <option value={bordersPizzas[2].text}>{bordersPizzas[2].text}</option>
-              </select>
-            </form>
-            <form action="">
-              <label for="Extra Queso"></label>
-              <select name="Extra Queso" id="Extra Queso" className="input-select" value={pizzaExtraQueso} onChange={(e)=>setPizzaExtraQueso(e.target.value)}>
-                <option value="" selected disabled>Extra Queso</option>
-                <option value={extraQueso[0].text}>{extraQueso[0].text}</option>
+                <option value="" selected >Bordes</option>
+                {pizzaBorder.map((borde)=>(
+                <option value="" >{borde.text}</option>
+                ))}
               </select>
             </form>
             <form action="">
               <label for="ingredients"></label>
               <select name="ingredients" id="ingredients" className="input-select" value={ingredient} onChange={(e)=>setIngredient(e.target.value)}>
-                <option value="" selected disabled>Ingrediente</option>
-                <option value="borde-1">ingrediente 1</option>
-                <option value="borde-2">ingrediente 2</option>
-                <option value="borde-3">ingrediente 3</option>
-                <option value="borde-4">ingrediente 4</option>
+                <option value="" selected >Ingrediente</option>
+                {pizzaIngredients.map((ingredient)=>(
+                <option value="" >{ingredient.text}</option>
+                ))}
               </select>
             </form>
             <form action="">
               <label for="drinks"></label>
               <select name="drinks" id="drinks" className="input-select" value={drink} onChange={(e)=>setDrink(e.target.value)}>
-                <option value="" selected disabled>Bebidas</option>
-                <option value="borde-1">bebida 1</option>
-                <option value="borde-2">bebida 2</option>
-                <option value="borde-3">bebida 3</option>
-                <option value="borde-4">bebida 4</option>
+                <option value="" selected >Bebidas</option>
+                {drinks.map((drink)=>(
+                <option value="">{drink.text}</option>
+                ))}
               </select>
             </form>
+            <label className="extraQueso"><input checked={pizzaExtraQueso} onChange={()=> setPizzaExtraQueso(!pizzaExtraQueso)} type="checkbox" id="extraQueso" value="extraQueso"/>Extra Queso</label>
             <img src={plusIcon} alt="" className="plusCirculeIcon"/>
             <h4>Observación</h4>
             <textarea
