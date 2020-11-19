@@ -15,9 +15,9 @@ function ModalSelectPizza({openModal, productPrice}) {
     const [quantity, setQuantity] = useState(1);
     const [size, setZise] = useState("Personal");
     const [pizzaEdge, setPizzaEdge] = useState("Bordes");
-    const [pizzaExtraQueso, setPizzaExtraQueso] = useState(false);
-    const [drink, setDrink] = useState("Bebidas");
     const [ingredient, setIngredient] = useState("Ingrediente");
+    const [drink, setDrink] = useState("Bebidas");
+    const [pizzaExtraQueso, setPizzaExtraQueso] = useState(false);
     const [observation, setObservation] = useState("");
     const [totalProductPrice, setTotalProductPrice] = useState(0);
 
@@ -31,18 +31,127 @@ function ModalSelectPizza({openModal, productPrice}) {
     }
 
     const TotalPrice = () => {
-      let onlyProductPrice;
+      let finalProductPrice;
       if(size === 'Personal'){
-        onlyProductPrice = productPrice.value.personal;
+        finalProductPrice = productPrice.value.personal;
+        finalProductPrice += calcBordePrice('personal');
+        finalProductPrice += calcIngredientPrice('personal');
+        finalProductPrice += calcExtraCheesePrice('personal');
+
+      // alert(calcBordePrice('personal'))
       } else if(size === 'Pequeña'){
-        onlyProductPrice = productPrice.value.pequeña;
+        finalProductPrice = productPrice.value.pequeña;
+        finalProductPrice += calcBordePrice('pequeña');
+        finalProductPrice += calcIngredientPrice('pequeña');
+        finalProductPrice += calcExtraCheesePrice('pequeña');
+
+      // alert(calcBordePrice('pequeña'))
       } else if(size === 'Mediana'){
-        onlyProductPrice = productPrice.value.mediana;
+        finalProductPrice = productPrice.value.mediana;  
+        finalProductPrice += calcBordePrice('mediana');
+        finalProductPrice += calcIngredientPrice('mediana');
+        finalProductPrice += calcExtraCheesePrice('mediana');
+
+      // alert(calcBordePrice('mediana'))
       }else if(size === 'Grande'){
-        onlyProductPrice = productPrice.value.grande;
+        finalProductPrice = productPrice.value.grande;
+        finalProductPrice += calcBordePrice('grande');
+        finalProductPrice += calcIngredientPrice('grande');
+        finalProductPrice += calcExtraCheesePrice('grande');
+        
+      // alert(calcBordePrice('grande'))
+      }
+      finalProductPrice += calcDrinkPrice();
+      setTotalProductPrice(finalProductPrice * quantity);
+    }
+
+    const calcBordePrice = (pizzaSize) => {
+      let borderPrice = 0;
+      // const newPizzaBorder = Object.assign({}, pizzaBorder);
+      if(pizzaSize === 'personal'){
+        if(pizzaEdge === 'Borde de Queso'){
+          borderPrice = pizzaBorder[0].value.personal;
+        }else if(pizzaEdge === 'Borde de Queso con Bocadillo'){
+          borderPrice = pizzaBorder[1].value.personal;
+        }else if(pizzaEdge === 'Borde de Queso con Piña'){
+          borderPrice = pizzaBorder[2].value.personal;
+        }
+      }else if(pizzaSize === 'pequeña'){
+
+        if(pizzaEdge === 'Borde de Queso'){
+          borderPrice = pizzaBorder[0].value.pequeña;
+        }else if(pizzaEdge === 'Borde de Queso con Bocadillo'){
+          borderPrice = pizzaBorder[1].value.pequeña;
+        }else if(pizzaEdge === 'Borde de Queso con Piña'){
+          borderPrice = pizzaBorder[2].value.pequeña;
+        }
+      }else if(pizzaSize === 'mediana'){
+
+        if(pizzaEdge === 'Borde de Queso'){
+          borderPrice = pizzaBorder[0].value.mediana;
+        }else if(pizzaEdge === 'Borde de Queso con Bocadillo'){
+          borderPrice = pizzaBorder[1].value.mediana;
+        }else if(pizzaEdge === 'Borde de Queso con Piña'){
+          borderPrice = pizzaBorder[2].value.mediana;
+        }
+      }else if(pizzaSize === 'grande'){
+
+        if(pizzaEdge === 'Borde de Queso'){
+          borderPrice = pizzaBorder[0].value.grande;
+        }else if(pizzaEdge === 'Borde de Queso con Bocadillo'){
+          borderPrice = pizzaBorder[1].value.grande;
+        }else if(pizzaEdge === 'Borde de Queso con Piña'){
+          borderPrice = pizzaBorder[2].value.grande;
+        }
       }
       
-      setTotalProductPrice(onlyProductPrice * quantity);
+      return borderPrice;
+    }
+
+    const calcIngredientPrice = (pizzaSize) => {
+      let ingredientPrice = 0;
+      if(ingredient !== 'Ingrediente'){
+        if(pizzaSize === 'personal'){
+            ingredientPrice = pizzaIngredients[0].value.personal;
+        }else if(pizzaSize === 'pequeña'){
+          ingredientPrice = pizzaIngredients[0].value.pequeña;
+        }else if(pizzaSize === 'mediana'){
+          ingredientPrice = pizzaIngredients[0].value.mediana;
+        }else if(pizzaSize === 'grande'){
+          ingredientPrice = pizzaIngredients[0].value.grande;
+        }
+      } 
+      return ingredientPrice;
+    }
+
+    const calcDrinkPrice = () => {
+      let drinkPrice = 0;
+        if(drink === 'Agua cristal 600ml'){
+          drinkPrice = drinks[0].value;
+        }else if(drink === 'Agua cielo con gas 600ml'){
+          drinkPrice = drinks[1].value;
+        }else if(drink === 'Coca-Cola 400ml'){
+          drinkPrice = drinks[2].value;
+        }else if(drink === 'Cocacola sin azucar 400ml'){
+          drinkPrice = drinks[3].value;
+        }
+      return drinkPrice;
+    }
+
+    const calcExtraCheesePrice = (pizzaSize) => {
+      let extraCheesePrice = 0;
+      if(pizzaExtraQueso){
+        if(pizzaSize === 'personal'){
+            extraCheesePrice = extraQueso[0].value.personal;
+        }else if(pizzaSize === 'pequeña'){
+          extraCheesePrice = extraQueso[0].value.pequeña;
+        }else if(pizzaSize === 'mediana'){
+          extraCheesePrice = extraQueso[0].value.mediana;
+        }else if(pizzaSize === 'grande'){
+          extraCheesePrice = extraQueso[0].value.grande;
+        }
+      } 
+      return extraCheesePrice;
     }
 
     useEffect(() => {
@@ -68,18 +177,18 @@ function ModalSelectPizza({openModal, productPrice}) {
             <form action="">
               <label for="border"></label>
               <select name="border" id="border" className="input-select" value={pizzaEdge} onChange={(e)=>setPizzaEdge(e.target.value)}>
-                <option value="" selected >Bordes</option>
+                <option value="Bordes" selected >Bordes</option>
                 {pizzaBorder.map((borde)=>(
-                <option value="" >{borde.text}</option>
+                <option value={borde.text} >{borde.text}</option>
                 ))}
               </select>
             </form>
             <form action="">
               <label for="ingredients"></label>
               <select name="ingredients" id="ingredients" className="input-select" value={ingredient} onChange={(e)=>setIngredient(e.target.value)}>
-                <option value="" selected >Ingrediente</option>
+                <option value="Ingrediente" selected >Ingrediente</option>
                 {pizzaIngredients.map((ingredient)=>(
-                <option value="" >{ingredient.text}</option>
+                <option value={ingredient.text} >{ingredient.text}</option>
                 ))}
               </select>
             </form>
@@ -88,7 +197,7 @@ function ModalSelectPizza({openModal, productPrice}) {
               <select name="drinks" id="drinks" className="input-select" value={drink} onChange={(e)=>setDrink(e.target.value)}>
                 <option value="" selected >Bebidas</option>
                 {drinks.map((drink)=>(
-                <option value="">{drink.text}</option>
+                <option value={drink.text}>{drink.text}</option>
                 ))}
               </select>
             </form>

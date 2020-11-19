@@ -107,6 +107,7 @@
     margin-bottom: 15px;
     border: solid 1px #9e9d9d;
     border-radius: 5px;
+    cursor: pointer;
   }
   .pizza-caracteristics .plusCirculeIcon{
     margin: 5px;
