@@ -1,30 +1,62 @@
 export const pizzaPricesLigeras =[
-    { key: 'pizza1', value: {
-        personal: 12000,
-        pequeña: 15000,
-        mediana: 22000,
-        grande: 34000,
-      }
+    { key: 'Queso', value: {
+        personal: 7500,
+        pequeña: 12000,
+        mediana: 18000,
+        grande: 25000,
+      },
+      text:"Queso",
+      description:"Pizza de solo queso, ligera y simple disfrutala.",
+      pizzaImg:"",
     },
-    { key: 'pizza2', value: {
-        personal: 10000,
-        pequeña: 13000,
-        mediana: 20000,
-        grande: 29000,
-      }
-    },
-    { key: 'pizza3', value: {
-        personal: 11000,
-        pequeña: 17000,
-        mediana: 26000,
-        grande: 32000,
-      }
-    },
-    { key: 'pizza4', value: {
-      personal: 10000,
+    { key: 'Maiz', value: {
+      personal: 8000,
       pequeña: 13000,
       mediana: 20000,
-      grande: 29000,
-    }
-  },
+      grande: 27000,
+    },
+    text:"Maiz",
+    description:"Pizza de solo Maiz con queso, ligera, simple y deliciosa.",
+    pizzaImg:"",
+    },
+    { key: 'Piña', value: {
+      personal: 8000,
+      pequeña: 13000,
+      mediana: 20000,
+      grande: 27000,
+    },
+    text:"Piña",
+    description:"Pizza de Piña con queso, ligera, simple y deliciosa.",
+    pizzaImg:"",
+    },
+    { key: 'Bocadillo', value: {
+      personal: 8000,
+      pequeña: 13000,
+      mediana: 20000,
+      grande: 27000,
+    },
+    text:"Bocadillo",
+    description:"Endulza tu dia con una pizza de Bocadillo con Queso, ligera, simple y deliciosa.",
+    pizzaImg:"",
+    },
+    { key: 'Napolitana', value: {
+      personal: 8000,
+      pequeña: 13000,
+      mediana: 20000,
+      grande: 27000,
+    },
+    text:"Napolitana",
+    description:"Deliciosa pizza Napolitana (Tomate con Queso), ligera, simple y deliciosa.",
+    pizzaImg:"",
+    },
+    { key: 'Champiñones', value: {
+      personal: 9000,
+      pequeña: 14000,
+      mediana: 22000,
+      grande: 28000,
+    },
+    text:"Champiñones",
+    description:"Deliciosa pizza Champiñones con Queso , ligera, simple y deliciosa.",
+    pizzaImg:"",
+    },
     ]

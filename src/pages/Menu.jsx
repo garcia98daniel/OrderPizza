@@ -81,13 +81,16 @@ function Menu(props) {
         </div>
         <div className="options-pizza">
           {pizzaCategory === "ligeras" &&
-              
-              <PizzaArticle 
-              handleClick={openPizzaModal}
-              prices={pizzaPricesLigeras[0]}
-              productDescription={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, ad? Similique perferendis facilis ullam eaque repudiandae."} 
-                  imgPizza={pizza}
-           />}
+              pizzaPricesLigeras.map((pizzaLigeraItem)=>(
+                <PizzaArticle 
+                handleClick={openPizzaModal}
+                pizzaName={pizzaLigeraItem.text}
+                prices={pizzaLigeraItem}
+                productDescription={pizzaLigeraItem.description} 
+                pizzaImg={pizzaLigeraItem.pizzaImg}
+                />
+              ))
+           }
           {pizzaCategory === "combinadas" &&
               
               <PizzaArticle 
@@ -95,7 +98,8 @@ function Menu(props) {
               prices={pizzaPricesCombinadas[1]}
               productDescription={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, ad? Similique perferendis facilis ullam eaque repudiandae."} 
               imgPizza={pizza}
-           />}
+           />
+           }
           {pizzaCategory === "especiales" &&
               
               <PizzaArticle 
@@ -103,7 +107,8 @@ function Menu(props) {
               prices={pizzaPricesEspeciales[2]}
               productDescription={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, ad? Similique perferendis facilis ullam eaque repudiandae."} 
               imgPizza={pizza}
-           />}
+           />
+           }
           {pizzaCategory === "gourmet" &&
               
               <PizzaArticle 
@@ -111,7 +116,10 @@ function Menu(props) {
               prices={pizzaPricesGourmet[3]}
               productDescription={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, ad? Similique perferendis facilis ullam eaque repudiandae."} 
               imgPizza={pizza}
-           />}
+           />
+           }
+           <div className="spaceItemInvisble">
+           </div>
         </div>
       </div>
       <div className="aditions-section">
