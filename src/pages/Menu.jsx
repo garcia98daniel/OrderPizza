@@ -6,10 +6,14 @@ import cart from "../img/cart.png";
 import PizzaArticle from "../components/PizzaArticle";
 import AdicionalArticle from "../components/AdicionalArticle";
 import ModalSelectPizza from "../components/ModalSelectPizza";
-import {pizzaPricesLigeras} from "../components/pizzaPricesData/pizzaPricesLigeras.js";
-import {pizzaPricesCombinadas} from "../components/pizzaPricesData/pizzaPricesCombinadas.js";
-import {pizzaPricesEspeciales} from "../components/pizzaPricesData/pizzaPricesEspeciales.js";
-import {pizzaPricesGourmet} from "../components/pizzaPricesData/pizzaPricesGourmet.js";
+import MenuSideShoppingCar from "../components/MenuSideShoppingCar";
+
+import {pizzaPricesLigeras} from "../pizzaPricesData/pizzaPricesLigeras.js";
+import {pizzaPricesCombinadas} from "../pizzaPricesData/pizzaPricesCombinadas.js";
+import {pizzaPricesEspeciales} from "../pizzaPricesData/pizzaPricesEspeciales.js";
+import {pizzaPricesGourmet} from "../pizzaPricesData/pizzaPricesGourmet.js";
+
+import pizza from '../img/pizza3.png';
 
 
 import "./style/menu.css";
@@ -18,6 +22,13 @@ function Menu(props) {
   const [pizzaCategory, setPizzaCategory] = useState("ligeras");
   const [selectPizzaModal, setSelectPizzaModal] = useState(false);
   const [productPrice, setProductPrice] = useState(0);
+
+  const [pizzaItemsChosen, setPizzaItemsChosen] = useState()
+
+
+  const addPizzaToShoppingCar = () => {
+    
+  }
   
   
   const openPizzaModal =(open, prices)=>{
@@ -75,7 +86,7 @@ function Menu(props) {
               handleClick={openPizzaModal}
               prices={pizzaPricesLigeras[0]}
               productDescription={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, ad? Similique perferendis facilis ullam eaque repudiandae."} 
-
+                  imgPizza={pizza}
            />}
           {pizzaCategory === "combinadas" &&
               
@@ -83,7 +94,7 @@ function Menu(props) {
               handleClick={openPizzaModal}
               prices={pizzaPricesCombinadas[1]}
               productDescription={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, ad? Similique perferendis facilis ullam eaque repudiandae."} 
-           
+              imgPizza={pizza}
            />}
           {pizzaCategory === "especiales" &&
               
@@ -91,7 +102,7 @@ function Menu(props) {
               handleClick={openPizzaModal}
               prices={pizzaPricesEspeciales[2]}
               productDescription={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, ad? Similique perferendis facilis ullam eaque repudiandae."} 
-           
+              imgPizza={pizza}
            />}
           {pizzaCategory === "gourmet" &&
               
@@ -99,7 +110,7 @@ function Menu(props) {
               handleClick={openPizzaModal}
               prices={pizzaPricesGourmet[3]}
               productDescription={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, ad? Similique perferendis facilis ullam eaque repudiandae."} 
-           
+              imgPizza={pizza}
            />}
         </div>
       </div>
@@ -127,53 +138,7 @@ function Menu(props) {
         </div>
       )}
 
-      <div className="overlay-two">
-        <div className="make-order">
-          <div className="items">
-            <div className="item">
-              <img src="/images/Pizza.png" alt="" />
-              <div className="item-description">
-                <h4>Amigera</h4>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Eveniet sit eos at, magnam debitis ea.
-                </p>
-                <a href="">
-                  <p>Lorem ipsum dolor sit amet.</p>
-                </a>
-              </div>
-              <div className="price">
-                <i className="fas fa-times-circle"></i>
-                <p>16000 COP</p>
-              </div>
-            </div>
-            <div className="item">
-              <img src="/images/Pizza.png" alt="" />
-              <div className="item-description">
-                <h4>Amigera</h4>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Eveniet sit eos at, magnam debitis ea.
-                </p>
-                <a href="">
-                  <p>Lorem ipsum dolor sit amet.</p>
-                </a>
-              </div>
-              <div className="price">
-                <i className="fas fa-times-circle"></i>
-                <p>16000 COP</p>
-              </div>
-            </div>
-          </div>
-          <div className="make-order-button">
-            <div className="order-resume">
-              <p>2 Items</p>
-              <h4>34000 COP</h4>
-            </div>
-            <button>Realizar Pedido</button>
-          </div>
-        </div>
-      </div>
+      <MenuSideShoppingCar pizzaItemsChosen={pizzaItemsChosen}/>
     </div>
   );
 }

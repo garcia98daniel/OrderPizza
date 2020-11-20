@@ -1,6 +1,6 @@
 .pizza-container {
     width: 226px;
-    /* height: 397px; */
+    height: 90%;
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
@@ -15,7 +15,7 @@
   }
 
   .pizza-container:hover{
-    transform: scale(1.05);
+    transform: scale(1.02);
   }
 
   .options-pizza img {

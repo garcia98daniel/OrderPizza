@@ -1,9 +1,8 @@
 import React from 'react';
 import "./style/pizzaArticle.css";
-import pizza from '../img/pizza3.png';
 
 
-function pizzaArticle({prices, productDescription, handleClick}) {
+function pizzaArticle({prices, productDescription, handleClick, imgPizza}) {
   
     return (
         <article class="pizza-container" onClick={() => handleClick(true, prices)}>
@@ -13,7 +12,7 @@ function pizzaArticle({prices, productDescription, handleClick}) {
                 {productDescription}
               </p>
             </div>
-            <img src={pizza} alt="" />
+            <img src={imgPizza} alt="" />
           </article>
     );
 }

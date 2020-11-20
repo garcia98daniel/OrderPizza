@@ -4,12 +4,10 @@ import closeIcon from '../img/closeIcon.png';
 import plusIcon from '../img/plusIcon.png';
 import pizza3 from '../img/pizza3.png';
 import plusIconSvg from '../img/plusIconSvg.svg';
-import {pizzaBorder} from "./pizzaPricesData/pizzaBorder.js";
-import {extraQueso} from "../components/pizzaPricesData/extraQueso.js";
-import {pizzaIngredients} from "../components/pizzaPricesData/pizzaIngredients.js";
-import {drinks} from "../components/pizzaPricesData/drinks.js";
-
-
+import {pizzaBorder} from "../pizzaPricesData/pizzaBorder.js";
+import {extraQueso} from "../pizzaPricesData/extraQueso.js";
+import {pizzaIngredients} from "../pizzaPricesData/pizzaIngredients.js";
+import {drinks} from "../pizzaPricesData/drinks.js";
 
 function ModalSelectPizza({openModal, productPrice}) {
     const [quantity, setQuantity] = useState(1);
