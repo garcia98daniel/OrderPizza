@@ -15,15 +15,21 @@ import {pizzaPricesGourmet} from "../pizzaPricesData/pizzaPricesGourmet.js";
 
 import pizza from '../img/pizza3.png';
 
+import pizza2 from '../img/imgMenuPizzas/pizzaQueso.jpg';
+
+
 
 import "./style/menu.css";
 
 function Menu(props) {
   const [pizzaCategory, setPizzaCategory] = useState("ligeras");
   const [selectPizzaModal, setSelectPizzaModal] = useState(false);
-  const [productPrice, setProductPrice] = useState(0);
+  const [pizzaItemsChosen, setPizzaItemsChosen] = useState(null);
 
-  const [pizzaItemsChosen, setPizzaItemsChosen] = useState()
+  const [productPrice, setProductPrice] = useState(0);
+  const [productPizzaName, setProductPizzaName] = useState(0);
+  const [productDescription, setProductDescription] = useState(0);
+  const [productPizzaImg, setProductPizzaImg] = useState(0);
 
 
   const addPizzaToShoppingCar = () => {
@@ -31,10 +37,16 @@ function Menu(props) {
   }
   
   
-  const openPizzaModal =(open, prices)=>{
+  const openPizzaModal =(open, prices, pizzaName, Description, pizzaImg)=>{
     setSelectPizzaModal(open);
     setProductPrice(prices);
+    setProductPizzaName(pizzaName);
+    setProductDescription(Description);
+    setProductPizzaImg(pizzaImg);
   }
+
+  const  [baseUrl, setBaseUrl] = useState("../img/imgMenuPizzas/");
+
   return (
     <div className="menuBody">
       <div className="container">
@@ -92,31 +104,37 @@ function Menu(props) {
               ))
            }
           {pizzaCategory === "combinadas" &&
-              
-              <PizzaArticle 
-              handleClick={openPizzaModal}
-              prices={pizzaPricesCombinadas[1]}
-              productDescription={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, ad? Similique perferendis facilis ullam eaque repudiandae."} 
-              imgPizza={pizza}
-           />
+              pizzaPricesCombinadas.map((pizzaCombinadasItem)=>(
+                <PizzaArticle 
+                handleClick={openPizzaModal}
+                pizzaName={pizzaCombinadasItem.text}
+                prices={pizzaCombinadasItem}
+                productDescription={pizzaCombinadasItem.description} 
+                pizzaImg={pizzaCombinadasItem.pizzaImg}
+                />
+              ))
            }
           {pizzaCategory === "especiales" &&
-              
-              <PizzaArticle 
-              handleClick={openPizzaModal}
-              prices={pizzaPricesEspeciales[2]}
-              productDescription={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, ad? Similique perferendis facilis ullam eaque repudiandae."} 
-              imgPizza={pizza}
-           />
+              pizzaPricesEspeciales.map((pizzaEspecialesItem)=>(
+                <PizzaArticle 
+                handleClick={openPizzaModal}
+                pizzaName={pizzaEspecialesItem.text}
+                prices={pizzaEspecialesItem}
+                productDescription={pizzaEspecialesItem.description} 
+                pizzaImg={pizzaEspecialesItem.pizzaImg}
+                />
+              ))
            }
           {pizzaCategory === "gourmet" &&
-              
-              <PizzaArticle 
-              handleClick={openPizzaModal}
-              prices={pizzaPricesGourmet[3]}
-              productDescription={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, ad? Similique perferendis facilis ullam eaque repudiandae."} 
-              imgPizza={pizza}
-           />
+              pizzaPricesGourmet.map((pizzaGourmetItem)=>(
+                <PizzaArticle 
+                handleClick={openPizzaModal}
+                pizzaName={pizzaGourmetItem.text}
+                prices={pizzaGourmetItem}
+                productDescription={pizzaGourmetItem.description} 
+                pizzaImg={pizzaGourmetItem.pizzaImg}
+                />
+              ))
            }
            <div className="spaceItemInvisble">
            </div>
@@ -142,7 +160,13 @@ function Menu(props) {
       {/* modals */}
       {selectPizzaModal && (
         <div className="overlay">
-          <ModalSelectPizza openModal={setSelectPizzaModal} productPrice={productPrice}/>
+          <ModalSelectPizza 
+          openModal={setSelectPizzaModal} 
+          productPrice={productPrice}
+          productPizzaName={productPizzaName}
+          productDescription={productDescription}
+          productPizzaImg={productPizzaImg}
+          />
         </div>
       )}
 

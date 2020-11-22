@@ -7,7 +7,7 @@ export const pizzaPricesLigeras =[
       },
       text:"Queso",
       description:"Pizza de solo queso, ligera y simple disfrutala.",
-      pizzaImg:"",
+      pizzaImg: require('../img/imgMenuPizzas/pizzaQueso.jpg'),
     },
     { key: 'Maiz', value: {
       personal: 8000,
@@ -17,7 +17,7 @@ export const pizzaPricesLigeras =[
     },
     text:"Maiz",
     description:"Pizza de solo Maiz con queso, ligera, simple y deliciosa.",
-    pizzaImg:"",
+    pizzaImg: require('../img/imgMenuPizzas/pizzaMaiz.png'),
     },
     { key: 'Piña', value: {
       personal: 8000,
@@ -27,7 +27,7 @@ export const pizzaPricesLigeras =[
     },
     text:"Piña",
     description:"Pizza de Piña con queso, ligera, simple y deliciosa.",
-    pizzaImg:"",
+    pizzaImg:require('../img/imgMenuPizzas/pizzaPiña.jpg'),
     },
     { key: 'Bocadillo', value: {
       personal: 8000,
@@ -37,7 +37,7 @@ export const pizzaPricesLigeras =[
     },
     text:"Bocadillo",
     description:"Endulza tu dia con una pizza de Bocadillo con Queso, ligera, simple y deliciosa.",
-    pizzaImg:"",
+    pizzaImg:require('../img/imgMenuPizzas/pizzaBocadillo.jpeg'),
     },
     { key: 'Napolitana', value: {
       personal: 8000,
@@ -47,7 +47,7 @@ export const pizzaPricesLigeras =[
     },
     text:"Napolitana",
     description:"Deliciosa pizza Napolitana (Tomate con Queso), ligera, simple y deliciosa.",
-    pizzaImg:"",
+    pizzaImg:require('../img/imgMenuPizzas/pizzaNapolitana.jpg'),
     },
     { key: 'Champiñones', value: {
       personal: 9000,
@@ -57,6 +57,6 @@ export const pizzaPricesLigeras =[
     },
     text:"Champiñones",
     description:"Deliciosa pizza Champiñones con Queso , ligera, simple y deliciosa.",
-    pizzaImg:"",
+    pizzaImg:require('../img/imgMenuPizzas/pizzaChampiñones.jpg'),
     },
     ]

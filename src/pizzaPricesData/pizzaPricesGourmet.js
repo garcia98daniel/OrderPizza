@@ -1,30 +1,32 @@
 export const pizzaPricesGourmet =[
-    { key: 'pizza1', value: {
-        personal: 12000,
-        pequeña: 15000,
-        mediana: 22000,
-        grande: 34000,
-      }
+  { key: 'Amigazos', value: {
+    personal: 13000,
+    pequeña: 20000,
+    mediana: 27000,
+    grande: 33000,
     },
-    { key: 'pizza2', value: {
-        personal: 10000,
-        pequeña: 13000,
-        mediana: 20000,
-        grande: 29000,
-      }
+      text:"Amigazos",
+      description:"Pizza Amigazos, solo para verdaderos amigos. ( Queso parmesano, en aceite de oliva: pimenton rojo y verde, espinaca, cebolla roja, aceitunas verdes y negras ).",
+      pizzaImg:require('../img/imgMenuPizzas/pizzaAmigazos.jpg'),
     },
-    { key: 'pizza3', value: {
-        personal: 11000,
-        pequeña: 17000,
-        mediana: 26000,
-        grande: 32000,
-      }
+  { key: 'Amigo secreto', value: {
+    personal: 15000,
+    pequeña: 22000,
+    mediana: 29000,
+    grande: 35000,
     },
-    { key: 'pizza4', value: {
-      personal: 10000,
-      pequeña: 13000,
-      mediana: 20000,
-      grande: 29000,
-    }
-  },
-    ]
+      text:"Amigo secreto",
+      description:"Pizza Amigo secreto, la indicada para mandar la a ese amig@ secreto. ( Tomate en trozos, champiñones, albahaca, queso holandes y parmesano ).",
+      pizzaImg:require('../img/imgMenuPizzas/pizzaAmigoSecreto.png'),
+    },
+    { key: 'Amigos con derecho', value: {
+      personal: 15000,
+      pequeña: 22000,
+      mediana: 29000,
+      grande: 35000,
+      },
+        text:"Amigos con derecho",
+        description:"Pizza Amigos con derecho, una pizza para hacer luego de todo. ( Champiñones, tomate cherry, cebolla caramelizada, queso holandes y parmesano ).",
+        pizzaImg:require('../img/imgMenuPizzas/pizzaAmigosConDerecho.png'),
+      },
+  ]

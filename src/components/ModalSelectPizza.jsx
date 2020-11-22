@@ -2,14 +2,23 @@ import React, {useState, useEffect} from 'react';
 import "./style/modalSelectPizza.css";
 import closeIcon from '../img/closeIcon.png';
 import plusIcon from '../img/plusIcon.png';
+
 import pizza3 from '../img/pizza3.png';
+
+
 import plusIconSvg from '../img/plusIconSvg.svg';
 import {pizzaBorder} from "../pizzaPricesData/pizzaBorder.js";
 import {extraQueso} from "../pizzaPricesData/extraQueso.js";
 import {pizzaIngredients} from "../pizzaPricesData/pizzaIngredients.js";
 import {drinks} from "../pizzaPricesData/drinks.js";
 
-function ModalSelectPizza({openModal, productPrice}) {
+function ModalSelectPizza({
+  openModal, 
+  productPrice, 
+  productPizzaName,
+  productDescription,
+  productPizzaImg,
+  }) {
     const [quantity, setQuantity] = useState(1);
     const [size, setZise] = useState("Personal");
     const [pizzaEdge, setPizzaEdge] = useState("Bordes");
@@ -60,7 +69,7 @@ function ModalSelectPizza({openModal, productPrice}) {
       // alert(calcBordePrice('grande'))
       }
       finalProductPrice += calcDrinkPrice();
-      setTotalProductPrice(finalProductPrice * quantity);
+      setTotalProductPrice((finalProductPrice * quantity) + (quantity * 4000));
     }
 
     const calcBordePrice = (pizzaSize) => {
@@ -162,12 +171,11 @@ function ModalSelectPizza({openModal, productPrice}) {
 
         <div className="order-information">
           <article className="pizza-visual-description">
-            <h1>Amigera</h1>
+            <h1>{productPizzaName}</h1>
             <p>
-              ingredients: Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Facere, voluptatibus?
+              {productDescription}
             </p>
-            <img src={pizza3} alt="" />
+            <img src={productPizzaImg} alt="" />
             <h4>Tamaño</h4>
           </article>
           <div className="pizza-caracteristics">
