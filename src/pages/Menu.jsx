@@ -20,6 +20,8 @@ import pizza2 from '../img/imgMenuPizzas/pizzaQueso.jpg';
 
 
 import "./style/menu.css";
+import { pizzaBorder } from "../pizzaPricesData/pizzaBorder";
+import { drinks } from "../pizzaPricesData/drinks";
 
 function Menu(props) {
   const [pizzaCategory, setPizzaCategory] = useState("ligeras");
@@ -44,9 +46,6 @@ function Menu(props) {
     setProductDescription(Description);
     setProductPizzaImg(pizzaImg);
   }
-
-  const  [baseUrl, setBaseUrl] = useState("../img/imgMenuPizzas/");
-
   return (
     <div className="menuBody">
       <div className="container">
@@ -145,7 +144,16 @@ function Menu(props) {
           <h1>Adicionales</h1>
         </div>
         <div className="aditions-container">
-          <AdicionalArticle />
+          {pizzaBorder &&
+              pizzaBorder.map((pizzaBordeItem)=>(
+                <AdicionalArticle 
+                adicionalName={pizzaBordeItem.text}
+                adicionalprices={pizzaBordeItem.value.personal}
+                adicionalDescription={pizzaBordeItem.description} 
+                adicionalImg={pizzaBordeItem.borderImg}
+                />
+              ))
+           }
         </div>
       </div>
       <div className="aditions-section">
@@ -153,7 +161,16 @@ function Menu(props) {
           <h1>Bebidas</h1>
         </div>
         <div className="aditions-container">
-          <AdicionalArticle />
+          {drinks &&
+              drinks.map((drinksItem)=>(
+                <AdicionalArticle 
+                adicionalName={drinksItem.text}
+                adicionalprices={drinksItem.value}
+                adicionalDescription="" 
+                adicionalImg={drinksItem.imgDrink}
+                />
+              ))
+           }
         </div>
       </div>
 

@@ -9,7 +9,7 @@ function pizzaArticle({pizzaName,prices, productDescription, handleClick, pizzaI
             <div class="pizza-description">
             <div className="pizza_tittle">
               <h3>{pizzaName}</h3>
-              <h3>{prices.value.personal+4000} COP</h3>
+              <h3><small>Desde</small> {prices.value.personal+4000} COP</h3>
             </div>
               <p>
                 {productDescription}

@@ -1,18 +1,23 @@
 export const drinks =[
     { key: 'Agua cristal 600ml',
       value: 2500,
-      text: 'Agua cristal 600ml' 
+      text: 'Agua cristal 600ml', 
+
+      imgDrink: require('../img/imgBebidas/aguaCristal600ml.jpg'),
     },
     { key: 'Agua cielo con gas 600ml',
       value: 2500,
-      text: 'Agua cielo con gas 600ml' 
+      text: 'Agua cielo con gas 600ml' ,
+      imgDrink: require('../img/imgBebidas/aguaCieloGas600ml.jpg'),
     },
     { key: 'Coca-Cola 400ml',
       value: 3500,
-      text: 'Coca-Cola 400ml' 
+      text: 'Coca-Cola 400ml' ,
+      imgDrink: require('../img/imgBebidas/cocacola400ml.jpg'),
     },
     { key: 'Cocacola sin azucar 400ml',
       value: 3500,
-      text: 'Cocacola sin azucar 400ml' 
+      text: 'Cocacola sin azucar 400ml' ,
+      imgDrink: require('../img/imgBebidas/cocacolaSinAzucar400ml.jpg'),
     },
     ]

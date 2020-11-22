@@ -1,17 +1,23 @@
 import React from 'react';
 import "./style/adicionalArticle.css";
 
-function AdicionalArticle(props) {
+function AdicionalArticle({
+  adicionalName,
+  adicionalprices,
+  adicionalDescription,
+  adicionalImg,
+}) {
     return (
         <div class="adition-container">
             <div class="adition-text">
-              <h3>3k borde de queso</h3>
+              <h3>{adicionalName} </h3>
+             
+              <h3><small>Desde</small>  {adicionalprices} <small>COP</small> </h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-                reprehenderit labore hic iusto, accusantium
+                {adicionalDescription}
               </p>
             </div>
-            <img src="/images/Pizza-adition.png" alt="" />
+            <img src={adicionalImg} alt="" />
           </div>
     );
 }
