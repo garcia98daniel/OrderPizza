@@ -14,6 +14,8 @@ import {drinks} from "../pizzaPricesData/drinks.js";
 
 function ModalSelectPizza({
   openModal, 
+  setPizzaProducts,
+  pizzaProducts,
   productPrice, 
   productPizzaName,
   productDescription,
@@ -22,7 +24,7 @@ function ModalSelectPizza({
     const [quantity, setQuantity] = useState(1);
     const [size, setZise] = useState("Personal");
     const [pizzaEdge, setPizzaEdge] = useState("Bordes");
-    const [ingredient, setIngredient] = useState("Ingrediente");
+    const [ingredient, setIngredient] = useState("Ingredientes");
     const [drink, setDrink] = useState("Bebidas");
     const [pizzaExtraQueso, setPizzaExtraQueso] = useState(false);
     const [observation, setObservation] = useState("");
@@ -161,8 +163,37 @@ function ModalSelectPizza({
       return extraCheesePrice;
     }
 
+    
+    const handleAddPizzaToShoppingCar = () => {
+      setPizzaProducts([
+        ...pizzaProducts,
+          {
+            quantity: quantity,
+            name: productPizzaName,
+            size: size,
+            observation: observation,
+            additionals: [
+                {
+                    name: (pizzaEdge !== 'Bordes' ? pizzaEdge : '' ),
+                },
+                {
+                    name: (ingredient !== 'Ingredientes' ? ingredient : '' ),
+                  
+                },
+                {
+                    name: (drink !== 'Bebidas' ? drink : '' ),
+                },
+                {
+                    name: (pizzaExtraQueso ? 'Extra queso' : ''),
+                }
+            ]
+          },
+        ]);
+    }
+
     useEffect(() => {
       TotalPrice();
+      console.log(pizzaProducts);
     });
     
     return (
@@ -192,7 +223,7 @@ function ModalSelectPizza({
             <form action="">
               <label for="ingredients"></label>
               <select name="ingredients" id="ingredients" className="input-select" value={ingredient} onChange={(e)=>setIngredient(e.target.value)}>
-                <option value="Ingrediente" selected >Ingrediente</option>
+                <option value="Ingredientes" selected >Ingredientes</option>
                 {pizzaIngredients.map((ingredient)=>(
                 <option value={ingredient.text} >{ingredient.text}</option>
                 ))}
@@ -276,7 +307,7 @@ function ModalSelectPizza({
               +
             </div>
           </div>
-          <div className="total-price">
+          <div className="total-price" onClick={() => handleAddPizzaToShoppingCar()}>
             <img src={plusIconSvg} alt="" className="plusIcon"/>
             <p>{totalProductPrice} COP</p>
           </div>

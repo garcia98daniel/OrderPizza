@@ -6,22 +6,54 @@
   --normal-font: "Roboto", sans-serif;
 }
 
+
 .cartIcon_container{
   color: white;
   height: 35px;
   width: 35px;
- }
- 
- .cartIcon_container img{
-     color: white;
-     height: 35px;
-     width: 35px;   
- }
+}
+
+.cartIcon_container img{
+  color: white;
+  height: 35px;
+  width: 35px;   
+}
 
 .menuBody {
   font-family: var(--normal-font);
+  background: rgb(243, 243, 243);
+  position: relative;
 }
 
+.domicilioBaner_container{
+position: absolute;
+left: 0;
+top: 0px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.domicilioBaner_container img{
+  width: 300px;
+  height: auto;
+}
+
+.domicilioBaner_container h1{
+  color: #6bd336;
+  font-size: 2.5em;
+  font-weight: 1000;
+  transform: rotate(-4deg);
+  margin: 0;
+  position: relative;
+  top: -25px;
+  -webkit-text-stroke: 1px white;
+  font-family: var(--normal-font);
+  text-shadow: 2px 2px white;
+  text-align: center;
+  line-height: 40px;
+  box-sizing: border-box;
+}
 /*---------------------- TITLE--- ---------------- */
 .container {
   width: 100%;
@@ -117,21 +149,22 @@
   width: 100px;
   height: 70px;
   position: absolute;
+  top: 50px;
   right: 0px;
   bottom: 0px;
   cursor: pointer;
 }
-.box1 {
+.box1:before {
   background-color: black;
   width: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 4px 0 0 4px;
-}
-.box1 i {
+  content: "<";
   color: white;
-  font-size: 10px;
+  height: 100%;
+  font-weight: 1000;
 }
 
 .box2 {
@@ -211,7 +244,7 @@
 
 
 .options-pizza {
-  padding: 0px 10px 20px 10px;
+  padding: 20px;
   overflow-x: auto;
   display: flex;
   width: inherit;
@@ -234,11 +267,6 @@
   width: 25%;
 }
 
-.pizza-description h3 {
-  color: #4a8846;
-  font-size: 24px;
-  margin-bottom: 10px;
-}
 
 /* -------------HERE ENDS MENU SECTION---------- */
 /* ------------- HERE STARTS ADITIONS SECTION --------- */

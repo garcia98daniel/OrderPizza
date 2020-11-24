@@ -13,11 +13,7 @@ import {pizzaPricesCombinadas} from "../pizzaPricesData/pizzaPricesCombinadas.js
 import {pizzaPricesEspeciales} from "../pizzaPricesData/pizzaPricesEspeciales.js";
 import {pizzaPricesGourmet} from "../pizzaPricesData/pizzaPricesGourmet.js";
 
-import pizza from '../img/pizza3.png';
-
-import pizza2 from '../img/imgMenuPizzas/pizzaQueso.jpg';
-
-
+import banerDomicilio from '../img/domicilios-gratis.png';
 
 import "./style/menu.css";
 import { pizzaBorder } from "../pizzaPricesData/pizzaBorder";
@@ -25,20 +21,20 @@ import { drinks } from "../pizzaPricesData/drinks";
 
 function Menu(props) {
   const [pizzaCategory, setPizzaCategory] = useState("ligeras");
-  const [selectPizzaModal, setSelectPizzaModal] = useState(false);
-  const [pizzaItemsChosen, setPizzaItemsChosen] = useState(null);
 
+  const [pizzaItemsChosen, setPizzaItemsChosen] = useState();
+  const [pizzaProducts, setPizzaProducts] = useState([]);
+
+  
   const [productPrice, setProductPrice] = useState(0);
   const [productPizzaName, setProductPizzaName] = useState(0);
   const [productDescription, setProductDescription] = useState(0);
   const [productPizzaImg, setProductPizzaImg] = useState(0);
 
+  const [selectPizzaModal, setSelectPizzaModal] = useState(false);
+  const [shoppingCarSwitchModal, setShoppingCarSwitchModal] = useState(false);
 
-  const addPizzaToShoppingCar = () => {
-    
-  }
-  
-  
+
   const openPizzaModal =(open, prices, pizzaName, Description, pizzaImg)=>{
     setSelectPizzaModal(open);
     setProductPrice(prices);
@@ -48,11 +44,15 @@ function Menu(props) {
   }
   return (
     <div className="menuBody">
+      <div className="domicilioBaner_container">
+      <img src={banerDomicilio} alt=""/>
+      <h1>Solo en el perimetro <br/> urbano</h1>
+      </div>
       <div className="container">
         <Brand />
-        <div className="shopping-car">
+        <div className="shopping-car" onClick={() => setShoppingCarSwitchModal(true)}>
           <div className="box1">
-            <i className="fas fa-angle-left"></i>
+           
           </div>
           <div className="box2">
             <Link className="cartIcon_container">
@@ -179,6 +179,8 @@ function Menu(props) {
         <div className="overlay">
           <ModalSelectPizza 
           openModal={setSelectPizzaModal} 
+          setPizzaProducts={setPizzaProducts}
+          pizzaProducts={pizzaProducts}
           productPrice={productPrice}
           productPizzaName={productPizzaName}
           productDescription={productDescription}
@@ -186,8 +188,12 @@ function Menu(props) {
           />
         </div>
       )}
-
-      <MenuSideShoppingCar pizzaItemsChosen={pizzaItemsChosen}/>
+      {shoppingCarSwitchModal &&
+        <MenuSideShoppingCar 
+        pizzaProducts={pizzaProducts} 
+        handleOpenModal={setShoppingCarSwitchModal}
+        />
+      }
     </div>
   );
 }

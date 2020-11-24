@@ -7,10 +7,11 @@ function pizzaArticle({pizzaName,prices, productDescription, handleClick, pizzaI
     return (
         <article class="pizza-container" onClick={() => handleClick(true, prices, pizzaName, productDescription, pizzaImg)}>
             <div class="pizza-description">
-            <div className="pizza_tittle">
-              <h3>{pizzaName}</h3>
+              <div className="pizza_tittle">
+                <small>Personal</small>
+                <h3> {pizzaName}</h3>
+              </div>
               <h3><small>Desde</small> {prices.value.personal+4000} COP</h3>
-            </div>
               <p>
                 {productDescription}
               </p>

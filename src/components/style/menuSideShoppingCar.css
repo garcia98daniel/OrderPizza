@@ -1,17 +1,16 @@
 /* ------------- HERE STARTS OVERLAY TWO SECTION --------- */
 .overlay-two {
     background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
-    position: fixed;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    visibility: hidden;
+    /* visibility: hidden; */
     font-family: var(--normal-font);
-    /* overflow-y: scroll; */
 
   }
   .make-order {
@@ -23,11 +22,19 @@
     justify-content: space-between;
     padding: 5px 35px;
     box-sizing: border-box;
+    position: relative;
+  }
+
+  .make-order .shopping-car{
+    left: -100px;
+  }
+
+  .make-order .shopping-car .box1:before{
+    content: ">";
   }
 
   .items{
     overflow-y: auto;
-    /* height: 0%; */
     padding: 35px 8px 0 0;
   }
 
