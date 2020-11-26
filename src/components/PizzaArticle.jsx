@@ -5,8 +5,8 @@ import a from '../img/imgMenuPizzas/pizzaQueso.jpg'
 function pizzaArticle({pizzaName,prices, productDescription, handleClick, pizzaImg}) {
   
     return (
-        <article class="pizza-container" onClick={() => handleClick(true, prices, pizzaName, productDescription, pizzaImg)}>
-            <div class="pizza-description">
+        <article className="pizza-container" onClick={() => handleClick(true, prices, pizzaName, productDescription, pizzaImg)}>
+            <div className="pizza-description">
               <div className="pizza_tittle">
                 <small>Personal</small>
                 <h3> {pizzaName}</h3>

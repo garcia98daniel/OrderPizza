@@ -5,7 +5,7 @@ import "./style/menuSideShoppingCar.css";
 
 import ItemShoppingCar from "../components/ItemShoppingCar";
 
-function MenuSideShoppingCar({pizzaProducts, handleOpenModal}) {
+function MenuSideShoppingCar({pizzaItemsChosen, handleOpenModal}) {
   return (
     <div className="overlay-two">
       <div className="make-order">
@@ -19,27 +19,39 @@ function MenuSideShoppingCar({pizzaProducts, handleOpenModal}) {
             </Link>
           </div>
         </div>
+        {pizzaItemsChosen.length !== 0 ? 
         <div className="items">
-          {pizzaProducts && pizzaProducts.map((pizzaItem) => (
+          {pizzaItemsChosen && pizzaItemsChosen.map((pizzaItem) => (
             <ItemShoppingCar
+            totalProductPrice={pizzaItem.price} 
+            pizzaImg={pizzaItem.img} 
+            productDescription={pizzaItem.description} 
+
+            detailPizzaPrice={pizzaItem.details.Price} 
+            detailBordePrice={pizzaItem.details.EdgePrice} 
+            detailIngredientPrice={pizzaItem.details.ingredientPrice} 
+            detailDrinkPrice={pizzaItem.details.drinkPrice}
+            detailExtraCheesePrice={pizzaItem.details.extraCheesePrice}
+
+            quantity={pizzaItem.quantity}
             productName={pizzaItem.name}
-            pizzaImg={"hola"} 
-            productDescription={"hola"} 
-            totalProductPrice={"hola"} 
-            detailsProdutPrice={"hola"} 
-            detailsBorderProduct={"hola"} 
-            detailsDrinkName={"hola"}
-            detailsDrinkPrice={"hola"} 
-            detailsExtraChesePrice={"hola"}
-            observation={"hola"}
+            size={pizzaItem.size}
+            observation={pizzaItem.observation}
+
+            aditionalBordeName={pizzaItem.additionals[0].name}
+            aditionalIngredientName={pizzaItem.additionals[1].name}
+            aditionalDrinkName={pizzaItem.additionals[2].name}
+            aditionalExtraCheeseName={pizzaItem.additionals[3].name}
             />
           ))}
         </div>
+        : <h1 className="emptyCar">Agrega una pizza a tu carrito</h1>}
+
         <div className="make-order-button">
           <div className="order-resume">
-            <p>{pizzaProducts && pizzaProducts.length} Items</p>
-            <h4>{pizzaProducts && pizzaProducts.reduce((total, pizzaItem) => {
-                  return total + pizzaItem.productPrice;
+            <p>{pizzaItemsChosen && pizzaItemsChosen.length} Items</p>
+            <h4>{pizzaItemsChosen && pizzaItemsChosen.reduce((total, pizzaItem) => {
+                  return total + pizzaItem.price;
                 }, 0)} COP
             </h4>
           </div>

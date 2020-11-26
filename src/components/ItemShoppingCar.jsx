@@ -5,62 +5,85 @@ import pizza from '../img/pizza3.png';
 import { Link } from 'react-router-dom';
 
 function ItemShoppingCar({
+  totalProductPrice,
+  pizzaImg,
+  productDescription,
+
+  detailPizzaPrice,
+  detailBordePrice,
+  detailIngredientPrice,
+  detailDrinkPrice,
+  detailExtraCheesePrice,
+
+  quantity,
   productName,
-  pizzaImg, 
-  productDescription, 
-  totalProductPrice, 
-  detailsProdutPrice, 
-  detailsBorderProduct, 
-  detailsDrinkName,
-  detailsDrinkPrice, 
-  detailsExtraChesePrice,
-  observation}) {
+  size,
+  observation,
+
+  aditionalBordeName,
+  aditionalIngredientName,
+  aditionalDrinkName,
+  aditionalExtraCheeseName,
+}) {
 
   const [seeMoreDetails, setSeeMoreDetails] = useState(false);
     return (
           <div className="item">
             <img src={closeIcon} alt="close" className="closeIcon" onClick=""/>
-            <img src={pizzaImg} alt="" />
+            <div className="img_size_container">
+              <h4>Pizza {productName}</h4>
+              <img src={pizzaImg} alt="" />
+              <h3>Cantidad <small>x</small>{quantity}</h3>
+            </div>
             <div className="item-description">
-              <h4>{productName}</h4>
+              <h4>{size}</h4>
               <p>
                 {productDescription}
               </p>
-              <h6>Adicionales</h6>
-              {detailsBorderProduct > 0 && <small>Borde de queso</small> }
-              {detailsDrinkPrice > 0 && <small>{detailsDrinkName}</small> }
-              {detailsExtraChesePrice > 0 && <small>Extra queso</small> }
+              <h6>Adicionales x unidad</h6>
+              {aditionalBordeName !== 'Bordes' ? <small>{aditionalBordeName}</small>:'' }
+              {aditionalIngredientName !== 'Ingredientes' ? <small>{aditionalIngredientName}</small>: ''}
+              {aditionalDrinkName !== 'Bebidas' ? <small>{aditionalDrinkName}</small>:'' }
+              {aditionalExtraCheeseName ==='Extra queso' ? <small>{aditionalExtraCheeseName}</small>:''}
               <br/>
 
-              {!seeMoreDetails ?
-              <Link href="" onClick={() => setSeeMoreDetails(!seeMoreDetails)}>
-                Ver mas detalles
+              {seeMoreDetails ?
+              <Link to="/menu" onClick={()=> setSeeMoreDetails(!seeMoreDetails)}>
+                Ocultar
               </Link>
               :
-              <Link href="" onClick={() => setSeeMoreDetails(!seeMoreDetails)}>
-                Ocultar
+              <Link to="/menu" onClick={()=> setSeeMoreDetails(!seeMoreDetails)}>
+                Ver mas detalles
               </Link>
               }
               
-              {seeMoreDetails && 
+              {seeMoreDetails &&  
               <>
                 <div className="colums_verMas">
                   <div className="first_colum_verMas">
-                    <strong><small>Precio neto pizza</small></strong>
-                    <strong><small>Precio neto borde</small></strong>
-                    <strong><small>Precio bebida</small></strong>
-                    <strong><small>Precio ex queso</small></strong>
+                  {detailPizzaPrice > 0 && <strong><small>Precio neto pizza</small></strong>}  
+                  {detailBordePrice > 0 && <strong><small>Precio neto borde</small></strong>}  
+                  {detailIngredientPrice > 0 && <strong><small>Precio neto ingrediente</small></strong>}  
+                  {detailDrinkPrice > 0 && <strong><small>Precio bebida</small></strong>}  
+                  {detailExtraCheesePrice > 0 && <strong><small>Precio ex queso</small></strong>}  
                   </div>
                   <div className="second_colum_verMas">
-                    <small><span>{detailsProdutPrice}</span></small>
-                    <small><span>{detailsBorderProduct}</span></small>
-                    <small><span>{detailsDrinkPrice}</span></small>
-                    <small><span>{detailsExtraChesePrice}</span></small>
+                  {detailPizzaPrice > 0 && <small><span>{detailPizzaPrice}</span></small>}
+                  {detailBordePrice > 0 && <small><span>{detailBordePrice}</span></small>}  
+                  {detailIngredientPrice > 0 && <small><span>{detailIngredientPrice}</span></small>}  
+                  {detailDrinkPrice > 0 && <small><span>{detailDrinkPrice}</span></small>}  
+                  {detailExtraCheesePrice > 0 && <small><span>{detailExtraCheesePrice}</span></small>} 
+                    
                   </div>
                 </div>
-                <p>{observation}</p>
               </>
               }
+                <br/>
+                <div className="observation_container">
+                  <h3>Observation</h3>
+                  <h6>{observation}</h6>
+                </div>
+
             </div>
             <div className="price">
               <i className="fas fa-times-circle"></i>

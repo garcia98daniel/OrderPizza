@@ -25,8 +25,8 @@ export const pizzaPricesGourmet =[
       mediana: 29000,
       grande: 35000,
       },
-        text:"Amigos con derecho",
-        description:"Pizza Amigos con derecho, una pizza para hacer luego de todo. ( Champiñones, tomate cherry, cebolla caramelizada, queso holandes y parmesano ).",
+        text:"Amigos con derechos",
+        description:"Pizza Amigos con derechos, una pizza para hacer luego de todo. ( Champiñones, tomate cherry, cebolla caramelizada, queso holandes y parmesano ).",
         pizzaImg:require('../img/imgMenuPizzas/pizzaAmigosConDerecho.png'),
       },
   ]

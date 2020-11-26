@@ -22,8 +22,8 @@ import { drinks } from "../pizzaPricesData/drinks";
 function Menu(props) {
   const [pizzaCategory, setPizzaCategory] = useState("ligeras");
 
-  const [pizzaItemsChosen, setPizzaItemsChosen] = useState();
   const [pizzaProducts, setPizzaProducts] = useState([]);
+  const [pizzaItemsChosen, setPizzaItemsChosen] = useState([]);
 
   
   const [productPrice, setProductPrice] = useState(0);
@@ -55,7 +55,7 @@ function Menu(props) {
            
           </div>
           <div className="box2">
-            <Link className="cartIcon_container">
+            <Link to="/menu" className="cartIcon_container">
               <img src={cart} alt="cart" />
             </Link>
           </div>
@@ -68,25 +68,25 @@ function Menu(props) {
               className={pizzaCategory === "ligeras" ? "categoryActive" : ""}
               onClick={() => setPizzaCategory("ligeras")}
             >
-              <Link href="">Pizzas Ligeras</Link>
+              <Link to="/menu">Pizzas Ligeras</Link>
             </li>
             <li
               className={pizzaCategory === "combinadas" ? "categoryActive" : ""}
               onClick={() => setPizzaCategory("combinadas")}
             >
-              <Link href="">Pizzas Combinadas</Link>
+              <Link to="/menu">Pizzas Combinadas</Link>
             </li>
             <li
               className={pizzaCategory === "especiales" ? "categoryActive" : ""}
               onClick={() => setPizzaCategory("especiales")}
             >
-              <Link href="">Pizzas Especiales</Link>
+              <Link to="/menu">Pizzas Especiales</Link>
             </li>
             <li
               className={pizzaCategory === "gourmet" ? "categoryActive" : ""}
               onClick={() => setPizzaCategory("gourmet")}
             >
-              <Link href="">Pizzas Gourmet</Link>
+              <Link to="/menu">Pizzas Gourmet</Link>
             </li>
           </ul>
         </div>
@@ -179,8 +179,8 @@ function Menu(props) {
         <div className="overlay">
           <ModalSelectPizza 
           openModal={setSelectPizzaModal} 
-          setPizzaProducts={setPizzaProducts}
-          pizzaProducts={pizzaProducts}
+          setPizzaItemsChosen={setPizzaItemsChosen}
+          pizzaItemsChosen={pizzaItemsChosen}
           productPrice={productPrice}
           productPizzaName={productPizzaName}
           productDescription={productDescription}
@@ -190,7 +190,7 @@ function Menu(props) {
       )}
       {shoppingCarSwitchModal &&
         <MenuSideShoppingCar 
-        pizzaProducts={pizzaProducts} 
+        pizzaItemsChosen={pizzaItemsChosen} 
         handleOpenModal={setShoppingCarSwitchModal}
         />
       }

@@ -8,8 +8,8 @@ function AdicionalArticle({
   adicionalImg,
 }) {
     return (
-        <div class="adition-container">
-            <div class="adition-text">
+        <div className="adition-container">
+            <div className="adition-text">
               <h3>{adicionalName} </h3>
              
               <h3><small>Desde</small>  {adicionalprices} <small>COP</small> </h3>

@@ -41,18 +41,20 @@ align-items: center;
 
 .domicilioBaner_container h1{
   color: #6bd336;
-  font-size: 2.5em;
+  font-size: 3.2em;
   font-weight: 1000;
-  transform: rotate(-4deg);
+  transform: rotate(-4deg) skew(7deg);
   margin: 0;
   position: relative;
-  top: -25px;
-  -webkit-text-stroke: 1px white;
-  font-family: var(--normal-font);
-  text-shadow: 2px 2px white;
+  top: -10px;
+  -webkit-text-stroke: 0.5px white;
+  font-family: 'Modak', cursive;
+  /* text-shadow: 2px 2px white; */
   text-align: center;
   line-height: 40px;
   box-sizing: border-box;
+  letter-spacing: 2px;
+  /* transform: skew(10deg); */
 }
 /*---------------------- TITLE--- ---------------- */
 .container {
@@ -154,17 +156,25 @@ align-items: center;
   bottom: 0px;
   cursor: pointer;
 }
-.box1:before {
+.box1 {
   background-color: black;
   width: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 4px 0 0 4px;
-  content: "<";
   color: white;
   height: 100%;
   font-weight: 1000;
+}
+
+.box1:before {
+  content: "\A";
+    border-style: solid;
+    border-width: 4px 9px 4px 0;
+    border-color: transparent white transparent transparent;
+    position: absolute;
+    left: 1px;
 }
 
 .box2 {
@@ -257,14 +267,11 @@ align-items: center;
 
 .options-pizza::-webkit-scrollbar {
   background-color: rgb(240 240 240);
-  border-radius: 5px;
-  height: 10px;
+  border-radius: 2px;
+  height: 5px;
 }
 .options-pizza::-webkit-scrollbar-thumb {
   background-color: #ccc;
-  border-radius: 5px;
-  height: 10px;
-  width: 25%;
 }
 
 
@@ -281,14 +288,11 @@ align-items: center;
 }
 .aditions-container::-webkit-scrollbar {
   background-color: rgb(240 240 240);
-  border-radius: 5px;
-  height: 10px;
+  border-radius: 2px;
+  height: 5px;
 }
 .aditions-container::-webkit-scrollbar-thumb {
   background-color: #ccc;
-  border-radius: 5px;
-  height: 10px;
-  width: 25%;
 }
 .aditions-title {
   border-bottom: solid 2px black;
