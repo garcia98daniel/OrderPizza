@@ -5,6 +5,8 @@ import pizza from '../img/pizza3.png';
 import { Link } from 'react-router-dom';
 
 function ItemShoppingCar({
+  handleDeletePizzaItemsChosen,
+  id,
   totalProductPrice,
   pizzaImg,
   productDescription,
@@ -27,9 +29,11 @@ function ItemShoppingCar({
 }) {
 
   const [seeMoreDetails, setSeeMoreDetails] = useState(false);
+
+  
     return (
           <div className="item">
-            <img src={closeIcon} alt="close" className="closeIcon" onClick=""/>
+            <img src={closeIcon} alt="close" className="closeIcon" onClick={() => handleDeletePizzaItemsChosen(id)}/>
             <div className="img_size_container">
               <h4>Pizza {productName}</h4>
               <img src={pizzaImg} alt="" />

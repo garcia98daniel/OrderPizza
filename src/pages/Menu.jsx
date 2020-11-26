@@ -22,7 +22,6 @@ import { drinks } from "../pizzaPricesData/drinks";
 function Menu(props) {
   const [pizzaCategory, setPizzaCategory] = useState("ligeras");
 
-  const [pizzaProducts, setPizzaProducts] = useState([]);
   const [pizzaItemsChosen, setPizzaItemsChosen] = useState([]);
 
   
@@ -191,6 +190,7 @@ function Menu(props) {
       {shoppingCarSwitchModal &&
         <MenuSideShoppingCar 
         pizzaItemsChosen={pizzaItemsChosen} 
+        setPizzaItemsChosen={setPizzaItemsChosen}
         handleOpenModal={setShoppingCarSwitchModal}
         />
       }

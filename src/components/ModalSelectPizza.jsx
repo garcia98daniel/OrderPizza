@@ -182,6 +182,7 @@ function ModalSelectPizza({
       setPizzaItemsChosen([
         ...pizzaItemsChosen,
             {
+              id: pizzaItemsChosen.length,
               price: totalProductPrice,
               img: productPizzaImg,
               description:productDescription,

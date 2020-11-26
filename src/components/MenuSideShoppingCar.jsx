@@ -5,7 +5,13 @@ import "./style/menuSideShoppingCar.css";
 
 import ItemShoppingCar from "../components/ItemShoppingCar";
 
-function MenuSideShoppingCar({pizzaItemsChosen, handleOpenModal}) {
+function MenuSideShoppingCar({pizzaItemsChosen, setPizzaItemsChosen, handleOpenModal}) {
+
+  const handleDeletePizzaItemsChosen =(pizzaItem_id)=>{
+    setPizzaItemsChosen(
+      pizzaItemsChosen.filter(pizzaItem => pizzaItem.id !== pizzaItem_id)
+    )
+  }
   return (
     <div className="overlay-two">
       <div className="make-order">
@@ -14,15 +20,18 @@ function MenuSideShoppingCar({pizzaItemsChosen, handleOpenModal}) {
             <i className="fas fa-angle-left"></i>
           </div>
           <div className="box2">
-            <Link className="cartIcon_container">
+            <Link to="/menu" className="cartIcon_container">
               <img src={cart} alt="cart" />
             </Link>
           </div>
         </div>
         {pizzaItemsChosen.length !== 0 ? 
         <div className="items">
-          {pizzaItemsChosen && pizzaItemsChosen.map((pizzaItem) => (
+          {pizzaItemsChosen && pizzaItemsChosen.map((pizzaItem, index) => (
             <ItemShoppingCar
+            handleDeletePizzaItemsChosen={handleDeletePizzaItemsChosen}
+            key={index}
+            id={pizzaItem.id}
             totalProductPrice={pizzaItem.price} 
             pizzaImg={pizzaItem.img} 
             productDescription={pizzaItem.description} 
