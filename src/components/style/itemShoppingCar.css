@@ -1,9 +1,12 @@
 .item {
     display: flex;
     justify-content: space-between;
-    padding: 30px 0px;
-    border-bottom: solid 1px #717171;
+    padding: 20px 20px;
+    border-radius: 8px;
+    border: solid 1px #cccccc;
     position: relative;
+    box-shadow: 4px 10px 5px #aca9a9;
+    margin-bottom: 10px;
   }
 
   .item .closeIcon{
@@ -11,10 +14,11 @@
     position: absolute;
     top: 0;
     right: 0;
-    height: 25px;
-    width: 25px;
+    height: 45px;
+    width: 45px;
     transition: .2s all;
     cursor: pointer;
+    fill: white;
   }
 
   .item .closeIcon:hover{
@@ -61,7 +65,7 @@
   .colums_verMas{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .first_colum_verMas{
@@ -94,6 +98,7 @@
   }
   .price p {
     font-family: var(--normal-font);
+    min-width: max-content;
     color: #4a8846;
     font-size: 20px;
     font-weight: 600;

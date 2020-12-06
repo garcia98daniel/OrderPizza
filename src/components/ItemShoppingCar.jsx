@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "./style/itemShoppingCar.css";
-import closeIcon from '../img/closeIcon.png';
+import trash from '../img/trash.png';
 import pizza from '../img/pizza3.png';
 import { Link } from 'react-router-dom';
 
@@ -33,7 +33,7 @@ function ItemShoppingCar({
   
     return (
           <div className="item">
-            <img src={closeIcon} alt="close" className="closeIcon" onClick={() => handleDeletePizzaItemsChosen(id)}/>
+            <img src={trash} alt="trash" className="closeIcon" onClick={() => handleDeletePizzaItemsChosen(id)}/>
             <div className="img_size_container">
               <h4>Pizza {productName}</h4>
               <img src={pizzaImg} alt="" />
@@ -44,7 +44,7 @@ function ItemShoppingCar({
               <p>
                 {productDescription}
               </p>
-              <h6>Adicionales x unidad</h6>
+              <strong>Adicionales x unidad</strong>
               {aditionalBordeName !== 'Bordes' ? <small>{aditionalBordeName}</small>:'' }
               {aditionalIngredientName !== 'Ingredientes' ? <small>{aditionalIngredientName}</small>: ''}
               {aditionalDrinkName !== 'Bebidas' ? <small>{aditionalDrinkName}</small>:'' }
@@ -65,20 +65,36 @@ function ItemShoppingCar({
               <>
                 <div className="colums_verMas">
                   <div className="first_colum_verMas">
-                  {detailPizzaPrice > 0 && <strong><small>Precio neto pizza</small></strong>}  
-                  {detailBordePrice > 0 && <strong><small>Precio neto borde</small></strong>}  
-                  {detailIngredientPrice > 0 && <strong><small>Precio neto ingrediente</small></strong>}  
-                  {detailDrinkPrice > 0 && <strong><small>Precio bebida</small></strong>}  
-                  {detailExtraCheesePrice > 0 && <strong><small>Precio ex queso</small></strong>}  
+                  {detailPizzaPrice > 0 &&
+                   <><strong><small>Precio neto pizza</small></strong>
+                   <small><span>{detailPizzaPrice}</span></small> </>}  
+                  {detailBordePrice > 0 &&
+                   <><strong><small>Precio neto borde</small></strong>
+                   <small><span>{detailBordePrice}</span></small></>}  
+                  {detailIngredientPrice > 0 &&
+                   <><strong><small>Precio neto ingrediente</small></strong>
+                   <small><span>{detailIngredientPrice}</span></small></>}  
+                  {detailDrinkPrice > 0 &&
+                   <><strong><small>Precio bebida</small></strong>
+                   <small><span>{detailDrinkPrice}</span></small></>}  
+                  {detailExtraCheesePrice > 0 &&
+                   <><strong><small>Precio ex queso</small></strong>
+                   <small><span>{detailExtraCheesePrice}</span></small></>}  
                   </div>
-                  <div className="second_colum_verMas">
-                  {detailPizzaPrice > 0 && <small><span>{detailPizzaPrice}</span></small>}
-                  {detailBordePrice > 0 && <small><span>{detailBordePrice}</span></small>}  
-                  {detailIngredientPrice > 0 && <small><span>{detailIngredientPrice}</span></small>}  
-                  {detailDrinkPrice > 0 && <small><span>{detailDrinkPrice}</span></small>}  
-                  {detailExtraCheesePrice > 0 && <small><span>{detailExtraCheesePrice}</span></small>} 
+
+                  {/* <div className="second_colum_verMas">
+                  {detailPizzaPrice > 0 &&
+                   <small><span>{detailPizzaPrice}</span></small>}
+                  {detailBordePrice > 0 &&
+                   <small><span>{detailBordePrice}</span></small>}  
+                  {detailIngredientPrice > 0 &&
+                   <small><span>{detailIngredientPrice}</span></small>}  
+                  {detailDrinkPrice > 0 &&
+                   <small><span>{detailDrinkPrice}</span></small>}  
+                  {detailExtraCheesePrice > 0 &&
+                   <small><span>{detailExtraCheesePrice}</span></small>} 
                     
-                  </div>
+                  </div> */}
                 </div>
               </>
               }

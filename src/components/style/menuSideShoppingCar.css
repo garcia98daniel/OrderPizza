@@ -20,7 +20,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 5px 35px;
+    padding: 5px 20px;
     box-sizing: border-box;
     position: relative;
   }
@@ -37,7 +37,7 @@
 
   .items{
     overflow-y: auto;
-    padding: 35px 8px 0 0;
+    padding: 10px 10px;
   }
 
   .items::-webkit-scrollbar {
@@ -60,6 +60,7 @@
   .make-order-button {
     text-align: center;
     border-top: solid 4px #e1e1e1;
+    margin-top: 10px;
   }
 
   .order-resume {

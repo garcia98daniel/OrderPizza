@@ -13,6 +13,7 @@ import "./style/orders.css";
 function Orders(props) {
   const [orders, setOrders] = useState([]);
   const [loader, setLoader] = useState(false);
+  // const [orderStatus, setOrderStatus] = useState(null);
 
   const ordersLoader = () => {
     // console.log(`/api/admin/historial/${dateValue.format('YYYY-MM-DD')}`);
@@ -27,6 +28,8 @@ function Orders(props) {
       })
       .catch((err) => console.log("Error getting orders"));
   };
+
+
 
   useEffect(() => {
     ordersLoader();
@@ -51,7 +54,7 @@ function Orders(props) {
             <img className="orderLoadingif" src={loaderGif} alt="" />
             <div className="orderItem_bottomBar">
               <button className="btn_order btnDecline">RECHAZAR</button>
-              <button className="btn_order btnEdit">EDITAR</button>
+              {/* <button className="btn_order btnEdit">EDITAR</button> */}
               <button className="btn_order btnAccept">ACEPTAR</button>
             </div>
           </div>
@@ -64,6 +67,7 @@ function Orders(props) {
                 "YYYY-MM-DD T HH:mm:ss"
               )}
               orderId={order.id}
+              orderStatus={order.status}
               userOrder={order.user.name}
               userPhone={order.user.phone_number}
               orderAddress={order.address}

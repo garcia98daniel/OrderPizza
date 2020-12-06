@@ -1,10 +1,10 @@
 export const pizzaPricesCombinadas =[
   { key: 'Aceitunas', value: 
     {
-      personal: 7500,
-      pequeña: 12000,
-      mediana: 18000,
-      grande: 25000,
+      personal: 12900,
+      pequeña: 17900,
+      mediana: 25900,
+      grande: 31900,
     },
       text:"Aceitunas",
       description:"Pizza de Aceitunas (Verdes y negras) excelente combinacion para disfrutarla donde quieras",
@@ -12,10 +12,10 @@ export const pizzaPricesCombinadas =[
   },
   { key: 'Maiz Piña', value: 
     {
-      personal: 8000,
-      pequeña: 13000,
-      mediana: 20000,
-      grande: 27000,
+      personal: 12900,
+      pequeña: 17900,
+      mediana: 25900,
+      grande: 31900,
     },
       text:"Maiz Piña",
       description:"Pizza de Maiz con Piña, muchos dirian que es la mejor, pruebala con un amigo",
@@ -23,7 +23,7 @@ export const pizzaPricesCombinadas =[
   }, 
   { key: 'Champiñon Maiz', value: 
     {
-      personal: 9000,
+      personal: 12900,
       pequeña: 14000,
       mediana: 22000,
       grande: 28000,
@@ -34,10 +34,10 @@ export const pizzaPricesCombinadas =[
   },
   { key: 'Champiñon Piña', value: 
     {
-      personal: 9000,
-      pequeña: 14000,
-      mediana: 22000,
-      grande: 28000,
+      personal: 12900,
+      pequeña: 17900,
+      mediana: 25900,
+      grande: 31900,
     },
       text:"Champiñon Piña",
       description:"Pizza de Champiñon y Piña, super deliciosa",
@@ -45,10 +45,10 @@ export const pizzaPricesCombinadas =[
   },
   { key: 'Champiñon Tomate', value: 
     {
-      personal: 10000,
-      pequeña: 15000,
-      mediana: 24000,
-      grande: 29000,
+      personal: 13900,
+      pequeña: 18900,
+      mediana: 27900,
+      grande: 32900,
     },
       text:"Champiñon Tomate",
       description:"Pizza de Champiñon y Tomate, super deliciosa",
@@ -56,10 +56,10 @@ export const pizzaPricesCombinadas =[
   },
   { key: 'Champiñon Cebolla caramelizada', value: 
   {
-    personal: 10000,
-    pequeña: 15000,
-    mediana: 24000,
-    grande: 29000,
+    personal: 13900,
+    pequeña: 18900,
+    mediana: 27900,
+    grande: 32900,
   },
     text:"Champiñon Cebolla caramelizada",
     description:"Pizza de Champiñon y Cebolla caramelizada, super deliciosa",

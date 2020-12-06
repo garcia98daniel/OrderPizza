@@ -44,6 +44,10 @@ function OrderUserInfo({
               <h6 className="wayToPay_description_change">Cambio para</h6>
               <h4>{orderChange} COP</h4>
             </div>
+            <div className="wayToPay_description">
+              <h4>Cambio</h4>
+              <h4>{orderChange - orderPrice <= 0 ? 0 : orderChange - orderPrice} COP</h4>
+            </div>
           </div>
           <div className="OrdersUserInfo_info_total">
             <h1>TOTAL</h1>
@@ -53,7 +57,7 @@ function OrderUserInfo({
         {hiddePedidos ?
          '' : 
          <div className="ordersTittle">
-          <h3>Pedidos</h3>
+          <h3>PEDIDO</h3>
          </div>
          }
       </div>

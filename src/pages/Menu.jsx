@@ -7,6 +7,7 @@ import PizzaArticle from "../components/PizzaArticle";
 import AdicionalArticle from "../components/AdicionalArticle";
 import ModalSelectPizza from "../components/ModalSelectPizza";
 import MenuSideShoppingCar from "../components/MenuSideShoppingCar";
+import ModalOrderDone from "../components/ModalOrderDone";
 
 import {pizzaPricesLigeras} from "../pizzaPricesData/pizzaPricesLigeras.js";
 import {pizzaPricesCombinadas} from "../pizzaPricesData/pizzaPricesCombinadas.js";
@@ -21,10 +22,10 @@ import { drinks } from "../pizzaPricesData/drinks";
 
 function Menu(props) {
   const [pizzaCategory, setPizzaCategory] = useState("ligeras");
-
+//order
   const [pizzaItemsChosen, setPizzaItemsChosen] = useState([]);
 
-  
+  //precios de las pizzas
   const [productPrice, setProductPrice] = useState(0);
   const [productPizzaName, setProductPizzaName] = useState(0);
   const [productDescription, setProductDescription] = useState(0);
@@ -33,6 +34,8 @@ function Menu(props) {
   const [selectPizzaModal, setSelectPizzaModal] = useState(false);
   const [shoppingCarSwitchModal, setShoppingCarSwitchModal] = useState(false);
 
+
+  const [makeOrder, setMakeOrder] = useState(false);
 
   const openPizzaModal =(open, prices, pizzaName, Description, pizzaImg)=>{
     setSelectPizzaModal(open);
@@ -45,7 +48,7 @@ function Menu(props) {
     <div className="menuBody">
       <div className="domicilioBaner_container">
       <img src={banerDomicilio} alt=""/>
-      <h1>Solo en el perimetro <br/> urbano</h1>
+      <h1>En el perimetro <br/> urbano</h1>
       </div>
       <div className="container">
         <Brand />
@@ -192,7 +195,13 @@ function Menu(props) {
         pizzaItemsChosen={pizzaItemsChosen} 
         setPizzaItemsChosen={setPizzaItemsChosen}
         handleOpenModal={setShoppingCarSwitchModal}
+        setMakeOrder={setMakeOrder}
         />
+      }
+      {makeOrder &&
+        <ModalOrderDone
+        setMakeOrder={setMakeOrder}
+        pizzaItemsChosen={pizzaItemsChosen}/>
       }
     </div>
   );

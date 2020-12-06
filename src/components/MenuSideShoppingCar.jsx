@@ -5,13 +5,15 @@ import "./style/menuSideShoppingCar.css";
 
 import ItemShoppingCar from "../components/ItemShoppingCar";
 
-function MenuSideShoppingCar({pizzaItemsChosen, setPizzaItemsChosen, handleOpenModal}) {
+function MenuSideShoppingCar({pizzaItemsChosen, setPizzaItemsChosen, handleOpenModal, setMakeOrder}) {
 
   const handleDeletePizzaItemsChosen =(pizzaItem_id)=>{
     setPizzaItemsChosen(
       pizzaItemsChosen.filter(pizzaItem => pizzaItem.id !== pizzaItem_id)
     )
   }
+
+
   return (
     <div className="overlay-two">
       <div className="make-order">
@@ -64,7 +66,7 @@ function MenuSideShoppingCar({pizzaItemsChosen, setPizzaItemsChosen, handleOpenM
                 }, 0)} COP
             </h4>
           </div>
-          <button>Realizar Pedido</button>
+          {pizzaItemsChosen.length !== 0 ? <button onClick={()=> setMakeOrder(true)}>Realizar Pedido</button> : ''}
         </div>
       </div>
     </div>

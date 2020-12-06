@@ -3,9 +3,6 @@ import "./style/modalSelectPizza.css";
 import closeIcon from '../img/closeIcon.png';
 import plusIcon from '../img/plusIcon.png';
 
-import pizza3 from '../img/pizza3.png';
-
-
 import plusIconSvg from '../img/plusIconSvg.svg';
 import {pizzaBorder} from "../pizzaPricesData/pizzaBorder.js";
 import {extraQueso} from "../pizzaPricesData/extraQueso.js";
@@ -50,7 +47,7 @@ function ModalSelectPizza({
       let finalProductPrice;
       if(size === 'Personal'){
         finalProductPrice = productPrice.value.personal;
-        setPizzaNetoPrice(finalProductPrice + 4000);
+        setPizzaNetoPrice(finalProductPrice);
         finalProductPrice += calcBordePrice('personal');
         finalProductPrice += calcIngredientPrice('personal');
         finalProductPrice += calcExtraCheesePrice('personal');
@@ -58,7 +55,7 @@ function ModalSelectPizza({
       // alert(calcBordePrice('personal'))
       } else if(size === 'Pequeña'){
         finalProductPrice = productPrice.value.pequeña;
-        setPizzaNetoPrice(finalProductPrice + 4000);
+        setPizzaNetoPrice(finalProductPrice);
         finalProductPrice += calcBordePrice('pequeña');
         finalProductPrice += calcIngredientPrice('pequeña');
         finalProductPrice += calcExtraCheesePrice('pequeña');
@@ -66,7 +63,7 @@ function ModalSelectPizza({
       // alert(calcBordePrice('pequeña'))
       } else if(size === 'Mediana'){
         finalProductPrice = productPrice.value.mediana;  
-        setPizzaNetoPrice(finalProductPrice + 4000);
+        setPizzaNetoPrice(finalProductPrice);
         finalProductPrice += calcBordePrice('mediana');
         finalProductPrice += calcIngredientPrice('mediana');
         finalProductPrice += calcExtraCheesePrice('mediana');
@@ -74,7 +71,7 @@ function ModalSelectPizza({
       // alert(calcBordePrice('mediana'))
       }else if(size === 'Grande'){
         finalProductPrice = productPrice.value.grande;
-        setPizzaNetoPrice(finalProductPrice + 4000);
+        setPizzaNetoPrice(finalProductPrice);
         finalProductPrice += calcBordePrice('grande');
         finalProductPrice += calcIngredientPrice('grande');
         finalProductPrice += calcExtraCheesePrice('grande');
@@ -82,7 +79,7 @@ function ModalSelectPizza({
       // alert(calcBordePrice('grande'))
       }
       finalProductPrice += calcDrinkPrice();
-      setTotalProductPrice((finalProductPrice + 4000 * quantity) + (quantity * 4000));
+      setTotalProductPrice((finalProductPrice * quantity));
     }
 
     const calcBordePrice = (pizzaSize) => {
@@ -203,16 +200,20 @@ function ModalSelectPizza({
               additionals: [
                   {
                       name: (pizzaEdge !== 'Bordes' ? pizzaEdge : '' ),
+                      type: "ownProduct"
                   },
                   {
                       name: (ingredient !== 'Ingredientes' ? ingredient : '' ),
+                      type: "ownProduct"
                     
                   },
                   {
                       name: (drink !== 'Bebidas' ? drink : '' ),
+                      type: drink
                   },
                   {
                       name: (pizzaExtraQueso ? 'Extra queso' : ''),
+                      type: "ownProduct"
                   }
               ]
             },
@@ -221,7 +222,7 @@ function ModalSelectPizza({
 
     useEffect(() => {
       TotalPrice();
-      console.log(pizzaItemsChosen);
+      // console.log(pizzaItemsChosen);
     });
     
     return (

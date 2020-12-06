@@ -11,7 +11,7 @@ function pizzaArticle({pizzaName,prices, productDescription, handleClick, pizzaI
                 <small>Personal</small>
                 <h3> {pizzaName}</h3>
               </div>
-              <h3><small>Desde</small> {prices.value.personal+4000} COP</h3>
+              <h3><small>Desde</small> {prices.value.personal} COP</h3>
               <p>
                 {productDescription}
               </p>

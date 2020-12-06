@@ -1,0 +1,115 @@
+.bg_modalOrderDone{
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* visibility: hidden; */
+    font-family: var(--normal-font);
+
+}
+
+.modalOrderDone{
+    box-sizing: border-box;
+    background: white;
+    padding-top: 40px;
+    border-radius: 16px;
+    width: 50%;
+    overflow: hidden;
+}
+
+.footerModal p{
+    margin-bottom: 15px;
+    color: #4a8846;
+    font-family: var(--normal-font);
+    font-size: 24px;
+}
+
+.dataRow{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0 50px;
+    box-sizing: border-box;
+
+}
+
+.inputGoup{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 200px;
+}
+
+.dataRow input[type=text], input[type=tel], textarea {
+    border: 2px solid gray;
+    border-radius: 4px;
+    height: 25px;
+    width: 100%;
+}
+
+.infoDatarow{
+    color: red;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.infoDatarow .checkData{
+    font-weight: 600;
+}
+
+.footerModal{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(230, 230, 230);
+    padding: 10px 50px;
+    box-sizing: border-box;
+}
+
+
+.footerModal .buttonConfir{
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    align-self: flex-end;
+}
+
+.buttonConfir button{
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 6px;
+    background: #4a8846;
+    color: white;
+    border: none;
+    font-size: 1.2em;
+    font-style: italic;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+}
+
+.buttonConfir button:active{
+    background: #305a2d;
+}
+
+.totalInfoOrder{
+    text-align: center;
+}
+
+.totalInfoOrder h4{
+    color: #305a2d;
+}
