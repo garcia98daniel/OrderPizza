@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import "./style/modalSelectPizza.css";
 import closeIcon from '../img/closeIcon.png';
 import plusIcon from '../img/plusIcon.png';
+import cart from "../img/cart.png";
 
 import plusIconSvg from '../img/plusIconSvg.svg';
 import {pizzaBorder} from "../pizzaPricesData/pizzaBorder.js";
@@ -34,6 +35,7 @@ function ModalSelectPizza({
     const [observation, setObservation] = useState("");
     const [totalProductPrice, setTotalProductPrice] = useState(0);
 
+    const [addedAnimation, setAddedAnimation] = useState(false);
 
     const handleProductQuantity = (number) =>{
       if(quantity + number < 1){
@@ -176,6 +178,11 @@ function ModalSelectPizza({
 
     
     const handleAddPizzaToShoppingCar = () => {
+      setAddedAnimation(true);
+      setTimeout(()=>{
+        setAddedAnimation(false);
+      }, 1000);
+
       setPizzaItemsChosen([
         ...pizzaItemsChosen,
             {
@@ -337,8 +344,16 @@ function ModalSelectPizza({
             </div>
           </div>
           <div className="total-price" onClick={() => handleAddPizzaToShoppingCar()}>
-            <img src={plusIconSvg} alt="" className="plusIcon"/>
+            <div>
+              <img src={cart} alt="cart" className="cart"/>
+              <img src={plusIconSvg} alt="" className="plusIcon"/>
+            </div>
             <p>{totalProductPrice} COP</p>
+            {addedAnimation &&
+              <div className="addedAnimation">
+              <img src={cart} alt="cart"/> Cargado al carrito
+              </div>
+            }
           </div>
         </div>
       </div>

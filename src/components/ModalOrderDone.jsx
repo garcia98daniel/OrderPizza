@@ -2,50 +2,39 @@ import "./style/ModalOrderDone.css";
 import Brand from "./Brand";
 import React, {useState, useEffect} from 'react';
 import axios from "axios";
+import succes from "../img/succes.gif";
 
+function ModalOrderDone({ 
+  pizzaItemsChosen,
+  setMakeOrder ,
+  finalOrder,
+  setFinalOrder
+}) {
 
-function ModalOrderDone({ pizzaItemsChosen, setMakeOrder }) {
-
-    const [userName, setUserName] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState(0);
-    const [address, setAddress] = useState('');
-    const [wayToPay, setWayToPay] = useState(null);
-    const [change, setChange] = useState(0);
-    const [addressReference, setAddressReference] = useState(0);
-
-    const [finalOrder, setFinalOrder] = useState({products: pizzaItemsChosen});
+    const [orderSucces, setOrderSucces] = useState(false);
 
     const finalData =(e)=>{
       e.preventDefault();
-
-      setFinalOrder(
-            {
-              ...finalOrder,
-                wayToPay: wayToPay,
-                change: change,
-                address: address,
-                reference: addressReference,
-                price: pizzaItemsChosen.reduce((total, pizzaItem) => {
-                    return total + pizzaItem.price;
-                  }, 0),
-                user: {
-                    name: userName,
-                    phone_number: phoneNumber,
-                }
-            }
-        );
-
+            
         axios
         .post(`/api/admin/pedidos`, finalOrder)
         .then((res) => {
-          console.log(res.data);
+          // console.log(res.data);
+          setOrderSucces(true);
+          setTimeout(()=>{
+            setOrderSucces(false);
+          }, 3000);
+          setOrderSucces(true);
+          setTimeout(()=>{
+            setMakeOrder(false);
+          }, 3000);
         })
-        .catch((err) => console.log(err+"Error creating order"));
+        .catch((err) => console.log("Error creating order"));
     }
 
-    useEffect(() => {
-      console.log(finalOrder);
-    });
+    // useEffect(() => {
+    //   console.log(finalOrder);
+    // });
 
   
     
@@ -57,36 +46,36 @@ function ModalOrderDone({ pizzaItemsChosen, setMakeOrder }) {
           <div className="fistDatarow dataRow">
             <div className="inputGoup">
               <h5>Nombre completo</h5>
-              <input required type="text" placeholder="Nombre" onChange={(e)=>setUserName(e.target.value)}/>
+              <input required type="text" placeholder="Nombre" name="name" value={finalOrder.user.name}onChange={(e)=>setFinalOrder({...finalOrder, user:{...finalOrder.user, [e.target.name]:e.target.value}})}/>
             </div>
             <div className="inputGoup">
               <h5>Telefono</h5>
-              <input type="tel" required placeholder="Telefono" onChange={(e)=>setPhoneNumber(e.target.value)}/>
+              <input type="tel" required placeholder="Telefono" name="phone_number" value={finalOrder.phone_number} onChange={(e)=>setFinalOrder({...finalOrder, user:{...finalOrder.user, [e.target.name]:e.target.value}})}/>
             </div>
           </div>
           <div className="secondDatarow dataRow">
             <div className="inputGoup">
               <h5>Direccion</h5>
-              <input required type="text" placeholder="Direccion" onChange={(e)=>setAddress(e.target.value)}/>
+              <input required type="text" placeholder="Direccion" name="address" value={finalOrder.address} onChange={(e)=>setFinalOrder({...finalOrder, [e.target.name]:e.target.value})}/>
             </div>
 
             <div className="inputGoup">
               <h5>Forma de pago</h5>
               <div className="ways">
                 <label htmlFor="efectivo">Efectivo</label>
-                <input id="efectivo" name="ways"  className="efectivo" type="radio" required  onClick={()=>setWayToPay('efectivo')}/>
+                <input id="efectivo" name="wayToPay"  className="efectivo" type="radio" required  onClick={(e)=>setFinalOrder({...finalOrder, [e.target.name]:'efectivo'})}/>
                 <label htmlFor="transaccion">Transacción</label>
-                <input id="transaccion" name="ways"  className="transaccion" type="radio" required onClick={()=>setWayToPay('transaccion')}/>
+                <input id="transaccion" name="wayToPay"  className="transaccion" type="radio" required onClick={(e)=>setFinalOrder({...finalOrder, [e.target.name]:'transaccion'})}/>
               </div>
-              {wayToPay === 'efectivo' && 
-              <input type="text" placeholder="¿Cambio para?" onChange={(e)=>setChange(e.target.value)}/>
+              {finalOrder.wayToPay === 'efectivo' && 
+              <input type="text" placeholder="¿Cambio para?" value={finalOrder.change} name="change" onChange={(e)=>setFinalOrder({...finalOrder, [e.target.name]:e.target.value})}/>
               }
             </div>
           </div>
           <div className="dataRow">
             <div className="inputGoup">
               <h5>Referencia de la direccion</h5>
-              <textarea required placeholder="referencia" onChange={(e)=>setAddressReference(e.target.value)}></textarea>
+              <textarea required placeholder="referencia" value={finalOrder.addressReference} name="reference" onChange={(e)=>setFinalOrder({...finalOrder, [e.target.name]:e.target.value})}></textarea>
             </div>
           </div>
           <div className="infoDatarow dataRow">
@@ -120,7 +109,12 @@ function ModalOrderDone({ pizzaItemsChosen, setMakeOrder }) {
           </div>
         </section>
         </form>
-
+        {orderSucces &&
+        <div className="orderSucces">
+          <img src={succes} alt="succes"/>
+          <h1>Pedido exitoso</h1>
+        </div>
+        }
       </div>
     </div>
   );

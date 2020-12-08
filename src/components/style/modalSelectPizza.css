@@ -338,6 +338,8 @@
     padding: 8px 10px;
     cursor: pointer;
     transition: .2s all;
+    position: relative;
+    color: white;
   }
 
   .order-price .total-price:hover {
@@ -352,6 +354,13 @@
     height: 15px;
     width: 15px;
     transform: skew(-8deg);
+    position: relative;
+    top: -2px;
+  }
+
+  .total-price .cart{
+    height: 20px;
+    width: 20px;
   }
 
   .total-price p{
@@ -365,4 +374,34 @@
     color: white;
     margin: 0 5px;
 
+  }
+
+  .total-price .addedAnimation{
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 8px;
+    height: inherit;
+    width: inherit;
+    background: #10c600;
+    font-size: 0.9em;
+    color: white;
+    padding: inherit;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    animation: addedAnimation 1s ease forwards;
+    opacity: 0;
+  }
+
+  .total-price .addedAnimation img{
+    height: 25px;
+    width: 25px;
+  }
+
+  @keyframes addedAnimation{
+    0%{opacity: 0}
+    50%{opacity: 1}
+    100%{opacity: 0; top: -50px}
   }

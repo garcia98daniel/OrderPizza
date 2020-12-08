@@ -34,8 +34,23 @@ function Menu(props) {
   const [selectPizzaModal, setSelectPizzaModal] = useState(false);
   const [shoppingCarSwitchModal, setShoppingCarSwitchModal] = useState(false);
 
-
   const [makeOrder, setMakeOrder] = useState(false);
+
+  const [finalOrder, setFinalOrder] = useState(
+    {products: pizzaItemsChosen,
+        wayToPay: '',
+        change: 0,
+        address: '',
+        reference: '',
+        price: pizzaItemsChosen.reduce((total, pizzaItem) => {
+            return total + pizzaItem.price;
+          }, 0),
+        user: {
+            name: '',
+            phone_number: 0,
+        }
+      }
+    );
 
   const openPizzaModal =(open, prices, pizzaName, Description, pizzaImg)=>{
     setSelectPizzaModal(open);
@@ -201,7 +216,10 @@ function Menu(props) {
       {makeOrder &&
         <ModalOrderDone
         setMakeOrder={setMakeOrder}
-        pizzaItemsChosen={pizzaItemsChosen}/>
+        pizzaItemsChosen={pizzaItemsChosen}
+        finalOrder={finalOrder}
+        setFinalOrder={setFinalOrder}
+        />
       }
     </div>
   );

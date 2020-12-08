@@ -15,6 +15,7 @@
 }
 
 .modalOrderDone{
+    position: relative;
     box-sizing: border-box;
     background: white;
     padding-top: 40px;
@@ -113,3 +114,32 @@
 .totalInfoOrder h4{
     color: #305a2d;
 }
+
+.orderSucces{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    color: #77b43f;
+    opacity: 0;
+    animation: orderSucces 3s ease forwards;
+}
+
+@keyframes orderSucces{
+    0%{opacity: 0}
+    20%{opacity: 1}
+    60%{opacity: 1}
+    100%{opacity: 0}
+  }
+
+.orderSucces img{
+    height: 250px;
+    width: auto;
+}
+
