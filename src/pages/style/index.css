@@ -15,17 +15,19 @@
     max-width: 1300px;
     width: inherit;
     height: inherit;
+    min-height: inherit;
     display: inherit;
     flex-direction: inherit;
     justify-content: inherit;
     align-items: inherit;
     margin: auto;
+    flex-wrap: inherit;
 }
 
 .hero{
     color: white;
     height: 100vh;
-    min-height: 100vh;
+    min-height: 800px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -76,7 +78,7 @@
 }
 
 .mainWords{
-    margin-bottom: 40vh;
+    margin-bottom: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -139,8 +141,7 @@
     justify-content: space-between;
     align-items: flex-end;
     background: white;
-    padding: 20px 100px 70px 100px;
-
+    padding: 20px 10% 70px 6%;
 }
 
 .ourHistoryWords_container{
@@ -149,6 +150,7 @@
     flex-direction: column;
     align-items: center;
     width: 50%;
+    margin-right: 20px;
 }
 
 .ourHistory_mainWords{
@@ -165,6 +167,8 @@
     font-weight: 600;
     font-style: normal;
     color: var(--green-color);
+    z-index: 100;
+
 }
 
 .ourHistoryWords_container p{
@@ -228,6 +232,7 @@
     justify-content: center;
     align-items: center;
     padding-bottom: 300px;
+    width: 100%;
 }
 
 .menu_section_tittle{
@@ -238,6 +243,7 @@
 }
 
 .arrows_img_container{
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -420,4 +426,235 @@ footer{
     height:40px;
     margin: 0 auto;
     cursor: pointer;
+}
+
+@media screen and (max-width: 1023px){
+    .navBarIndex{
+        font-size: 1.1em;
+    }
+}
+
+@media screen and (max-width: 930px){
+    .mainWords{
+        font-size: 0.9em;
+    }
+
+    .ourHistory{
+        font-size: 1.1em;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0px 0 70px 0;
+    }
+
+    .ourHistoryWords_container{
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .ourHistoryWords_container h1{
+        width: 100%;
+        margin: auto;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .navBarIndex{
+        font-size: 1em;
+        padding: 25px 0px;
+    }
+
+
+    .mainWords{
+        font-size: 0.8em;
+    }
+    
+    .btn_menu{
+        margin-top: 8px;
+        font-size: 1.7em;
+    }
+
+    .brand{
+        display: none;
+    }
+
+    .navBarIndex{
+        justify-content:center;
+    }
+
+    .enjoyPizzaImg{
+        background-position: 60%;
+    }
+
+    .enjoy_words_container {
+        width: 70%;
+    }
+
+    .enjoy_words_container :first-child{
+        font-size: 7em;
+    }
+
+    .menu_section_tittle{
+        font-size: 6.5em;
+    }
+
+    .footer_text_container p{
+        padding: 0 100px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .navBarIndex{
+        
+        padding: 25px 0px;
+    }
+    
+    .navBarIndex a{
+        padding: 0 10px;
+    }
+
+    
+    .mainWords{
+        font-size: 0.7em;
+    }
+
+    .welcomeTxt{
+        font-size: 10em;
+        top: 80px;
+    }
+
+    .entreAmigostxt{
+        margin : 8px 0;
+    }
+
+    .ourHistoryWords_container{
+        font-size: 0.8em;
+    }
+
+    .followUs{
+        width: 100%;
+    }
+
+    .footer_text_container p{
+        padding: 0;
+    }
+    .footer_section2{
+        display: block;
+    }
+
+    .contactUs{
+        width: 80%; 
+        height: 150px;
+        box-sizing: initial;
+        padding: 0;
+        margin: auto;
+    }
+
+    .dataRow input[type=text], input[type=tel], textarea {
+        width: initial !important;
+    }
+}
+
+@media screen and (max-width: 480px){
+
+    .navBarIndex a {
+        padding: 0px 9px;
+    }
+
+    .mainWords{
+        width: 80%;
+        font-size: 0.7em;
+    }
+
+    .welcomeTxt{
+        width: 100%;
+        
+    }
+
+    .ourHistoryWords_container{
+        font-size: 0.65em;
+    }
+
+    .ourHistory_mainWords {
+        top: 60px;
+    }
+
+    .ourHistoryWords_container p{
+        font-size: 1.7em;
+        text-align: justify;
+    }
+
+    .imgSectionOurHistory{
+        width: 100%;
+        height: auto;  
+    }
+
+    .enjoy_words_container {
+        width: 80%;
+        text-align: center;
+        font-size: 0.9em;
+    }
+
+    .enjoy_words_container :first-child {
+        width: 100%;
+        font-size: 7em;
+        top: 30px;
+    }
+
+    .enjoy_words_container :nth-child(2) {
+        font-size: 2em;
+        width: 100%;
+    }
+
+    .menu p{
+        width: 80%;
+    }
+
+    .menu a{
+        text-align: center;
+        width: 100%;
+    }
+    
+}
+
+@media screen and (max-width: 380px){
+    .navBarIndex {
+        font-size: 0.85em
+    }
+    .navBarIndex a {
+        padding: 0px 8px;
+    }
+
+  .mainWords{
+      font-size: 0.5em;
+  }
+
+  .welcomeTxt {
+    top: 70px;
+  }
+
+  .menu_section_tittle {
+    font-size: 5em; 
+  }
+
+  .arrow {
+      display: none;
+  }
+  .img_menuSection_container{
+      width: 90%;
+  }
+}
+
+@media screen and (max-width: 320px){
+  
+}
+
+
+/* medias de alto de pantalla */
+
+@media screen and (min-height: 690px){
+    .heroImg {
+        background-size: auto;
+        background-position: 10%;
+    }
 }
