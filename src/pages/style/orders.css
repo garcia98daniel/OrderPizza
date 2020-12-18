@@ -3,8 +3,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
+    /* justify-content: center; */
+    height: 100%;
     min-height: 100vh;
     overflow-y: auto;
     position: relative;
@@ -13,7 +13,7 @@
 
 .orders_wrapper{
     max-width: 1200px;
-    height: 100vh;
+    height: inherit;
     width: 100%;
 }
 
@@ -24,3 +24,32 @@
     width: 100%;
     background: black;
 }
+
+.newOrderAlert{
+    position: fixed;
+    top: 0;
+    left: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 20px;
+    width: max-content;
+    background: white;
+    color: #7cbe6c;
+    border-radius: 8px;
+    animation: newOrderAlertAnimation 2s ease forwards;
+    opacity: 0;
+    box-shadow: 2px 8px 5px rgba(0, 0, 0, 0.25);
+}
+
+.newOrderAlert img{
+    height: 55px;
+    width: auto;
+}
+
+  @keyframes newOrderAlertAnimation{
+    0%{opacity: 0}
+    25%{opacity: 1}
+    50%{opacity: 1}
+    100%{opacity: 0; top: 50px}
+  }

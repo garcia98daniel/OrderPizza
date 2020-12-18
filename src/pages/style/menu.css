@@ -327,7 +327,29 @@ align-items: center;
 }
 
 /* ------------- HERE ENDS OVERLAY ONE SECTION --------- */
+@media screen and (max-width:1048px){
+  .options li{
+    padding: 25px 5px ;
+  }
+  .options a{
+    font-size: 1.4em;
+  }
 
+  .aditions-title h1{
+    font-size: 1.4em;
+  }
+}
 
-/* ------------- HERE ENDS ADITIONS SECTION --------- */
-/* ------------- HERE STARTS FOOTER SECTION --------- */
+@media screen and (max-width: 940px){
+  .domicilioBaner_container img{
+    width: 220px;
+  }
+
+  .domicilioBaner_container h1{
+    font-size: 2.5em;
+  }
+
+  .options-pizza, .aditions-container{
+    transform: scale(0.9);
+  }
+}

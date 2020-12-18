@@ -6,14 +6,16 @@ import Order from "../components/Order";
 import Navbar from "../components/Navbar";
 import Brand from "../components/Brand";
 import loaderGif from "../img/loading.gif";
-
+import newNotificationAlert from "../img/newNotificationAlert.gif";
 import moment from "moment";
 import "./style/orders.css";
+
+import Pusher from 'pusher-js';
 
 function Orders(props) {
   const [orders, setOrders] = useState([]);
   const [loader, setLoader] = useState(false);
-  // const [orderStatus, setOrderStatus] = useState(null);
+  const [newOrder, setNewOrder] = useState(false);
 
   const ordersLoader = () => {
     // console.log(`/api/admin/historial/${dateValue.format('YYYY-MM-DD')}`);
@@ -33,7 +35,32 @@ function Orders(props) {
 
   useEffect(() => {
     ordersLoader();
+
+    Pusher.logToConsole = true;
+    const pusher = new Pusher('82f816aa5edf2a6dfa2b', {
+      cluster: 'mt1',
+      // encrypted: true
+    });
+    const channel = pusher.subscribe('orderNotification');
+    channel.bind('event-pusher', data => {
+      setOrders((prevState) => { 
+        return [...prevState, data.order.original[0]]
+      });
+      // console.log(JSON.stringify( data.order.original[0]));
+          setNewOrder(true);
+          setTimeout(()=>{
+            setNewOrder(false);
+          }, 2200);
+      
+    });
+
+      return () => { //componet will unmount
+      pusher.disconnect();
+     }
   }, []);
+
+
+
 
   return (
     <div className="orders_body">
@@ -85,6 +112,13 @@ function Orders(props) {
       </div>
 
       <div className="orders_bottomBar"></div>
+      {newOrder &&
+      <div className="newOrderAlert">
+          <img src={newNotificationAlert} alt=""/>
+          <h1>Nueva orden</h1>
+      </div>
+      }
+      
     </div>
   );
 }

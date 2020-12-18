@@ -3,23 +3,42 @@ import Brand from "./Brand";
 import React, {useState, useEffect} from 'react';
 import axios from "axios";
 import succes from "../img/succes.gif";
+import loaderGif from "../img/loading.gif";
 
 function ModalOrderDone({ 
   pizzaItemsChosen,
   setMakeOrder ,
-  finalOrder,
-  setFinalOrder
 }) {
+
+  const [finalOrder, setFinalOrder] = useState(
+    {products: pizzaItemsChosen,
+        wayToPay: '',
+        change: 0,
+        address: '',
+        reference: '',
+        price: pizzaItemsChosen.reduce((total, pizzaItem) => {
+            return total + pizzaItem.price;
+          }, 0),
+        user: {
+            name: '',
+            phone_number: 0,
+        }
+      }
+    );
 
     const [orderSucces, setOrderSucces] = useState(false);
 
+    const [orderSend, setOrderSend] = useState(false);
+
     const finalData =(e)=>{
       e.preventDefault();
-            
+      setOrderSend(true);
         axios
         .post(`/api/admin/pedidos`, finalOrder)
         .then((res) => {
           // console.log(res.data);
+          setOrderSend(false);
+
           setOrderSucces(true);
           setTimeout(()=>{
             setOrderSucces(false);
@@ -50,7 +69,7 @@ function ModalOrderDone({
             </div>
             <div className="inputGoup">
               <h5>Telefono</h5>
-              <input type="tel" required placeholder="Telefono" name="phone_number" value={finalOrder.phone_number} onChange={(e)=>setFinalOrder({...finalOrder, user:{...finalOrder.user, [e.target.name]:e.target.value}})}/>
+              <input type="tel" required placeholder="Telefono" name="phone_number" value={finalOrder.user.phone_number===0 ? '': finalOrder.user.phone_number} onChange={(e)=>setFinalOrder({...finalOrder, user:{...finalOrder.user, [e.target.name]:e.target.value}})}/>
             </div>
           </div>
           <div className="secondDatarow dataRow">
@@ -63,9 +82,9 @@ function ModalOrderDone({
               <h5>Forma de pago</h5>
               <div className="ways">
                 <label htmlFor="efectivo">Efectivo</label>
-                <input id="efectivo" name="wayToPay"  className="efectivo" type="radio" required  onClick={(e)=>setFinalOrder({...finalOrder, [e.target.name]:'efectivo'})}/>
+                <input id="efectivo" name="wayToPay"  className="efectivo" type="radio" required  checked={finalOrder.wayToPay === 'efectivo' && true} onClick={(e)=>setFinalOrder({...finalOrder, [e.target.name]:'efectivo'})}/>
                 <label htmlFor="transaccion">Transacción</label>
-                <input id="transaccion" name="wayToPay"  className="transaccion" type="radio" required onClick={(e)=>setFinalOrder({...finalOrder, [e.target.name]:'transaccion'})}/>
+                <input id="transaccion" name="wayToPay"  className="transaccion" type="radio" required checked={finalOrder.wayToPay === 'transaccion' && true} onClick={(e)=>setFinalOrder({...finalOrder, [e.target.name]:'transaccion'})}/>
               </div>
               {finalOrder.wayToPay === 'efectivo' && 
               <input type="text" placeholder="¿Cambio para?" value={finalOrder.change} name="change" onChange={(e)=>setFinalOrder({...finalOrder, [e.target.name]:e.target.value})}/>
@@ -75,29 +94,37 @@ function ModalOrderDone({
           <div className="dataRow">
             <div className="inputGoup">
               <h5>Referencia de la direccion</h5>
-              <textarea required placeholder="referencia" value={finalOrder.addressReference} name="reference" onChange={(e)=>setFinalOrder({...finalOrder, [e.target.name]:e.target.value})}></textarea>
+              <textarea required placeholder="referencia" value={finalOrder.reference} name="reference" onChange={(e)=>setFinalOrder({...finalOrder, [e.target.name]:e.target.value})}></textarea>
             </div>
           </div>
           <div className="infoDatarow dataRow">
             <p>
-              Por favor asegúrese que el telefono que esta colocando sea el
-              correcto tenga bateria y este a su mano, sele llamara para
-              confirmarle pedido y la tarifa del domicilio si está fuera del perimetro gratis.
+              Por favor asegúrese que el telefono que ingreso sea el
+              correcto, tenga bateria y este a su mano, sele llamara para
+              confirmarle pedido y la <strong>tarifa del domicilio</strong> si es necesario.
             </p>
             <div className="checkData">
               <label htmlFor="radioCheckData">
                 He leido y aceptado terminos
               </label>
-              <input className="radioCheckData" type="radio" required />
+              <input id ="radioCheckData" className="radioCheckData" type="radio" required />
             </div>
           </div>
           <section className="footerModal">
           <p className="itemNumber">
             {pizzaItemsChosen && pizzaItemsChosen.length} items
           </p>
-          <div className="buttonConfir">
-            <button >Confirmar</button>
-          </div>
+          {!orderSend ?
+            <div className="buttonConfir">
+              <button >Confirmar</button>
+            </div>
+            :
+            <div className="buttonConfir">
+              <div className="loaderConfir">
+                Enviando ...
+              </div>
+            </div>
+          }
           <div className="totalInfoOrder">
             <h3>Total</h3>
             <h4>

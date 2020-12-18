@@ -2,7 +2,6 @@
     background: #E5E5E5;
     display: flex;
     justify-content: center;
-    height: 100vh;
     min-height: 100vh;
     overflow-y: auto;
     position: relative;
@@ -11,7 +10,7 @@
 
 .ordersHistory_wrapper{
     max-width: 1200px;
-    height: 100vh;
+    height: inherit;
     width: 100%;
 }
 
