@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.20.0",
     "ciqu-react-calendar": "^1.0.2",
+    "howler": "^2.2.1",
     "laravel-echo": "^1.9.0",
     "pusher": "^4.0.2",
     "pusher-js": "^7.0.2",

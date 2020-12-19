@@ -123,7 +123,9 @@ function ModalSelectPizza({
           borderPrice = pizzaBorder[2].value.grande;
         }
       }
-      setPizzaEdgePrice(borderPrice);
+      // setPizzaEdgePrice(borderPrice);
+      setPizzaEdgePrice(0); //deleting borde
+      borderPrice =0;
       return borderPrice;
     }
 
@@ -247,7 +249,7 @@ function ModalSelectPizza({
           </article>
           <div className="pizza-caracteristics">
             <h3>Adicionales</h3>
-            <form action="">
+            {/* <form action="">
               <label htmlFor="border"></label>
               <select name="border" id="border" className="input-select" value={pizzaEdge} onChange={(e)=>setPizzaEdge(e.target.value)}>
                 <option value="Bordes" selected >Bordes</option>
@@ -255,7 +257,7 @@ function ModalSelectPizza({
                 <option key={index} value={borde.text} >{borde.text}</option>
                 ))}
               </select>
-            </form>
+            </form> */}
             <form action="">
               <label htmlFor="ingredients"></label>
               <select name="ingredients" id="ingredients" className="input-select" value={ingredient} onChange={(e)=>setIngredient(e.target.value)}>

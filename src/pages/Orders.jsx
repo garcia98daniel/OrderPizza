@@ -12,6 +12,11 @@ import "./style/orders.css";
 
 import Pusher from 'pusher-js';
 
+import machinegunSound from "../sound/machinegunSound.mp3";
+import siuuu from "../sound/siuuu.mp3"
+import johncena from "../sound/johncena.mp3"
+import {Howl, Howler} from "howler";
+
 function Orders(props) {
   const [orders, setOrders] = useState([]);
   const [loader, setLoader] = useState(false);
@@ -22,18 +27,60 @@ function Orders(props) {
     setOrders([]);
     setLoader(true);
     axios
-      .get(`/api/admin/pedidos`)
-      .then((res) => {
-        setOrders(res.data);
-        setLoader(false);
-        // console.log(res.data);
-      })
-      .catch((err) => console.log("Error getting orders"));
+    .get(`/api/admin/pedidos`)
+    .then((res) => {
+      setOrders(res.data);
+      setLoader(false);
+      // console.log(res.data);
+    })
+    .catch((err) => console.log("Error getting orders"));
   };
+  var sound = null;
+  const soundPlay1 = (src) => {
+    sound = new Howl({
+      src
+    });
+    sound.play();
+  }
 
+  const soundPlay2 = (src) => {
+    sound = new Howl({
+      src
+    });
+    sound.play();
+  }
 
+  const soundPlay3 = (src) => {
+    sound = new Howl({
+      src
+    });
+    sound.play();
+  }
+
+  var iSound = 0;
+  const renderSound = () => {
+  // alert(iSound);
+    switch (iSound) {
+      case 0:
+          soundPlay1(siuuu);
+        break;
+      case 1:
+          soundPlay2(machinegunSound);
+        break;
+      case 2:
+          soundPlay3(johncena);
+        break;
+      default:
+        break;
+    }
+    if(iSound==2){
+      iSound = 0;
+    }
+    iSound = iSound + 1;
+  }
 
   useEffect(() => {
+    Howler.volume(1.0);
     ordersLoader();
 
     Pusher.logToConsole = true;
@@ -47,11 +94,9 @@ function Orders(props) {
         return [...prevState, data.order.original[0]]
       });
       // console.log(JSON.stringify( data.order.original[0]));
-          setNewOrder(true);
-          setTimeout(()=>{
-            setNewOrder(false);
-          }, 2200);
-      
+      showAlert();
+      //playing sound new order
+      renderSound();
     });
 
       return () => { //componet will unmount
@@ -59,7 +104,12 @@ function Orders(props) {
      }
   }, []);
 
-
+const showAlert =()=>{
+  setNewOrder(true);
+  setTimeout(()=>{
+    setNewOrder(false);
+  }, 2200);
+}
 
 
   return (
