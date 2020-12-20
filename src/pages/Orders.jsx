@@ -6,6 +6,8 @@ import Order from "../components/Order";
 import Navbar from "../components/Navbar";
 import Brand from "../components/Brand";
 import loaderGif from "../img/loading.gif";
+import sound_icon from "../img/sound_icon.webp";
+
 import newNotificationAlert from "../img/newNotificationAlert.gif";
 import moment from "moment";
 import "./style/orders.css";
@@ -15,12 +17,16 @@ import Pusher from 'pusher-js';
 import machinegunSound from "../sound/machinegunSound.mp3";
 import siuuu from "../sound/siuuu.mp3"
 import johncena from "../sound/johncena.mp3"
+import chaturbate from "../sound/chaturbate.mp3"
+
 import {Howl, Howler} from "howler";
 
 function Orders(props) {
   const [orders, setOrders] = useState([]);
   const [loader, setLoader] = useState(false);
   const [newOrder, setNewOrder] = useState(false);
+
+  const [activarSound, setActivarSound]  = useState(false);
 
   const ordersLoader = () => {
     // console.log(`/api/admin/historial/${dateValue.format('YYYY-MM-DD')}`);
@@ -57,7 +63,15 @@ function Orders(props) {
     sound.play();
   }
 
-  var iSound = 0;
+  const soundPlay4 = (src) => {
+    sound = new Howl({
+      src
+    });
+    // sound.stop();
+    sound.play();
+  }
+
+  var iSound = 3;
   const renderSound = () => {
   // alert(iSound);
     switch (iSound) {
@@ -70,13 +84,23 @@ function Orders(props) {
       case 2:
           soundPlay3(johncena);
         break;
+      case 3:
+        
+        let intervalsound = setInterval(() => {
+            soundPlay4(chaturbate);
+        }, 1500);
+
+        setTimeout(() => {
+          clearInterval(intervalsound); //stop interval
+        }, 10000);
+        break;
       default:
         break;
     }
-    if(iSound==2){
+    iSound = iSound + 1;
+    if(iSound>3){
       iSound = 0;
     }
-    iSound = iSound + 1;
   }
 
   useEffect(() => {
@@ -117,6 +141,7 @@ const showAlert =()=>{
       <div className="orders_wrapper">
         <Navbar />
         <Brand />
+        <i className={activarSound ? "btn_sound" : "btn_sound disable"} onClick={() => setActivarSound(true)}> <img src={sound_icon} className="sound_icon"/></i>
         {loader ? (
           <div className="orderItem loading">
             <div className="stripe"></div>

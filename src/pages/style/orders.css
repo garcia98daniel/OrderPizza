@@ -17,6 +17,39 @@
     width: 100%;
 }
 
+.btn_sound{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    border-radius: 50%;
+    background: #33ff00;
+    border: 1px solid #000000;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.btn_sound.disable{
+    border-radius: 50%;
+    background: rgb(201, 199, 199);
+    border: 1px solid #000000;
+}
+
+.btn_sound.disable:hover{
+    background: rgb(151, 151, 151);
+}
+
+.btn_sound.disable:active{
+    transform: scale(0.8);
+}
+
+.sound_icon{
+    height: 20px;
+    width: auto;
+}
+
 .orders_bottomBar{
     position: fixed;
     bottom: 0;
@@ -37,7 +70,7 @@
     background: white;
     color: #7cbe6c;
     border-radius: 8px;
-    animation: newOrderAlertAnimation 2s ease forwards;
+    animation: newOrderAlertAnimation 4s ease forwards;
     opacity: 0;
     box-shadow: 2px 8px 5px rgba(0, 0, 0, 0.25);
 }
