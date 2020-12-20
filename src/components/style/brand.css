@@ -29,3 +29,32 @@
     position: relative;
     top: -15px;
 }
+
+/* ------------- responsive --------- */
+@media screen and (max-width:1024px){
+    
+  }
+  
+  @media screen and (max-width: 767px){
+    .title{
+      margin-left:20px;
+    }
+  }
+  
+  @media screen and (max-width: 600px){
+   .title-container{
+       transform: scale(0.8);
+   }
+  }
+  
+  @media screen and (max-width: 480px){
+    
+  }
+  
+  @media screen and (max-width: 380px){
+   
+  }
+  
+  @media screen and (max-width: 320px){
+  
+  }

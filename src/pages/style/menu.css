@@ -7,17 +7,7 @@
 }
 
 
-.cartIcon_container{
-  color: white;
-  height: 35px;
-  width: 35px;
-}
 
-.cartIcon_container img{
-  color: white;
-  height: 35px;
-  width: 35px;   
-}
 
 .menuBody {
   font-family: var(--normal-font);
@@ -67,12 +57,6 @@ align-items: center;
   margin-bottom: 40px;
 }
 
-.title-container {
-  display: flex;
-}
-.title {
-  text-align: center;
-}
 .pizza-logo {
   height: 36px;
   width: 36px;
@@ -151,7 +135,7 @@ align-items: center;
   width: 100px;
   height: 70px;
   position: absolute;
-  top: 50px;
+  top: 100px;
   right: 0px;
   bottom: 0px;
   cursor: pointer;
@@ -187,6 +171,18 @@ align-items: center;
 .box2 a:hover {
   box-shadow: none;
 }
+
+.cartIcon_container{
+  color: white;
+  height: 35px;
+  width: 35px;
+}
+
+.cartIcon_container img{
+  color: white;
+  height: 100%;
+  width: 100%;   
+}
 /*---------------------- TITLE END--- ---------------- */
 
 /* -------------HERE STARTS MENU SECTION---------- */
@@ -194,6 +190,7 @@ align-items: center;
   max-width: 1440px;
   height: auto;
   display: flex;
+  align-items: center;
   flex-direction: column;
   margin: auto;
   margin-bottom: 40px;
@@ -202,7 +199,6 @@ align-items: center;
 }
 .options {
   width: 95%;
-  
   margin: auto;
   margin-bottom: 25px;
 }
@@ -211,7 +207,7 @@ align-items: center;
   justify-content: space-evenly;
   list-style: none;
   height: 25px;
-
+  padding: 0%;
 }
 .options li {
   text-align: center;
@@ -257,7 +253,8 @@ align-items: center;
   padding: 20px;
   overflow-x: auto;
   display: flex;
-  width: inherit;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .spaceItemInvisble{
@@ -268,7 +265,8 @@ align-items: center;
 .options-pizza::-webkit-scrollbar {
   background-color: rgb(240 240 240);
   border-radius: 2px;
-  height: 5px;
+  height: 10px;
+  cursor: pointer;
 }
 .options-pizza::-webkit-scrollbar-thumb {
   background-color: #ccc;
@@ -285,11 +283,14 @@ align-items: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 .aditions-container::-webkit-scrollbar {
   background-color: rgb(240 240 240);
   border-radius: 2px;
-  height: 5px;
+  height: 10px;
+  cursor: pointer;
 }
 .aditions-container::-webkit-scrollbar-thumb {
   background-color: #ccc;
@@ -307,7 +308,7 @@ align-items: center;
 .aditions-container {
   overflow: auto;
   display: -webkit-box;
-  width: 99%;
+  width: 100%;
   padding: 10px;
 }
 
@@ -326,30 +327,117 @@ align-items: center;
   /* visibility: hidden; */
 }
 
-/* ------------- HERE ENDS OVERLAY ONE SECTION --------- */
-@media screen and (max-width:1048px){
-  .options li{
-    padding: 25px 5px ;
-  }
-  .options a{
-    font-size: 1.4em;
-  }
-
-  .aditions-title h1{
-    font-size: 1.4em;
+/* ------------- responsive --------- */
+@media screen and (max-width:1024px){
+  .domicilioBaner_container{
+    transform: scale(0.7);
   }
 }
 
-@media screen and (max-width: 940px){
-  .domicilioBaner_container img{
-    width: 220px;
+@media screen and (max-width: 767px){
+  .domicilioBaner_container{
+    display: none;
   }
 
-  .domicilioBaner_container h1{
-    font-size: 2.5em;
+  .container{
+    justify-content: start;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .options{
+    margin: -20px;
+  } 
+
+  .options a{
+    font-size: 1.2em;
+    height: 100%;
   }
 
-  .options-pizza, .aditions-container{
+  .options li{
+    height:40px;
+  }
+
+  .options-pizza{
     transform: scale(0.9);
   }
+
+  .aditions-container{
+    transform: scale(0.9);
+  }
+
+  .aditions-title h1{
+    font-size: 1.5em;
+  }
+
+  
+.shopping-car {
+  display: flex;
+  width: 70px;
+  height: 50px;
+  position: absolute;
+  top: 110px;
+  right: 0px;
+  bottom: 0px;
+  cursor: pointer;
+}
+
+  .cartIcon_container{
+    height: 25px;
+    width: 25px;
+  }
+
+  .menu-section{
+    margin: 0;
+  }
+
+}
+
+@media screen and (max-width: 480px){
+  .options{
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+
+  .options ul {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    height: 25px;
+    width: fit-content;
+}
+
+  .options a{
+    font-size: 1em;
+  }
+
+  .options-pizza{
+    transform: scale(0.8);
+  }
+
+  .options-pizza {
+    width: 120%;
+  }
+  
+  .aditions-container{
+    transform: scale(0.8);
+  }
+
+  .aditions-container{
+    width: 110%;
+  }
+
+  .aditions-title h1{
+    font-size: 1.2em;
+  }
+}
+
+@media screen and (max-width: 380px){
+ 
+}
+
+@media screen and (max-width: 320px){
+
 }
