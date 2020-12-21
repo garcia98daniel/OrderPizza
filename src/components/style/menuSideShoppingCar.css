@@ -14,7 +14,8 @@
 
   }
   .make-order {
-    width: 600px;
+    width: 60%;
+    max-width: 600px;
     height: 100vh;
     background-color: #f2f2f2;
     display: flex;
@@ -96,3 +97,60 @@
   }
   
   /* ------------- HERE ENDS OVERLAY THREE ONE SECTION --------- */
+
+  /* ------------- responsive --------- */
+@media screen and (max-width:1024px){
+
+}
+
+@media screen and (max-width: 767px){
+
+}
+
+@media screen and (max-width: 600px){
+  .make-order .shopping-car{
+    left: -70px;
+  }
+
+  .order-resume p{
+    font-size: 1.2em;
+  }
+
+  .order-resume h4{
+    font-size: 1.2em;
+  }
+
+  .make-order-button button{
+    font-size: 1.3em;
+    padding: 5px 40px;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .make-order{
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 380px){
+  .make-order{
+    padding: 5px;
+  }
+
+  .make-order .shopping-car .box1{
+    padding: 0 1px;
+    box-sizing: border-box;
+  }
+  .make-order .shopping-car{
+    width: 50px;
+    left: -50px;
+  }
+  
+  .order-resume{
+    padding: 0 5px;
+  }
+}
+
+@media screen and (max-width: 320px){
+
+}

@@ -100,13 +100,12 @@ function ItemShoppingCar({
               }
                 <br/>
                 <div className="observation_container">
-                  <h3>Observation</h3>
+                  <h3>Observación</h3>
                   <h6>{observation}</h6>
                 </div>
 
             </div>
             <div className="price">
-              <i className="fas fa-times-circle"></i>
               <p>{totalProductPrice} COP</p>
             </div>
           </div>
