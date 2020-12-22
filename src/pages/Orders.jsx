@@ -71,7 +71,7 @@ function Orders(props) {
     sound.play();
   }
 
-  var iSound = 3;
+  var iSound = 0;
   const renderSound = () => {
   // alert(iSound);
     switch (iSound) {

@@ -405,3 +405,125 @@
     50%{opacity: 1}
     100%{opacity: 0; top: -50px}
   }
+
+
+  /* ------------- responsive --------- */
+@media screen and (max-width:1024px){
+
+}
+
+@media screen and (max-width: 767px){
+  .order-popup{
+    top: 0;
+    height: fit-content;
+  }
+
+  .order-information{
+    flex-direction: column;
+  }
+
+  .order-price{
+    flex-direction: column;
+  }
+
+  .pizza-caracteristics .plusCirculeIcon{
+    display: none;
+  }
+
+  .pizza-caracteristics{
+    min-height: fit-content;
+  }
+}
+
+@media screen and (max-width: 600px){
+
+
+  .order-popup{
+    width: 90%;
+  }
+
+  .pizza-visual-description{
+    width: 100%;
+  }
+
+  .pizza-caracteristics{
+    width: 100%;
+  }
+
+  .order-popup img{
+    height: 150px;
+    width: auto;
+  }
+
+  .pizza-caracteristics h3{
+    font-size: 1.2em;
+  }
+
+  .pizza-caracteristics textarea{
+    height: 30px;
+  }
+
+  .order-price .quantity{
+    width: 225px;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .pizza-visual-description h1{
+    font-size: 1.5em;
+  }
+
+  .sizes .size{
+    font-size: 0.9em;
+  }
+
+  .input-select{
+    margin-bottom: 8px;
+    height: 25px;
+  }
+
+  .pizza-visual-description h4{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 380px){
+  .sizes .size{
+    font-size: 0.7em;
+  }
+
+  .extraQueso{
+    font-size: 0.9em;
+  }
+
+  .pizza-caracteristics h4{
+    font-size: 0.4;
+  }
+
+  .pizza-visual-description h1{
+    font-size: 1.3em;
+  }
+
+  .order-popup .closeIcon{
+    height: 30px;
+    width: 30px;
+  }
+}
+
+@media screen and (max-width: 320px){
+  .pizza-caracteristics h3{
+    font-size: 1em;
+  }
+
+  .order-price .quantity{
+    transform: scale(0.9);
+  }
+
+  .order-price .total-price{
+    transform: scale(0.9);
+  }
+
+  .pizza-caracteristics textarea{
+    height: 20px;
+  }
+}
