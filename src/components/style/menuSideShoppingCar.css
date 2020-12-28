@@ -54,8 +54,13 @@
 }
 
 .emptyCar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: lightgray;
-  margin: auto;
+  width: 100%;
+  height: 100%;
+  text-align: center;
 }
 
   .make-order-button {
@@ -129,6 +134,10 @@
 @media screen and (max-width: 480px){
   .make-order{
     width: 80%;
+  }
+
+  .emptyCar{
+    font-size: 1.5em;
   }
 }
 

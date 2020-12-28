@@ -7,6 +7,8 @@ import { useState } from 'react';
 
 
 function Order({
+    orders,
+    setOrders,
     key,
     orderDate,
     orderId,
@@ -27,21 +29,29 @@ function Order({
     const handleOrderStatus = (id, status) => {
         const newStatus = {'status': status}
         axios
-            .put(`/api/admin/pedidos/edit-status/${id}`, newStatus)
+            // .put(`/api/admin/pedidos/edit-status/${id}`, newStatus)
+            .put(`https://evening-beyond-19007.herokuapp.com/api/admin/pedidos/edit-status/${id}`, newStatus)
             .then((res) => {
                 if(status === 'acepted'){
                     setStatus("acepted");
                 }else{
                     setStatus("rejected");
+                    handleDeleteOrderItem(id);
                 }
               console.log(res.data);
             })
             .catch((err) => console.log("Error udating orderStatus"));
       }
 
+      const handleDeleteOrderItem =(orderItem_id)=>{
+        setOrders(
+            orders.filter(order => order.id !== orderItem_id)
+        )
+      }
+
     return (
         <>
-        {status === 'acepted' || status === null ?
+        {(status === 'acepted' || status === null) &&
         <div className="orderItem">
                 <OrderUserInfo
                 key={key} 
@@ -79,7 +89,7 @@ function Order({
                 }
                 </div>
         </div>
-        : ''}
+        }
         </>
     );
 }

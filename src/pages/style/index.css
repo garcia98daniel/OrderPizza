@@ -302,6 +302,8 @@
 
 .img_menuSection{
     margin: 0 10px;
+    height: 200px;
+    width: auto;
 }
 
 .menu p {

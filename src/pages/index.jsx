@@ -6,6 +6,9 @@ import especias from "../img/especias.png";
 import pizza1 from "../img/pizza1.png";
 import pizza2 from "../img/pizza2.png";
 import pizza3 from "../img/pizza3.png";
+import pizza4 from "../img/imgMenuPizzas/pizzaChampiñonesPiña.png";
+import pizza5 from "../img/imgMenuPizzas/pizzaBocadillo.jpeg";
+
 import arrow from "../img/arrow.png";
 import whiteArrow from "../img/white_arrow.png";
 import fb_icon from "../img/fb.png";
@@ -83,8 +86,8 @@ function index(props) {
               <img className="img_menuSection" src={pizza1} alt="img_pizza" />
               <img className="img_menuSection" src={pizza2} alt="img_pizza" />
               <img className="img_menuSection" src={pizza3} alt="img_pizza" />
-              <img className="img_menuSection" src={pizza3} alt="img_pizza" />
-              <img className="img_menuSection" src={pizza3} alt="img_pizza" />
+              <img className="img_menuSection" src={pizza4} alt="img_pizza" />
+              <img className="img_menuSection" src={pizza5} alt="img_pizza" />
             </div>
             <img className="arrow right" src={arrow} alt="img_arrow" onClick={() => scrollingWithButton(250)}/>
           </div>

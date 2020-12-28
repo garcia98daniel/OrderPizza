@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import "./style/navbar.css";
-import PizzaLogo from "./PizzaLogo";
+// import PizzaLogo from "./PizzaLogo";
 
 function Navbar(props) {
     return (

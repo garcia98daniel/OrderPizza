@@ -1,16 +1,21 @@
 import React from "react";
 import "./style/brand.css";
-import PizzaLogo from "./PizzaLogo";
+// import PizzaLogo from "./PizzaLogo";
+import {Link} from "react-router-dom";
 import logoEntreAmigos from "../img/logoEntreAmigos.png"
-function Brand(props) {
+function Brand({page, link}) {
   return (
     <div className="title-container">
       <div className="title">
         <div className="tittleLetter_container">
+        <Link to={link}>
           <h1>ENTRE AMIGOS</h1>
-          <h2>Menu</h2>
+          <h2>{page}</h2>
+        </Link>
         </div>
-        <img src={logoEntreAmigos} alt="" className="logo"/>
+        <Link to={link}>
+          <img src={logoEntreAmigos} alt="" className="logo"/>
+        </Link>
       </div>
       
       {/* <PizzaLogo/> */}

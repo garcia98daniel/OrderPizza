@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Brand from "../components/Brand";
 import cart from "../img/cart.png";
@@ -14,7 +14,7 @@ import {pizzaPricesCombinadas} from "../pizzaPricesData/pizzaPricesCombinadas.js
 import {pizzaPricesEspeciales} from "../pizzaPricesData/pizzaPricesEspeciales.js";
 import {pizzaPricesGourmet} from "../pizzaPricesData/pizzaPricesGourmet.js";
 
-import banerDomicilio from '../img/domicilios-gratis.png';
+// import banerDomicilio from '../img/domicilios-gratis.png';
 
 import "./style/menu.css";
 import { pizzaBorder } from "../pizzaPricesData/pizzaBorder";
@@ -47,12 +47,12 @@ function Menu(props) {
   }
   return (
     <div className="menuBody">
-      <div className="domicilioBaner_container">
+      {/* <div className="domicilioBaner_container">
       <img src={banerDomicilio} alt=""/>
       <h1>En el perimetro <br/> urbano</h1>
-      </div>
+      </div> */}
       <div className="container">
-        <Brand />
+        <Brand page={"Menu"} link={"/"}/>
         <div className="shopping-car" onClick={() => setShoppingCarSwitchModal(true)}>
           <div className="box1">
            

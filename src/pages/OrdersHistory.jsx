@@ -43,7 +43,8 @@ function OrdersHistory(props) {
         // console.log(`/api/admin/historial/${dateStartValue.format('YYYY-MM-DD')}`);
         setOrders([]);
         setLoader(true);
-        axios.get(`/api/admin/historial/${dateStartValue.format('YYYY-MM-DD')}/${dateEndValue.format('YYYY-MM-DD')}`)
+        // axios.get(`http://127.0.0.1:8000/api/admin/historial/${dateStartValue.format('YYYY-MM-DD')}/${dateEndValue.format('YYYY-MM-DD')}`)
+        axios.get(`https://evening-beyond-19007.herokuapp.com/api/admin/historial/${dateStartValue.format('YYYY-MM-DD')}/${dateEndValue.format('YYYY-MM-DD')}`)  
         .then(res => {
             setOrders(res.data);
             setLoader(false);
@@ -55,7 +56,8 @@ function OrdersHistory(props) {
 
     const salesSum = () =>{
         // console.log(`/api/admin/historial/${dateStartValue.format('YYYY-MM-DD')}`);
-        axios.get(`/api/admin/total-ventas/${dateStartValue.format('YYYY-MM-DD')}/${dateEndValue.format('YYYY-MM-DD')}`)
+        // axios.get(`/api/admin/total-ventas/${dateStartValue.format('YYYY-MM-DD')}/${dateEndValue.format('YYYY-MM-DD')}`)
+        axios.get(`https://evening-beyond-19007.herokuapp.com/api/admin/total-ventas/${dateStartValue.format('YYYY-MM-DD')}/${dateEndValue.format('YYYY-MM-DD')}`)
         .then(res => {
             setTotalDay(res.data);
             // console.log(res.data);
@@ -72,7 +74,7 @@ function OrdersHistory(props) {
         <div className="ordersHistory_body">
             <div className="ordersHistory_wrapper">
             <Navbar/>
-            <Brand/>
+            <Brand page={"Historial"}/>
             <div className="ordersHistory_dateContainer">
 
                 <div className="ordersHistory_dateGroup">

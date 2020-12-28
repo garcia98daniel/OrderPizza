@@ -12,6 +12,18 @@
     display: flex;
 }
 
+.title a{
+    text-decoration: none;
+    color: green;
+    display: inherit;
+    flex-direction: inherit;
+}
+
+.title a:hover{
+    box-shadow: none;
+    color: green;
+}
+
 .tittleLetter_container{
     display: flex;
     flex-direction: column;

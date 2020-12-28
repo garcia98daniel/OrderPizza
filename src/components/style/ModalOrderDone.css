@@ -40,10 +40,14 @@
     width: 100%;
     padding: 0 50px;
     box-sizing: border-box;
+}
 
+.fistDatarow{
+    height: 130px;
 }
 
 .inputGoup{
+    margin: 0 10px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -91,6 +95,7 @@
 
 .buttonConfir button{
     width: 100%;
+    min-width: fit-content;
     padding: 5px 10px;
     border-radius: 6px;
     background: #4a8846;
@@ -160,3 +165,127 @@
     width: auto;
 }
 
+  /* ------------- responsive --------- */
+@media screen and (max-width:1024px){
+    .dataRow{
+        justify-content: center;
+    }
+
+    .dataModal .title-container .title{
+        margin-left: 0;
+        justify-content: flex-end;
+    }
+}
+
+@media screen and (max-width: 860px){
+    .footerModal{
+        padding: 10px 20px;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .dataModal .title-container .title img{
+       display: none;
+    }
+
+    .dataRow{
+        padding: 0 25px;
+        margin-bottom: 15px;
+    }
+
+    .footerModal{
+        padding: 10px 25px;
+    }
+
+    .footerModal p{
+        font-size: 18px;
+    }
+
+    .buttonConfir button{
+        font-size: 1.1em;
+    }
+
+    .totalInfoOrder{
+        font-size: 0.9em;
+    }
+
+    .modalOrderDone{
+        width: 60%;
+    }
+
+    .infoDatarow.dataRow{
+        margin-bottom: 5px;
+    }
+
+    .infoDatarow p{
+        margin: 5px 0;
+    }
+}
+
+
+@media screen and (max-width: 600px){
+    .modalOrderDone{
+        width: 70%;
+        padding-top: 10px;
+    }
+    
+
+    .infoDatarow.dataRow{
+        font-size: 1em;
+        text-align: justify;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .modalOrderDone{
+        width: 90%;
+    }
+
+    .footerModal{
+        padding-top: 0;
+    }
+
+    .modalOrderDone .inputGoup{
+        width: 100%;
+    }
+
+    .modalOrderDone .inputGoup h5{
+        font-size: 1.2em;
+    }
+
+    .dataRow input[type=text], input[type=tel], .modalOrderDone textarea {
+        width: 100% !important;
+        font-size: 1.1em;
+    }
+
+    .dataRow {
+        justify-content: start;
+    }
+}
+
+@media screen and (max-width: 380px){
+   
+}
+
+@media screen and (max-width: 320px){
+    .modalOrderDone{
+        width: 95%;
+    }
+
+    .modalOrderDone .title-container .title{
+        font-size: 0.8em;
+    }
+
+    .inputGoup h5{
+        font-size: 1em;
+    }
+
+    .dataRow input[type=text], input[type=tel], .modalOrderDone textarea {
+        width: 100% !important;
+        font-size: 1em;
+    }
+
+    .infoDatarow p{
+        font-size: 0.8em;
+    }
+}

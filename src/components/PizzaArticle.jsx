@@ -1,6 +1,6 @@
 import React from 'react';
 import "./style/pizzaArticle.css";
-import a from '../img/imgMenuPizzas/pizzaQueso.jpg'
+// import a from '../img/imgMenuPizzas/pizzaQueso.jpg'
 
 function pizzaArticle({pizzaName,prices, productDescription, handleClick, pizzaImg}) {
   

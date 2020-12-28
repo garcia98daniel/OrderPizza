@@ -1,9 +1,9 @@
 import "./style/ModalOrderDone.css";
 import Brand from "./Brand";
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import axios from "axios";
 import succes from "../img/succes.gif";
-import loaderGif from "../img/loading.gif";
+// import loaderGif from "../img/loading.gif";
 
 function ModalOrderDone({ 
   pizzaItemsChosen,
@@ -34,7 +34,8 @@ function ModalOrderDone({
       e.preventDefault();
       setOrderSend(true);
         axios
-        .post(`/api/admin/pedidos`, finalOrder)
+        // .post(`http://127.0.0.1:8000/api/admin/pedidos`, finalOrder)
+        .post(`https://evening-beyond-19007.herokuapp.com/api/admin/pedidos`, finalOrder)
         .then((res) => {
           // console.log(res.data);
           setOrderSend(false);
@@ -61,7 +62,7 @@ function ModalOrderDone({
     <div className="bg_modalOrderDone" onClick={()=>setMakeOrder(false) }>
       <div className="modalOrderDone" onClick={(e)=> e.stopPropagation()}>
         <form className="dataModal" onSubmit={(e)=> finalData(e)}>
-          <Brand />
+          <Brand page={""}/>
           <div className="fistDatarow dataRow">
             <div className="inputGoup">
               <h5>Nombre completo</h5>
@@ -87,7 +88,7 @@ function ModalOrderDone({
                 <input id="transaccion" name="wayToPay"  className="transaccion" type="radio" required checked={finalOrder.wayToPay === 'transaccion' && true} onClick={(e)=>setFinalOrder({...finalOrder, [e.target.name]:'transaccion'})}/>
               </div>
               {finalOrder.wayToPay === 'efectivo' && 
-              <input type="text" placeholder="¿Cambio para?" value={finalOrder.change} name="change" onChange={(e)=>setFinalOrder({...finalOrder, [e.target.name]:e.target.value})}/>
+              <input type="text" placeholder="¿Cambio para?" value={finalOrder.change === 0 ? '' : finalOrder.change} name="change" onChange={(e)=>setFinalOrder({...finalOrder, [e.target.name]:e.target.value})}/>
               }
             </div>
           </div>

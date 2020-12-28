@@ -33,7 +33,8 @@ function Orders(props) {
     setOrders([]);
     setLoader(true);
     axios
-    .get(`/api/admin/pedidos`)
+    // .get(`http://127.0.0.1:8000/api/admin/pedidos`)
+    .get(`https://evening-beyond-19007.herokuapp.com/api/admin/pedidos`)
     .then((res) => {
       setOrders(res.data);
       setLoader(false);
@@ -108,7 +109,7 @@ function Orders(props) {
     ordersLoader();
 
     Pusher.logToConsole = true;
-    const pusher = new Pusher('82f816aa5edf2a6dfa2b', {
+    const pusher = new Pusher('959526922a3e68c98042', {
       cluster: 'mt1',
       // encrypted: true
     });
@@ -140,7 +141,7 @@ const showAlert =()=>{
     <div className="orders_body">
       <div className="orders_wrapper">
         <Navbar />
-        <Brand />
+        <Brand page={"Pedidos"} />
         <i className={activarSound ? "btn_sound" : "btn_sound disable"} onClick={() => setActivarSound(true)}> <img src={sound_icon} className="sound_icon"/></i>
         {loader ? (
           <div className="orderItem loading">
@@ -164,6 +165,8 @@ const showAlert =()=>{
           orders &&
           orders.map((order, index) => (
             <Order
+              orders={orders}
+              setOrders={setOrders}
               key={index}
               orderDate={moment(order.created_at).format(
                 "YYYY-MM-DD T HH:mm:ss"
@@ -182,7 +185,7 @@ const showAlert =()=>{
             />
           ))
         ) : (
-          <h1 className="ordersNoFound">PEDIDOS NO ENCONTRADOS</h1>
+          <h1 className="ordersNoFound">NO TIENEN PEDIDOS AÚN</h1>
         )}
       </div>
 
