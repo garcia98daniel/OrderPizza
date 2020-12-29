@@ -1,10 +1,10 @@
 export const pizzaPricesEspeciales =[
   { key: 'Amigo fit', value: 
     {
-      personal: 14900,
-      pequeña: 19900,
-      mediana: 28900,
-      grande: 33900,
+      personal: 13000,
+      pequeña: 20000,
+      mediana: 27000,
+      grande: 34000,
     },
     text:"Amigo fit",
     description:"Pizza Amigo fit, no la puedes dejar pasar. ( Tomate, pimenton verde y rojo, cebolla roja, aceitunas verdes )",
@@ -12,10 +12,10 @@ export const pizzaPricesEspeciales =[
   },
   { key: 'Viejos amigos', value: 
     {
-      personal: 14900,
-      pequeña: 19900,
-      mediana: 28900,
-      grande: 33900,
+      personal: 13000,
+      pequeña: 20000,
+      mediana: 27000,
+      grande: 34000,
     },
     text:"Viejos amigos",
     description:"Pizza Viejos amigos, pruebala ahora. ( Champiñones, maiz, pimenton verde, aceitunas negras )",
@@ -23,10 +23,10 @@ export const pizzaPricesEspeciales =[
   },
   { key: 'Amigos especiales', value: 
     {
-      personal: 14900,
-      pequeña: 19900,
-      mediana: 28900,
-      grande: 33900,
+      personal: 13000,
+      pequeña: 20000,
+      mediana: 27000,
+      grande: 34000,
     },
     text:"Amigos especiales",
     description:"Pizza Amigos especiales, nada como tener un amigo con quien comer esta belleza. ( Tomate cherry, pimenton verde, cebolla roja, aceitunas verde, champiñones )",
