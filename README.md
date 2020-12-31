@@ -5,9 +5,13 @@ This project was made to help my brother's pizza shop in order to make easier ge
 
 # tools and tecnologies
 1- REACTJS to develop the app
+
 2- REACT ROUTER
+
 3- PUSHERJS to make in real time the pizza orders module 
+
 4- FIGMA to desing
+
 5- HOWLER to push some sound efects when appear a new order
 
 ## steps to install the program
