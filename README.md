@@ -1,6 +1,6 @@
 # Order Pizza Entre amigos web app
 
-This project was made to help my brother's pizza shop in order to make easier get pizza orders by whatsapp or instagram asking to the people.
+This project was made to help my brother's pizza shop in order to make easier get pizza orders by whatsapp or instagram asking orders details to the people.
 ## [Project link](https://entreamigos.vercel.app/)  
 
 # tools and tecnologies
