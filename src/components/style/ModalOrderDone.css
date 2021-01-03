@@ -1,20 +1,18 @@
 .bg_modalOrderDone{
-    background-color: rgba(0, 0, 0, 0.3);
     position: fixed;
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 100vh;
+    width: 100%;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* visibility: hidden; */
     font-family: var(--normal-font);
-
 }
 
 .modalOrderDone{
+    margin: auto;
+    margin-top: 20px;
     position: relative;
     box-sizing: border-box;
     background: white;
@@ -43,7 +41,7 @@
 }
 
 .fistDatarow{
-    height: 130px;
+    /* height: 130px; */
 }
 
 .inputGoup{
@@ -289,3 +287,15 @@
         font-size: 0.8em;
     }
 }
+
+
+
+@media screen and (max-height: 400px){
+    .bg_modalOrderDone{
+      overflow-y: scroll;
+    }
+
+    .modalOrderDone{
+        margin-top: 0px;
+    }
+  }

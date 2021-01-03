@@ -1,6 +1,7 @@
 import "./style/ModalOrderDone.css";
 import Brand from "./Brand";
 import React, {useState} from 'react';
+import ReactDOM from "react-dom";
 import axios from "axios";
 import succes from "../img/succes.gif";
 // import loaderGif from "../img/loading.gif";
@@ -58,7 +59,7 @@ function ModalOrderDone({
 
   
     
-  return (
+  return ReactDOM.createPortal(
     <div className="bg_modalOrderDone" onClick={()=>setMakeOrder(false) }>
       <div className="modalOrderDone" onClick={(e)=> e.stopPropagation()}>
         <form className="dataModal" onSubmit={(e)=> finalData(e)}>
@@ -145,6 +146,7 @@ function ModalOrderDone({
         }
       </div>
     </div>
+    ,document.getElementById("modal")
   );
 }
 

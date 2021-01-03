@@ -179,7 +179,6 @@ function Menu(props) {
 
       {/* modals */}
       {selectPizzaModal && (
-        <div className="overlay">
           <ModalSelectPizza 
           openModal={setSelectPizzaModal} 
           setPizzaItemsChosen={setPizzaItemsChosen}
@@ -189,7 +188,6 @@ function Menu(props) {
           productDescription={productDescription}
           productPizzaImg={productPizzaImg}
           />
-        </div>
       )}
       {shoppingCarSwitchModal &&
         <MenuSideShoppingCar 
