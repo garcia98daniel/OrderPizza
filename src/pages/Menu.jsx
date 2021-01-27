@@ -9,10 +9,15 @@ import ModalSelectPizza from "../components/ModalSelectPizza";
 import MenuSideShoppingCar from "../components/MenuSideShoppingCar";
 import ModalOrderDone from "../components/ModalOrderDone";
 
-import {pizzaPricesLigeras} from "../pizzaPricesData/pizzaPricesLigeras.js";
+// import {pizzaPricesLigeras} from "../pizzaPricesData/pizzaPricesLigeras.js";
+// import {pizzaPricesCombinadas} from "../pizzaPricesData/pizzaPricesCombinadas.js";
+// import {pizzaPricesEspeciales} from "../pizzaPricesData/pizzaPricesEspeciales.js";
+// import {pizzaPricesGourmet} from "../pizzaPricesData/pizzaPricesGourmet.js";
+
+import {pizzaPricesClasicas} from "../pizzaPricesData/pizzaPricesClasicas.js";
 import {pizzaPricesCombinadas} from "../pizzaPricesData/pizzaPricesCombinadas.js";
-import {pizzaPricesEspeciales} from "../pizzaPricesData/pizzaPricesEspeciales.js";
-import {pizzaPricesGourmet} from "../pizzaPricesData/pizzaPricesGourmet.js";
+import {pizzaPricesClasicasVegetarianas} from "../pizzaPricesData/pizzaPricesClasicasVegetarianas.js";
+import {pizzaPricesCombinadasVegetarianas} from "../pizzaPricesData/pizzaPricesCombinadasVegetarianas.js";
 
 // import banerDomicilio from '../img/domicilios-gratis.png';
 
@@ -21,7 +26,7 @@ import { pizzaBorder } from "../pizzaPricesData/pizzaBorder";
 import { drinks } from "../pizzaPricesData/drinks";
 
 function Menu(props) {
-  const [pizzaCategory, setPizzaCategory] = useState("ligeras");
+  const [pizzaCategory, setPizzaCategory] = useState("clasicas");
 //order
   const [pizzaItemsChosen, setPizzaItemsChosen] = useState([]);
 
@@ -68,10 +73,10 @@ function Menu(props) {
         <div className="options">
           <ul>
             <li
-              className={pizzaCategory === "ligeras" ? "categoryActive" : ""}
-              onClick={() => setPizzaCategory("ligeras")}
+              className={pizzaCategory === "clasicas" ? "categoryActive" : ""}
+              onClick={() => setPizzaCategory("clasicas")}
             >
-              <Link to="/menu">Pizzas Ligeras</Link>
+              <Link to="/menu">Pizzas clasicas</Link>
             </li>
             <li
               className={pizzaCategory === "combinadas" ? "categoryActive" : ""}
@@ -80,61 +85,61 @@ function Menu(props) {
               <Link to="/menu">Pizzas Combinadas</Link>
             </li>
             <li
-              className={pizzaCategory === "especiales" ? "categoryActive" : ""}
-              onClick={() => setPizzaCategory("especiales")}
+              className={pizzaCategory === "clasicas vegetarianas" ? "categoryActive" : ""}
+              onClick={() => setPizzaCategory("clasicas vegetarianas")}
             >
-              <Link to="/menu">Pizzas Especiales</Link>
+              <Link to="/menu">Pizzas clasicas vegetarianas</Link>
             </li>
             <li
-              className={pizzaCategory === "gourmet" ? "categoryActive" : ""}
-              onClick={() => setPizzaCategory("gourmet")}
+              className={pizzaCategory === "Combinadas vegetarianas" ? "categoryActive" : ""}
+              onClick={() => setPizzaCategory("Combinadas vegetarianas")}
             >
-              <Link to="/menu">Pizzas Gourmet</Link>
+              <Link to="/menu">Pizzas Combinadas vegetarianas</Link>
             </li>
           </ul>
         </div>
         <div className="options-pizza">
-          {pizzaCategory === "ligeras" &&
-              pizzaPricesLigeras.map((pizzaLigeraItem)=>(
+          {pizzaCategory === "clasicas" &&
+              pizzaPricesClasicas.map((pizzaItem)=>(
                 <PizzaArticle 
                 handleClick={openPizzaModal}
-                pizzaName={pizzaLigeraItem.text}
-                prices={pizzaLigeraItem}
-                productDescription={pizzaLigeraItem.description} 
-                pizzaImg={pizzaLigeraItem.pizzaImg}
+                pizzaName={pizzaItem.text}
+                prices={pizzaItem}
+                productDescription={pizzaItem.description} 
+                pizzaImg={pizzaItem.pizzaImg}
                 />
               ))
            }
           {pizzaCategory === "combinadas" &&
-              pizzaPricesCombinadas.map((pizzaCombinadasItem)=>(
+              pizzaPricesCombinadas.map((pizzaItem)=>(
                 <PizzaArticle 
                 handleClick={openPizzaModal}
-                pizzaName={pizzaCombinadasItem.text}
-                prices={pizzaCombinadasItem}
-                productDescription={pizzaCombinadasItem.description} 
-                pizzaImg={pizzaCombinadasItem.pizzaImg}
+                pizzaName={pizzaItem.text}
+                prices={pizzaItem}
+                productDescription={pizzaItem.description} 
+                pizzaImg={pizzaItem.pizzaImg}
                 />
               ))
            }
-          {pizzaCategory === "especiales" &&
-              pizzaPricesEspeciales.map((pizzaEspecialesItem)=>(
+          {pizzaCategory === "clasicas vegetarianas" &&
+              pizzaPricesClasicasVegetarianas.map((pizzaItem)=>(
                 <PizzaArticle 
                 handleClick={openPizzaModal}
-                pizzaName={pizzaEspecialesItem.text}
-                prices={pizzaEspecialesItem}
-                productDescription={pizzaEspecialesItem.description} 
-                pizzaImg={pizzaEspecialesItem.pizzaImg}
+                pizzaName={pizzaItem.text}
+                prices={pizzaItem}
+                productDescription={pizzaItem.description} 
+                pizzaImg={pizzaItem.pizzaImg}
                 />
               ))
            }
-          {pizzaCategory === "gourmet" &&
-              pizzaPricesGourmet.map((pizzaGourmetItem)=>(
+          {pizzaCategory === "Combinadas vegetarianas" &&
+              pizzaPricesCombinadasVegetarianas.map((pizzaItem)=>(
                 <PizzaArticle 
                 handleClick={openPizzaModal}
-                pizzaName={pizzaGourmetItem.text}
-                prices={pizzaGourmetItem}
-                productDescription={pizzaGourmetItem.description} 
-                pizzaImg={pizzaGourmetItem.pizzaImg}
+                pizzaName={pizzaItem.text}
+                prices={pizzaItem}
+                productDescription={pizzaItem.description} 
+                pizzaImg={pizzaItem.pizzaImg}
                 />
               ))
            }

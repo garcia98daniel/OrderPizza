@@ -1,69 +1,98 @@
-export const pizzaPricesCombinadas =[
-  { key: 'Aceitunas', value: 
-    {
-      personal: 10000,
-      pequeña: 17000,
-      mediana: 24000,
-      grande: 31000,
-    },
-      text:"Aceitunas",
-      description:"Pizza de Aceitunas (Verdes y negras) excelente combinacion para disfrutarla donde quieras",
-      pizzaImg:require('../img/imgMenuPizzas/pizzaAceitunas.jpg'),
-  },
-  { key: 'Maiz Piña', value: 
-    {
-      personal: 10000,
-      pequeña: 17000,
-      mediana: 24000,
-      grande: 31000,
-    },
-      text:"Maiz Piña",
-      description:"Pizza de Maiz con Piña, muchos dirian que es la mejor, pruebala con un amigo",
-      pizzaImg:require('../img/imgMenuPizzas/pizzaMaizPiña.png'),
-  }, 
-  { key: 'Champiñon Maiz', value: 
-    {
-      personal: 10000,
-      pequeña: 17000,
-      mediana: 24000,
-      grande: 31000,
-    },
-      text:"Champiñon Maiz",
-      description:"Pizza de Champiñon y maiz, super deliciosa",
-      pizzaImg:require('../img/imgMenuPizzas/pizzaChampiñonesMaiz.png'),
-  },
-  { key: 'Champiñon Piña', value: 
-    {
-      personal: 10000,
-      pequeña: 17000,
-      mediana: 24000,
-      grande: 31000,
-    },
-      text:"Champiñon Piña",
-      description:"Pizza de Champiñon y Piña, super deliciosa",
-      pizzaImg:require('../img/imgMenuPizzas/pizzaChampiñonesPiña.png'),
-  },
-  { key: 'Champiñon Tomate', value: 
-    {
-      personal: 10000,
-      pequeña: 17000,
-      mediana: 24000,
-      grande: 31000,
-    },
-      text:"Champiñon Tomate",
-      description:"Pizza de Champiñon y Tomate, super deliciosa",
-      pizzaImg:require('../img/imgMenuPizzas/pizzaChampiñonesTomate.png'),
-  },
-  { key: 'Champiñon Cebolla caramelizada', value: 
+export const pizzaPricesCombinadas = [
   {
-    personal: 10000,
-    pequeña: 17000,
-    mediana: 24000,
-    grande: 31000,
+    key: "Hawaiiana",
+    value: {
+      personal: 8000,
+      pequeña: 14990,
+      mediana: 22990,
+      grande: 27990,
+    },
+    text: "Hawaiiana",
+    description: "Pizza de Jamon y piña, una excelente combinacion",
+    // pizzaImg:require('../img/imgMenuPizzas/pizzaAceitunas.jpg'),
   },
-    text:"Champiñon Cebolla caramelizada",
-    description:"Pizza de Champiñon y Cebolla caramelizada, super deliciosa",
-    pizzaImg:require('../img/imgMenuPizzas/pizzaChampiñonesCebollaCaramelizada.png'),
-},
-   
-    ]
+  {
+    key: "Pollo champiñón",
+    value: {
+      personal: 8000,
+      pequeña: 14990,
+      mediana: 24990,
+      grande: 29990,
+    },
+    text: "Pollo champiñón",
+    description: "Pizza con champiñónes y pollo",
+    // pizzaImg:require('../img/imgMenuPizzas/pizzaMaizPiña.png'),
+  },
+  {
+    key: "Pollo Maiz",
+    value: {
+      personal: 8000,
+      pequeña: 14990,
+      mediana: 24990,
+      grande: 29990,
+    },
+    text: "Pollo Maiz",
+    description: "Pizza con pollo y maiz",
+    // pizzaImg:require('../img/imgMenuPizzas/pizzaChampiñonesMaiz.png'),
+  },
+  {
+    key: "Pollo Jamón",
+    value: {
+      personal: 8000,
+      pequeña: 14990,
+      mediana: 24990,
+      grande: 29990,
+    },
+    text: "Pollo Jamón",
+    description: "Pizza de pollo con jamón, super deliciosa",
+    // pizzaImg:require('../img/imgMenuPizzas/pizzaChampiñonesPiña.png'),
+  },
+  {
+    key: "Pollo cebolla caramelizada",
+    value: {
+      personal: 8000,
+      pequeña: 14990,
+      mediana: 24990,
+      grande: 29990,
+    },
+    text: "Pollo cebolla caramelizada",
+    description: "Pizza de Pollo y cebolla caramelizada",
+    // pizzaImg:require('../img/imgMenuPizzas/pizzaChampiñonesTomate.png'),
+  },
+  {
+    key: "Salami pimentón",
+    value: {
+      personal: 8000,
+      pequeña: 14990,
+      mediana: 22990,
+      grande: 27990,
+    },
+    text: "Salami pimentón",
+    description: "Pizza de salami con pimentón",
+    // pizzaImg: require("../img/imgMenuPizzas/pizzaChampiñonesCebollaCaramelizada.png"),
+  },
+  {
+    key: "Panitas",
+    value: {
+      personal: 10000,
+      pequeña: 17000,
+      mediana: 24000,
+      grande: 31000,
+    },
+    text: "Panitas",
+    description: "Maiz, pollo, tocineta y una pizca de albahaca",
+    // pizzaImg: require("../img/imgMenuPizzas/pizzaChampiñonesCebollaCaramelizada.png"),
+  },
+  {
+    key: "Salchiloca",
+    value: {
+      personal: 8000,
+      pequeña: 14990,
+      mediana: 22990,
+      grande: 27990,
+    },
+    text: "Salchiloca",
+    description: "Salchicha ranchera caramelizada con coca-cola",
+    // pizzaImg: require("../img/imgMenuPizzas/pizzaChampiñonesCebollaCaramelizada.png"),
+  },
+];
