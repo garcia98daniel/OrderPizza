@@ -84,17 +84,17 @@ function Menu(props) {
             >
               <Link to="/menu">Pizzas Combinadas</Link>
             </li>
-            <li
+            {/* <li
               className={pizzaCategory === "clasicas vegetarianas" ? "categoryActive" : ""}
               onClick={() => setPizzaCategory("clasicas vegetarianas")}
             >
               <Link to="/menu">Pizzas clasicas vegetarianas</Link>
-            </li>
+            </li> */}
             <li
               className={pizzaCategory === "Combinadas vegetarianas" ? "categoryActive" : ""}
               onClick={() => setPizzaCategory("Combinadas vegetarianas")}
             >
-              <Link to="/menu">Pizzas Combinadas vegetarianas</Link>
+              <Link to="/menu">Pizzas vegetarianas</Link>
             </li>
           </ul>
         </div>
@@ -121,7 +121,7 @@ function Menu(props) {
                 />
               ))
            }
-          {pizzaCategory === "clasicas vegetarianas" &&
+          {/* {pizzaCategory === "clasicas vegetarianas" &&
               pizzaPricesClasicasVegetarianas.map((pizzaItem)=>(
                 <PizzaArticle 
                 handleClick={openPizzaModal}
@@ -131,7 +131,7 @@ function Menu(props) {
                 pizzaImg={pizzaItem.pizzaImg}
                 />
               ))
-           }
+           } */}
           {pizzaCategory === "Combinadas vegetarianas" &&
               pizzaPricesCombinadasVegetarianas.map((pizzaItem)=>(
                 <PizzaArticle 

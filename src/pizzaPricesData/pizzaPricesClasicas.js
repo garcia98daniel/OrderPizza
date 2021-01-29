@@ -7,7 +7,7 @@ export const pizzaPricesClasicas =[
       },
       text:"Jamón con queso",
       description:"Tradicional pizza de jamon con queso mozzarela.",
-    //   pizzaImg: require('../img/imgMenuPizzas/pizzaQueso.jpg'),
+      pizzaImg: require('../img/imgMenuPizzas/jamonQueso.jpg'),
       // pizzaImg: require(''),
     },
     { key: 'Salami', value: {
@@ -18,7 +18,7 @@ export const pizzaPricesClasicas =[
     },
     text:"Salami",
     description:"Pizza de solo Salami con queso mozzarela.",
-    // pizzaImg: require('../img/imgMenuPizzas/pizzaMaiz.png'),
+    pizzaImg: require('../img/imgMenuPizzas/pizzaSalami.jpg'),
       // pizzaImg: require(''),
     },
     { key: 'Pepperoni', value: {
@@ -29,7 +29,43 @@ export const pizzaPricesClasicas =[
     },
     text:"Pepperoni",
     description:"Pizza de solo Pepperoni con queso mozzarela.",
-    // pizzaImg: require('../img/imgMenuPizzas/pizzaMaiz.png'),
+    pizzaImg: require('../img/imgMenuPizzas/pizzaPepperoni.jpg'),
       // pizzaImg: require(''),
     },
+    {
+      key: "Bocadillo",
+      value: {
+        personal: 6500,
+        pequeña: 11990,
+        mediana: 16990,
+        grande: 23990,
+      },
+      text: "Bocadillo",
+      description: "Pizza de bocadillo y queso mozzarella",
+      pizzaImg:require('../img/imgMenuPizzas/pizzaBocadillo.jpeg'),
+    },
+    {
+        key: "Napolitana",
+        value: {
+          personal: 6500,
+          pequeña: 11990,
+          mediana: 16990,
+          grande: 23990,
+        },
+        text: "Napolitana",
+        description: "Pizza con rodajas de tomate con queso mozzarella",
+        pizzaImg:require('../img/imgMenuPizzas/pizzaNapolitana.jpg'),
+      },
+      {
+        key: "Champiñónes",
+        value: {
+          personal: 6500,
+          pequeña: 11990,
+          mediana: 16990,
+          grande: 23990,
+        },
+        text: "Champiñones",
+        description: "Pizza solo champiñones y queso mozzarella",
+        pizzaImg:require('../img/imgMenuPizzas/pizzaChampiñones.jpg'),
+      },
     ]
