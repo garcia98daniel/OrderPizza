@@ -9,6 +9,7 @@ import succes from "../img/succes.gif";
 function ModalOrderDone({ 
   pizzaItemsChosen,
   setMakeOrder ,
+  setPizzaItemsChosen,
 }) {
 
   const [finalOrder, setFinalOrder] = useState(
@@ -39,13 +40,20 @@ function ModalOrderDone({
         .post(`https://evening-beyond-19007.herokuapp.com/api/admin/pedidos`, finalOrder)
         .then((res) => {
           // console.log(res.data);
+          setPizzaItemsChosen([]);
+
           setOrderSend(false);
 
+          //activa el giff de succes
           setOrderSucces(true);
+
+          //desactiva el giff de succes a los 3s
           setTimeout(()=>{
             setOrderSucces(false);
           }, 3000);
           setOrderSucces(true);
+
+          //cierra el modal a los 3s
           setTimeout(()=>{
             setMakeOrder(false);
           }, 3000);
@@ -123,7 +131,7 @@ function ModalOrderDone({
             :
             <div className="buttonConfir">
               <div className="loaderConfir">
-                Enviando ...
+                Enviando...
               </div>
             </div>
           }
