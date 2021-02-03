@@ -107,9 +107,7 @@ function index(props) {
             <h1 className="contactTxt">Contactanos</h1>
             <span>*</span>
             <p>
-              La dieta carnívora, además de la crueldad con los animales, supone
-              un despilfarro de recursos naturales, genera un gran impacto
-              ambiental y más cambio climático, unetenos.
+              Experimenta nuevos y deliciosos sabores con nuestras pizzas hechas por expertos en su labor. Entre amigos te invita a hacer tus pedidos desde esta web para que tu experiencia sea la mejor con nosotros.
             </p>
           </div>
           <div className="footer_section2" >

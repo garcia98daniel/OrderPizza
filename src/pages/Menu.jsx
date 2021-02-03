@@ -206,6 +206,7 @@ function Menu(props) {
         <ModalOrderDone
         setMakeOrder={setMakeOrder}
         pizzaItemsChosen={pizzaItemsChosen}
+        handleOpenModal={setShoppingCarSwitchModal}
         setPizzaItemsChosen={setPizzaItemsChosen}
         />
       }

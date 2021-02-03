@@ -10,6 +10,7 @@ function ModalOrderDone({
   pizzaItemsChosen,
   setMakeOrder ,
   setPizzaItemsChosen,
+  handleOpenModal,
 }) {
 
   const [finalOrder, setFinalOrder] = useState(
@@ -34,14 +35,20 @@ function ModalOrderDone({
 
     const finalData =(e)=>{
       e.preventDefault();
+        //cambia la palabra del boton confirmar por enviando
       setOrderSend(true);
         axios
         // .post(`http://127.0.0.1:8000/api/admin/pedidos`, finalOrder)
         .post(`https://evening-beyond-19007.herokuapp.com/api/admin/pedidos`, finalOrder)
         .then((res) => {
           // console.log(res.data);
+          //borra lo que tiene el carrito de compras
           setPizzaItemsChosen([]);
 
+          //cierra el modal carrito de compras
+          handleOpenModal(false);
+
+          //cambia la palabra del boton enviando por confirmar
           setOrderSend(false);
 
           //activa el giff de succes
