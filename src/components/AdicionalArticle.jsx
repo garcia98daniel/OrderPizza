@@ -2,13 +2,14 @@ import React from 'react';
 import "./style/adicionalArticle.css";
 
 function AdicionalArticle({
+  disable,
   adicionalName,
   adicionalprices,
   adicionalDescription,
   adicionalImg,
 }) {
     return (
-        <div className="adition-container">
+        <div className={ disable ? "article_disable adition-container" : "adition-container"}>
             <div className="adition-text">
               <h3>{adicionalName} </h3>
              

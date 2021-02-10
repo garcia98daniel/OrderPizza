@@ -24,6 +24,7 @@ import {pizzaPricesCombinadasVegetarianas} from "../pizzaPricesData/pizzaPricesC
 import "./style/menu.css";
 import { pizzaBorder } from "../pizzaPricesData/pizzaBorder";
 import { drinks } from "../pizzaPricesData/drinks";
+import { extraQueso } from "../pizzaPricesData/extraQueso";
 
 function Menu(props) {
   const [pizzaCategory, setPizzaCategory] = useState("clasicas");
@@ -152,9 +153,20 @@ function Menu(props) {
           <h1>Adicionales</h1>
         </div>
         <div className="aditions-container">
+          {extraQueso &&
+              extraQueso.map((item)=>(
+                <AdicionalArticle 
+                adicionalName={item.text}
+                adicionalprices={item.value.personal}
+                adicionalDescription={item.description} 
+                adicionalImg={item.img}
+                />
+              ))
+           }
           {pizzaBorder &&
               pizzaBorder.map((pizzaBordeItem)=>(
-                <AdicionalArticle 
+                <AdicionalArticle
+                disable={true} 
                 adicionalName={pizzaBordeItem.text}
                 adicionalprices={pizzaBordeItem.value.personal}
                 adicionalDescription={pizzaBordeItem.description} 

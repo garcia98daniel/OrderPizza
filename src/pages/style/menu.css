@@ -6,7 +6,9 @@
   --normal-font: "Roboto", sans-serif;
 }
 
-
+.article_disable{
+  filter: grayscale(1) !important;
+}
 
 
 .menuBody {

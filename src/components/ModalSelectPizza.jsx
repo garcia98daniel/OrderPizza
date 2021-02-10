@@ -147,9 +147,9 @@ function ModalSelectPizza({
 
   const calcDrinkPrice = () => {
     let drinkPrice = 0;
-    if (drink === "Agua cristal 600ml") {
+    if (drink === "Gaseosa Pool 250ml") {
       drinkPrice = drinks[0].value;
-    } else if (drink === "Agua cielo con gas 600ml") {
+    } else if (drink === "Gaseosa Pool 400ml") {
       drinkPrice = drinks[1].value;
     } else if (drink === "Coca-Cola 400ml") {
       drinkPrice = drinks[2].value;

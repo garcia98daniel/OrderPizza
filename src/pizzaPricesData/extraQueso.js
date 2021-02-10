@@ -1,11 +1,13 @@
 export const extraQueso =[
     { key: 'extra Queso',
       value: {
-        personal: 2000,
-        pequeña: 3000,
-        mediana: 4000,
-        grande: 6000,
+        personal: 2500,
+        pequeña: 4000,
+        mediana: 6000,
+        grande: 8500,
       },
-      text: 'Extra Queso' 
+      img:require('../img/imgBordePizzas/eq.jpeg'),
+      text: 'Extra Queso' ,
+      description:'Deliciosa capa de queso mozarrella que recubre los ingredientes y le da un toque magico a tu pizza'
     },
     ]
