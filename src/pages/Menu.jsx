@@ -68,6 +68,9 @@ function Menu(props) {
               <img src={cart} alt="cart" />
             </Link>
           </div>
+          <div className="counterShoppingCarItems">
+           {pizzaItemsChosen.length > 9 ? "+9": pizzaItemsChosen.length}
+          </div>
         </div>
       </div>
       <div className="menu-section">

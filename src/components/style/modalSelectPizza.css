@@ -498,11 +498,21 @@
   .pizza-visual-description h4{
     display: none;
   }
+
+  .pizzaModel{
+    top: -250px;
+    left: -30vw;
+    transform: scale(0.8);
+  }
 }
 
 @media screen and (max-width: 380px){
   .sizes .size{
     font-size: 0.7em;
+  }
+
+  .pizzaModel{
+    transform: scale(0.6);
   }
 
   .extraQueso{
@@ -538,6 +548,10 @@
 
   .pizza-caracteristics textarea{
     height: 20px;
+  }
+
+  .pizzaModel{
+    transform: scale(0.5);
   }
 }
 

@@ -142,6 +142,23 @@ align-items: center;
   bottom: 0px;
   cursor: pointer;
 }
+
+.counterShoppingCarItems{
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(240, 0, 0, 0.932);
+  color: white;
+  font-size: 0.9em;
+  padding: 0px 4px;
+  padding-top: 1px;
+  left: 8px;
+  top: -5px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .box1 {
   background-color: black;
   width: 15px;
