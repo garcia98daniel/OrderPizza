@@ -65,7 +65,10 @@ function ModalOrderDone({
             setMakeOrder(false);
           }, 3000);
         })
-        .catch((err) => console.log("Error creating order"));
+        .catch((err) =>{ 
+          // setOrderSend(false);
+          console.log("Error creating order")
+        });
     }
 
     // useEffect(() => {
@@ -82,29 +85,29 @@ function ModalOrderDone({
           <div className="fistDatarow dataRow">
             <div className="inputGoup">
               <h5>Nombre completo</h5>
-              <input required type="text" placeholder="Nombre" name="name" value={finalOrder.user.name}onChange={(e)=>setFinalOrder({...finalOrder, user:{...finalOrder.user, [e.target.name]:e.target.value}})}/>
+              <input autocomplete="off" required type="text" placeholder="Nombre" name="name" value={finalOrder.user.name}onChange={(e)=>setFinalOrder({...finalOrder, user:{...finalOrder.user, [e.target.name]:e.target.value}})}/>
             </div>
             <div className="inputGoup">
               <h5>Telefono</h5>
-              <input type="tel" required placeholder="Telefono" name="phone_number" value={finalOrder.user.phone_number===0 ? '': finalOrder.user.phone_number} onChange={(e)=>setFinalOrder({...finalOrder, user:{...finalOrder.user, [e.target.name]:e.target.value}})}/>
+              <input autocomplete="off" type="tel" required placeholder="Telefono" name="phone_number" value={finalOrder.user.phone_number===0 ? '': finalOrder.user.phone_number} onChange={(e)=>setFinalOrder({...finalOrder, user:{...finalOrder.user, [e.target.name]:e.target.value}})}/>
             </div>
           </div>
           <div className="secondDatarow dataRow">
             <div className="inputGoup">
               <h5>Direccion</h5>
-              <input required type="text" placeholder="Direccion" name="address" value={finalOrder.address} onChange={(e)=>setFinalOrder({...finalOrder, [e.target.name]:e.target.value})}/>
+              <input autocomplete="off" required type="text" placeholder="Direccion" name="address" value={finalOrder.address} onChange={(e)=>setFinalOrder({...finalOrder, [e.target.name]:e.target.value})}/>
             </div>
 
             <div className="inputGoup">
               <h5>Forma de pago</h5>
               <div className="ways">
                 <label htmlFor="efectivo">Efectivo</label>
-                <input id="efectivo" name="wayToPay"  className="efectivo" type="radio" required  checked={finalOrder.wayToPay === 'efectivo' && true} onClick={(e)=>setFinalOrder({...finalOrder, [e.target.name]:'efectivo'})}/>
+                <input autocomplete="off" id="efectivo" name="wayToPay"  className="efectivo" type="radio" required  checked={finalOrder.wayToPay === 'efectivo' && true} onClick={(e)=>setFinalOrder({...finalOrder, [e.target.name]:'efectivo'})}/>
                 <label htmlFor="transaccion">Transacción</label>
-                <input id="transaccion" name="wayToPay"  className="transaccion" type="radio" required checked={finalOrder.wayToPay === 'transaccion' && true} onClick={(e)=>setFinalOrder({...finalOrder, [e.target.name]:'transaccion'})}/>
+                <input autocomplete="off" id="transaccion" name="wayToPay"  className="transaccion" type="radio" required checked={finalOrder.wayToPay === 'transaccion' && true} onClick={(e)=>setFinalOrder({...finalOrder, [e.target.name]:'transaccion'})}/>
               </div>
               {finalOrder.wayToPay === 'efectivo' && 
-              <input type="text" placeholder="¿Cambio para?" value={finalOrder.change === 0 ? '' : finalOrder.change} name="change" onChange={(e)=>setFinalOrder({...finalOrder, [e.target.name]:e.target.value})}/>
+              <input autocomplete="off" type="text" placeholder="¿Cambio para?" value={finalOrder.change === 0 ? '' : finalOrder.change} name="change" onChange={(e)=>setFinalOrder({...finalOrder, [e.target.name]:e.target.value})}/>
               }
             </div>
           </div>
@@ -124,7 +127,7 @@ function ModalOrderDone({
               <label htmlFor="radioCheckData">
                 He leido y aceptado terminos
               </label>
-              <input id ="radioCheckData" className="radioCheckData" type="radio" required />
+              <input autocomplete="off" id ="radioCheckData" className="radioCheckData" type="radio" required />
             </div>
           </div>
           <section className="footerModal">
