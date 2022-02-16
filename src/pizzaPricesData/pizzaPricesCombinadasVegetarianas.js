@@ -21,7 +21,7 @@ export const pizzaPricesCombinadasVegetarianas = [
     },
     text: "Amigos especiales",
     description:
-      "( Tomate cherry, pimenton verde, cebolla roja, aceitunas verde, champiñones )",
+      "Tomate cherry, pimenton verde, cebolla roja, aceitunas verde, champiñones",
     pizzaImg: require("../img/imgMenuPizzas/pizzaAmigosEspeciales.jpg"),
   },
   {
@@ -34,7 +34,7 @@ export const pizzaPricesCombinadasVegetarianas = [
     },
     text: "Amigo secreto",
     description:
-      "( Tomate en trozos, champiñones, albahaca, queso holandes y parmesano ).",
+      "Tomate en trozos, champiñones, albahaca, queso holandes y parmesano.",
     pizzaImg: require("../img/imgMenuPizzas/pizzaAmigoSecreto.png"),
   },
   {
@@ -47,7 +47,7 @@ export const pizzaPricesCombinadasVegetarianas = [
     },
     text: "Amigos con derechos",
     description:
-      "( Champiñones, tomate cherry, cebolla caramelizada, queso holandes y parmesano ).",
+      "Champiñones, tomate cherry, cebolla caramelizada, queso holandes y parmesano.",
     pizzaImg: require("../img/imgMenuPizzas/pizzaAmigosDerecho.jpeg"),
   },
 ];

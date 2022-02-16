@@ -3,17 +3,17 @@
   "name": "Entre Amigos Pizza ",
   "icons": [
     {
-      "src": "entre_amigos2022.jpeg",
+      "src": "entre_amigos2022-removebg.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "entre_amigos2022.jpeg",
+      "src": "entre_amigos2022-removebg.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "entre_amigos2022.jpeg",
+      "src": "entre_amigos2022-removebg.png",
       "type": "image/png",
       "sizes": "512x512"
     }

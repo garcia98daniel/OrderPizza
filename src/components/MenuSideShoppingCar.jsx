@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import cart from "../img/cart.png";
 import closeIcon from "../img/closeIcon.png";
+import backIcon from "../img/white_arrow.png";
 
 import "./style/menuSideShoppingCar.css";
 
@@ -29,7 +30,7 @@ function MenuSideShoppingCar({
     <div className="overlay-two">
       <div className="make-order">
         <i className="make-order-closeIcon" onClick={() => handleOpenModal(!shoppingCarSwitchModal)}>
-          <img src={closeIcon} alt="" />
+          <img src={backIcon} alt="" />
         </i>
         <div className="shopping-car" onClick={() => handleOpenModal(false)}>
           <div className="box1">

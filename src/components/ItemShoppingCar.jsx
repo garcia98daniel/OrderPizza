@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "./style/itemShoppingCar.css";
-import trash from '../img/trash.png';
+import trash from '../img/trashIcon.png';
 import { Link } from 'react-router-dom';
 
 function ItemShoppingCar({

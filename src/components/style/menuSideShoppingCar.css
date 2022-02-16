@@ -31,10 +31,17 @@
   .make-order-closeIcon {
     display: flex;
     justify-content: flex-end;
+    height: fit-content;
+    padding-top: 10px;
   }
   .make-order-closeIcon img{
+    background-color: black;
+    padding: 10px;
     width: 40px;
-    height: auto;
+    height: 40px;
+    transform: rotate(90deg);
+    border-radius: 50%;
+    box-sizing: border-box;
   }
 
   .make-order .shopping-car{
@@ -145,7 +152,7 @@
 
 @media screen and (max-width: 480px){
   .make-order{
-    width: 80%;
+    width: 100%;
     height: calc(100vh - 61px);
   }
 
