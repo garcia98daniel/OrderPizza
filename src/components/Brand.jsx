@@ -2,7 +2,7 @@ import React from "react";
 import "./style/brand.css";
 // import PizzaLogo from "./PizzaLogo";
 import {Link} from "react-router-dom";
-import logoEntreAmigos from "../img/logoEntreAmigos.png"
+import logoEntreAmigos from "../img/entre_amigos2022.jpeg"
 function Brand({page, link}) {
   return (
     <div className="title-container">

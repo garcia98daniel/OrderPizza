@@ -11,6 +11,7 @@
     justify-content: flex-end;
     /* visibility: hidden; */
     font-family: var(--normal-font);
+    z-index: 1000;
 
   }
   .make-order {
@@ -24,6 +25,16 @@
     padding: 5px 20px;
     box-sizing: border-box;
     position: relative;
+    align-self: flex-start;
+  }
+
+  .make-order-closeIcon {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .make-order-closeIcon img{
+    width: 40px;
+    height: auto;
   }
 
   .make-order .shopping-car{
@@ -77,13 +88,13 @@
   }
   .order-resume h4 {
     font-family: var(--normal-font);
-    color: #4a8846;
+    color: #018740;
     font-size: 24px;
     font-weight: 600;
   }
   .order-resume p {
     margin-bottom: 15px;
-    color: #4a8846;
+    color: #018740;
     font-family: var(--normal-font);
     font-size: 24px;
   }
@@ -135,6 +146,7 @@
 @media screen and (max-width: 480px){
   .make-order{
     width: 80%;
+    height: calc(100vh - 61px);
   }
 
   .emptyCar{

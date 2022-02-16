@@ -43,7 +43,9 @@ function ModalOrderDone({
         .then((res) => {
           // console.log(res.data);
           //borra lo que tiene el carrito de compras
-          setPizzaItemsChosen([]);
+          if(res.data.status === 201){
+            setPizzaItemsChosen([]);
+          }
 
           //cierra el modal carrito de compras
           handleOpenModal(false);

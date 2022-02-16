@@ -1,9 +1,10 @@
 :root{
     --gold-color: #FCB84F;
     --darkerGold-color: #D6A251;
-    --green-color: #4A8845;
+    --green-color: #018740;
     --big-text-font: 'Herr Von Muellerhoff', cursive;
-}
+    --normal-font: "Roboto", sans-serif;
+  }
 
 *{
     scroll-behavior: smooth;
@@ -553,7 +554,7 @@ footer{
     }
 
     .dataRow input[type=text], input[type=tel], textarea {
-        width: initial !important;
+        width: 100%;
     }
 }
 

@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 
 import "./style/modalSelectPizza.css";
 import closeIcon from "../img/closeIcon.png";
+import backIcon from "../img/white_arrow.png";
 import plusIcon from "../img/plusIcon.png";
 import cart from "../img/cart.png";
 
@@ -223,6 +224,10 @@ function ModalSelectPizza({
         ],
       },
     ]);
+
+    setTimeout(() => {
+      openModal(false);
+    }, 800);
   };
 
   useEffect(() => {
@@ -239,6 +244,14 @@ function ModalSelectPizza({
           className="closeIcon"
           onClick={() => openModal(false)}
         />
+        
+        <img
+          src={backIcon}
+          alt="close"
+          className="backIcon"
+          onClick={() => openModal(false)}
+        />
+        
 
         <div className="order-information">
           <article className="pizza-visual-description">
@@ -248,7 +261,8 @@ function ModalSelectPizza({
             <h4>Tamaño</h4>
           </article>
           <div className="pizza-caracteristics">
-            <h3>Adicionales</h3>
+          <h3 className="pizza-caracteristics-price">Valor ${totalProductPrice}</h3>
+            <h4>¿Quieres añadir un ingrediente?</h4>
             {/* <form action="">
                <label htmlFor="border"></label>
                <select name="border" id="border" className="input-select" value={pizzaEdge} onChange={(e)=>setPizzaEdge(e.target.value)}>
@@ -268,13 +282,14 @@ function ModalSelectPizza({
                 onChange={(e) => setIngredient(e.target.value)}
               >
                 <option value="Ingredientes" selected>
-                  Ingredientes
+                  Selecciona un Ingrediente adicional
                 </option>
                 {pizzaIngredients.map((ingredient) => (
                   <option value={ingredient.text}>{ingredient.text}</option>
                 ))}
               </select>
             </form>
+            <h4>¿Quieres añadir una bebida?</h4>
             <form action="">
               <label htmlFor="drinks"></label>
               <select
@@ -285,7 +300,7 @@ function ModalSelectPizza({
                 onChange={(e) => setDrink(e.target.value)}
               >
                 <option value="" selected>
-                  Bebidas
+                Selecciona una bebida adicional
                 </option>
                 {drinks.map((drink) => (
                   <option value={drink.text}>{drink.text}</option>
@@ -293,6 +308,7 @@ function ModalSelectPizza({
               </select>
             </form>
             <label className="extraQueso">
+              Añadir Extra Queso
               <input
                 checked={pizzaExtraQueso}
                 onChange={() => setPizzaExtraQueso(!pizzaExtraQueso)}
@@ -300,9 +316,8 @@ function ModalSelectPizza({
                 id="extraQueso"
                 value="extraQueso"
               />
-              Extra Queso
             </label>
-            <img src={plusIcon} alt="" className="plusCirculeIcon" />
+            {/* <img src={plusIcon} alt="" className="plusCirculeIcon" /> */}
             <h4>Observación</h4>
             <textarea
               value={observation}
@@ -314,7 +329,9 @@ function ModalSelectPizza({
             ></textarea>
           </div>
         </div>
+        
         <div className="order-price">
+          <h3 className="question-pizza-size">¿De que tamaño quieres tu pizza?</h3>
           <div className="sizes">
             <div
               className={
@@ -335,7 +352,7 @@ function ModalSelectPizza({
                 </div>
               </span>
             </div>
-            <div
+            {/* <div
               className={
                 size === "Pequeña"
                   ? "pizza_pequeña size sizeActive"
@@ -355,7 +372,7 @@ function ModalSelectPizza({
                   <div className="pizza_stripe stripe_three_6"></div>
                 </div>
               </span>
-            </div>
+            </div>*/}
             <div
               className={
                 size === "Mediana"
@@ -363,22 +380,21 @@ function ModalSelectPizza({
                   : "pizza_mediana size"
               }
               onClick={() => setZise("Mediana")}
-            >
+            > 
               Mediana
               <span className="pizzaModel">
-                <div className="detailsZise">
-                  <h3>Porciones 8</h3>
-                  <span>37 CM</span>
+              <div className="detailsZise">
+                  <h3>Porciones 6</h3>
+                  <span>32 CM</span>
                 </div>
                 <div className="circulePizzaModel">
-                  <div className="pizza_stripe stripe_one_8"></div>
-                  <div className="pizza_stripe stripe_two_8"></div>
-                  <div className="pizza_stripe stripe_three_8"></div>
-                  <div className="pizza_stripe stripe_four_8"></div>
+                  <div className="pizza_stripe stripe_one_6"></div>
+                  <div className="pizza_stripe stripe_two_6"></div>
+                  <div className="pizza_stripe stripe_three_6"></div>
                 </div>
               </span>
             </div>
-            <div
+            {/* <div
               className={
                 size === "Grande"
                   ? "pizza_grande size sizeActive"
@@ -400,8 +416,9 @@ function ModalSelectPizza({
                   <div className="pizza_stripe stripe_five_10"></div>
                 </div>
               </span>
-            </div>
+            </div> */}
           </div>
+          <h3 className="question-pizza-size">¿Cuantas quieres?</h3>
           <div className="quantity">
             <div className="minus" onClick={() => handleProductQuantity(-1)}>
               -
@@ -415,11 +432,16 @@ function ModalSelectPizza({
             className="total-price"
             onClick={() => handleAddPizzaToShoppingCar()}
           >
-            <div>
-              <img src={cart} alt="cart" className="cart" />
-              <img src={plusIconSvg} alt="" className="plusIcon" />
-            </div>
-            <p>{totalProductPrice} COP</p>
+            
+              <h3>Añadir al carrito</h3>
+              {/* <div className="total-price-icon-container">
+                <img src={cart} alt="cart" className="cart" />
+                <img src={plusIconSvg} alt="" className="plusIcon" />
+              </div> */}
+            <p>
+                ${totalProductPrice}
+              
+            </p>
             {addedAnimation && (
               <div className="addedAnimation">
                 <img src={cart} alt="cart" /> Cargado al carrito
@@ -427,6 +449,25 @@ function ModalSelectPizza({
             )}
           </div>
         </div>
+            
+        <div
+            className="total-price-mobile-button"
+            onClick={() => handleAddPizzaToShoppingCar()}
+          >
+              <h3>Añadir al carrito</h3>
+              {/* <div className="total-price-icon-container">
+                <img src={cart} alt="cart" className="cart" />
+                <img src={plusIconSvg} alt="" className="plusIcon" />
+              </div> */}
+            <p>
+                $ {totalProductPrice}
+            </p>
+            {addedAnimation && (
+              <div className="addedAnimation">
+                <img src={cart} alt="cart" /> Cargado al carrito
+              </div>
+            )}
+          </div>
       </div>
       </div>
     ,document.getElementById("modal")

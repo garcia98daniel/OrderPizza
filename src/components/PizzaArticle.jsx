@@ -6,17 +6,27 @@ function pizzaArticle({pizzaName,prices, productDescription, handleClick, pizzaI
   
     return (
         <article className="pizza-container" onClick={() => handleClick(true, prices, pizzaName, productDescription, pizzaImg)}>
-            <div className="pizza-description">
-              <div className="pizza_tittle">
-                <small>Personal</small>
-                <h3> {pizzaName}</h3>
-              </div>
-              <h3><small>Desde</small> {prices.value.personal} COP</h3>
-              <p>
-                {productDescription}
-              </p>
-            </div>
             <img src={pizzaImg} alt="" />
+            <div className="pizza-description">
+              <div>
+                <h4 className="pizza_tittle">
+                  {/* <small>Personal</small> */}
+                  {/* <h4 className="articule-name">  */}
+                  {pizzaName}
+                  {/* </h4> */}
+                </h4>
+                <p>
+                  {productDescription}
+                </p>
+              </div>
+
+              <button className="pizza-article-btn">
+                Ordenar
+              </button>
+              {/* <h3 className="pizza-price">
+                ${prices.value.personal}
+              </h3> */}
+            </div>
           </article>
     );
 }

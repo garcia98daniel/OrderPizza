@@ -8,6 +8,7 @@
     right: 0;
     left: 0;
     font-family: var(--normal-font);
+    z-index: 1000;
 }
 
 .modalOrderDone{
@@ -24,7 +25,7 @@
 
 .footerModal p{
     margin-bottom: 15px;
-    color: #4a8846;
+    color: #018740;
     font-family: var(--normal-font);
     font-size: 24px;
 }
@@ -96,7 +97,7 @@
     min-width: fit-content;
     padding: 5px 10px;
     border-radius: 6px;
-    background: #4a8846;
+    background: #018740;
     color: white;
     border: none;
     font-size: 1.2em;
@@ -113,7 +114,7 @@
     width: 100%;
     padding: 5px 10px;
     border-radius: 6px;
-    background: #4a8846;
+    background: #018740;
     color: white;
     border: none;
     font-size: 1.2em;
@@ -252,7 +253,7 @@
     }
 
     .dataRow input[type=text], input[type=tel], .modalOrderDone textarea {
-        width: 100% !important;
+        width: 100% ;
         font-size: 1.1em;
     }
 
@@ -279,7 +280,7 @@
     }
 
     .dataRow input[type=text], input[type=tel], .modalOrderDone textarea {
-        width: 100% !important;
+        width: 100% ;
         font-size: 1em;
     }
 

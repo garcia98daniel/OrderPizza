@@ -1,7 +1,7 @@
 /* ------------- HERE STARTS OVERLAY ONE SECTION --------- */
  .overlay { 
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(194, 188, 188, 0.3);
   height: 100vh;
   width: 100%;
   top: 0;
@@ -9,6 +9,8 @@
   right: 0;
   left: 0;
   display: flex;
+  z-index:20;
+  font-family: var(--normal-font);
 }
 
 
@@ -18,6 +20,7 @@
     display: block;
     border-radius: 5px;
     position: relative;
+    font-style: normal !important;
   }
 
   
@@ -78,10 +81,13 @@
     background-color: #e7e7e7;
     text-align: center;
     border-top-right-radius: 8px;
+
   }
   .pizza-caracteristics h3 {
     font-size: 24px;
     margin: 5px;
+    font-family: var(--normal-font);
+
   }
   .pizza-caracteristics .fas {
     font-size: 50px;
@@ -102,7 +108,10 @@
     padding: 5px 10px;
     border-radius: 6px;
     color: white;
-    background: #4a8845;
+    background: var(--green-color);
+    border: 2px solid white;
+    box-shadow: 0px 5px 5px rgb(24 24 24 / 25%);
+    margin-bottom: 30px;
   }
   
   .pizza-caracteristics textarea {
@@ -115,6 +124,7 @@
   }
   
   .input-select {
+    background: white;
     height: 30px;
     width: 272px;
     margin-bottom: 15px;
@@ -143,26 +153,30 @@
   .order-price .sizes {
     display: flex;
     margin: 0px 10px 0px 5px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 5px rgb(24 24 24 / 25%);
+    border: 2px solid white;
   }
   .sizes .size {
-    color: white;
-    background-color: #4a8845;
+    color: rgb(88, 88, 88);
+    background-color: lightgray;
     padding: 7px 8px;
     cursor: pointer;
     position: relative;
   }
 
   .sizeActive{
-    background: #385A36 !important;
+    color: white !important;
+    background: #10c600 !important;
   }
 
   .size:nth-of-type(-n + 3) {
-    border-right: solid 1px #385a36;
+    border-right: solid 1px #ffffff;
   }
   .size:nth-of-type(1) {
     border-radius: 5px 0px 0px 5px;
   }
-  .size:nth-of-type(4) {
+  .size:nth-of-type(2) {
     border-radius: 0px 5px 5px 0px;
   }
 
@@ -203,7 +217,7 @@
     border-width: 10px 15px 10px 0;
     border-color: transparent lightgray transparent transparent;
     position: absolute;
-    left: 8px;
+    /* left: 8px; */
     top: -13px;
     transform: rotate(-35deg);
   }
@@ -343,6 +357,7 @@
   }
   .order-price .total-price {
     display: flex;
+    flex-direction: column;
     background-color: black;
     justify-content: space-between;
     align-items: center;
@@ -353,6 +368,12 @@
     transition: .2s all;
     position: relative;
     color: white;
+  }
+
+  .order-price .total-price-icon-container{
+    display: flex;
+    justify-content: space-around;
+    min-width: fit-content;
   }
 
   .order-price .total-price:hover {
@@ -413,12 +434,30 @@
     width: 25px;
   }
 
+  
+
   @keyframes addedAnimation{
     0%{opacity: 0}
     50%{opacity: 1}
     100%{opacity: 0; top: -50px}
   }
 
+  .backIcon{
+    display:none;
+  }
+
+  .total-price-mobile-button{
+    display:none;
+    
+  }
+
+  .pizza-caracteristics-price{
+    margin: 5px;
+  }
+
+  .question-pizza-size{
+    display: none;
+  }
 
   /* ------------- responsive --------- */
 @media screen and (max-width:1024px){
@@ -482,17 +521,136 @@
 }
 
 @media screen and (max-width: 480px){
+
+  .overlay { 
+    height: calc(100vh - 61px);
+  }
+  .order-popup {
+    overflow-y: auto;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: block;
+    position: relative; 
+  }
+
+  .order-price .total-price{
+    display: none;
+  }
+
+  .total-price-mobile-button{
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 80px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #10c600;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+    transition: .2s all;
+    color: white;
+    box-sizing: border-box;
+    border: 2px solid white;
+    box-shadow: 0px 5px 5px rgb(24 24 24 / 25%);
+  }
+
+  .total-price-mobile-button h3{
+    justify-self: center;
+  }
+   
+  .total-price-mobile-button p{
+    font-size: 24px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .order-popup .closeIcon{
+    display:none;
+  }
+
+  .order-popup .backIcon{
+    display:block;
+    width: 30px;
+    height: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 15px;
+    cursor: pointer;
+    transition: .2s all;
+    transform: rotate(90deg);
+  }
+  .order-popup img{
+    width: 80%;
+    height: auto;
+    border-radius: 8px;
+    margin: 10px 0;
+  }
+    
+  .pizza-visual-description{
+    box-sizing: border-box;
+    padding: 10px;
+    min-height: 33%;
+    background-color: black;
+  }
+
+  .pizza-visual-description p{
+    color: white;
+    order: 3;
+  }
+
+  .pizza-caracteristics{
+    background-color: transparent;
+
+  }
+  .pizza-caracteristics-price{
+    margin-right: 10px;
+    align-self: end;
+    border-radius: 8px;
+    border: 2px solid black;
+    padding: 10px;
+    box-shadow: 0px 5px 5px rgb(24 24 24 / 25%);
+    color:white;
+    background: black;
+  }
+  .order-price{
+    background-color: transparent;
+    margin-bottom: 140px;
+  }
+
+  form{
+    width: 100%;
+  }
+
+  .input-select {
+    background: white;
+    height: 40px;
+    padding: 5px 15px;
+    width: 90%;
+    border: solid 2px black;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 18px;
+  }
+
   .pizza-visual-description h1{
+    color: white;
     font-size: 1.5em;
   }
 
-  .sizes .size{
-    font-size: 0.9em;
+  .order-price .sizes{
+    margin-bottom: 15px;
   }
-
-  .input-select{
-    margin-bottom: 8px;
-    height: 25px;
+  
+  .sizes .size{
+    font-size: 1.3em;
   }
 
   .pizza-visual-description h4{
@@ -500,10 +658,66 @@
   }
 
   .pizzaModel{
-    top: -250px;
+    /* top: -250px; */
     left: -30vw;
     transform: scale(0.8);
   }
+
+  .extraQueso{
+    width: 90%;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+  }
+
+  .pizza-caracteristics textarea{
+    width: 90%;
+  }
+
+  .question-pizza-size{
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .pizzaModel{
+    width: 310px;
+  }
+
+  .total-price-mobile-button .addedAnimation{
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-radius: 8px;
+    height: inherit;
+    width: 100%;
+    background: #10c600;
+    font-size: 1.2em;
+    color: white;
+    padding: inherit;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    animation: addedAnimation 1s ease forwards;
+    opacity: 0;
+  }
+
+  .total-price-mobile-button .addedAnimation img{
+    height: 25px;
+    width: 25px;
+  }
+
+  
+
+  @keyframes addedAnimation{
+    0%{opacity: 1}
+    70%{opacity: 0.8}
+    90%{opacity: 0.5}
+    100%{opacity: 0; top: -90px}
+  }
+  
 }
 
 @media screen and (max-width: 380px){

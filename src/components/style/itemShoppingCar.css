@@ -29,7 +29,7 @@
 
   .img_size_container h4 {
     margin-bottom: 15px;
-    color: #4a8846;
+    color: #018740;
     font-family: var(--normal-font);
     font-size: 24px;
   }
@@ -52,7 +52,7 @@
   }
   .item-description h4 {
     margin-bottom: 15px;
-    color: #4a8846;
+    color: #018740;
     font-family: var(--normal-font);
   }
   .item-description a {
@@ -101,7 +101,7 @@
   .price p {
     font-family: var(--normal-font);
     min-width: max-content;
-    color: #4a8846;
+    color: #018740;
     font-size: 20px;
     font-weight: 600;
     margin: 0;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Brand from "../components/Brand";
@@ -8,6 +8,7 @@ import AdicionalArticle from "../components/AdicionalArticle";
 import ModalSelectPizza from "../components/ModalSelectPizza";
 import MenuSideShoppingCar from "../components/MenuSideShoppingCar";
 import ModalOrderDone from "../components/ModalOrderDone";
+import BottonBar from "../components/BottonBar";
 
 // import {pizzaPricesLigeras} from "../pizzaPricesData/pizzaPricesLigeras.js";
 // import {pizzaPricesCombinadas} from "../pizzaPricesData/pizzaPricesCombinadas.js";
@@ -51,6 +52,12 @@ function Menu(props) {
     setProductDescription(Description);
     setProductPizzaImg(pizzaImg);
   }
+
+  useEffect(() => {
+    window.scrollTo({
+        top: 0,
+    }) 
+  },[])
   return (
     <div className="menuBody">
       {/* <div className="domicilioBaner_container">
@@ -152,7 +159,7 @@ function Menu(props) {
         </div>
       </div>
       <div className="aditions-section">
-        <div className="aditions-title">
+        {/* <div className="aditions-title">
           <h1>Adicionales</h1>
         </div>
         <div className="aditions-container">
@@ -177,9 +184,9 @@ function Menu(props) {
                 />
               ))
            }
-        </div>
+        </div> */}
       </div>
-      <div className="aditions-section">
+      {/* <div className="aditions-section">
         <div className="aditions-title">
           <h1>Bebidas</h1>
         </div>
@@ -194,8 +201,8 @@ function Menu(props) {
                 />
               ))
            }
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
 
       {/* modals */}
       {selectPizzaModal && (
@@ -211,6 +218,7 @@ function Menu(props) {
       )}
       {shoppingCarSwitchModal &&
         <MenuSideShoppingCar 
+        shoppingCarSwitchModal={shoppingCarSwitchModal}
         pizzaItemsChosen={pizzaItemsChosen} 
         setPizzaItemsChosen={setPizzaItemsChosen}
         handleOpenModal={setShoppingCarSwitchModal}
@@ -225,6 +233,8 @@ function Menu(props) {
         setPizzaItemsChosen={setPizzaItemsChosen}
         />
       }
+
+      <BottonBar shoppingCarSwitchModal={shoppingCarSwitchModal} pizzaItemsChosen={pizzaItemsChosen} handlerOpenCloseShoppingcart={setShoppingCarSwitchModal}/>
     </div>
   );
 }

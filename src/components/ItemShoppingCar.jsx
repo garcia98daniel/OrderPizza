@@ -43,7 +43,7 @@ function ItemShoppingCar({
               <p>
                 {productDescription}
               </p>
-              <strong>Adicionales x unidad</strong>
+              <strong>Adicionales</strong>
               {aditionalBordeName !== 'Bordes' ? <small>{aditionalBordeName}</small>:'' }
               {aditionalIngredientName !== 'Ingredientes' ? <small>{aditionalIngredientName}</small>: ''}
               {aditionalDrinkName !== 'Bebidas' ? <small>{aditionalDrinkName}</small>:'' }
